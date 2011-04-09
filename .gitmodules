@@ -1,3 +1,6 @@
 [submodule ".emacs.d"]
 	path = .emacs.d
 	url = git@github.com:troter/emacs-files.git
+[submodule "etc/config"]
+	path = etc/config
+	url = git@github.com:troter/config.git
