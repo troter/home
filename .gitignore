@@ -1,0 +1,8 @@
+.*
+doc/**/*
+local/**/*
+sandbox/**/*
+src/**/*
+tmp/**/*
+work/**/*
+Dropbox
