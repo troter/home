@@ -12,3 +12,4 @@ svn co https://www.seasar.org/svn/s2container/trunk/seasar2/
 svn co https://www.seasar.org/svn/cubby/trunk/cubby-project/
 svn co https://www.seasar.org/svn/doma/trunk/doma/
 svn co http://google-guice.googlecode.com/svn/trunk/ google-guice-read-only
+svn co https://svn.java.net/svn/jersey~svn/tags/jersey-1.6
