@@ -1,17 +1,26 @@
 # -*- mode:sh; coding:utf-8-unix -*-
 
+# python
 hg clone http://selenic.com/repo/hg-stable
 hg clone https://bitbucket.org/tksoh/hgshelve -r 41e13e800fb6
 
+# ruby
 git clone git://github.com/rack/rack.git
 git clone git://github.com/rack/rack-contrib.git
 git clone git://github.com/sinatra/sinatra.git
 git clone git://github.com/sinatra/sinatra-contrib.git
 git clone git://github.com/teambox/teambox.git
 
+# java
 svn co https://www.seasar.org/svn/s2container/trunk/seasar2/
 svn co https://www.seasar.org/svn/cubby/trunk/cubby-project/
 svn co https://www.seasar.org/svn/doma/trunk/doma/
 svn co http://slim3.googlecode.com/svn/trunk/ slim3-read-only
 svn co http://google-guice.googlecode.com/svn/trunk/ google-guice-read-only
 svn co https://svn.java.net/svn/jersey~svn/tags/jersey-1.6
+svn co https://resteasy.svn.sourceforge.net/svnroot/resteasy/trunk resteasy-trunk
+svn co https://resteasy.svn.sourceforge.net/svnroot/resteasy/RESTEASY_JAXRS_2_1_0_GA/ resteasy-jaxrs-2.1.0-ga
+svn co http://svn.apache.org/repos/asf/tomcat/trunk/ tomcat-trunk
+svn co http://svn.apache.org/repos/asf/wicket/trunk/ wicket-trunk
+git clone git://github.com/KentBeck/junit
+git clone git://github.com/yusuke/twitter4j.git
