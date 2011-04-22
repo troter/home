@@ -7,6 +7,7 @@ git clone git://github.com/rack/rack.git
 git clone git://github.com/rack/rack-contrib.git
 git clone git://github.com/sinatra/sinatra.git
 git clone git://github.com/sinatra/sinatra-contrib.git
+git clone git://github.com/teambox/teambox.git
 
 svn co https://www.seasar.org/svn/s2container/trunk/seasar2/
 svn co https://www.seasar.org/svn/cubby/trunk/cubby-project/
