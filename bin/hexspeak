@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby
+# -*- coding: utf-8; mode: ruby -*-
+#
+# usage:
+# hg log --template "{node} {author} {desc|firstline}\n" | hexspeak
+
+first_class = %w[
+  abadbabe baadf00d baddcafe cafebabe deadbeef defec8ed
+  facefeed fee1dead badcab1e feedface deaddead beadface
+]
+second_class = %w[
+  c0ed f00d cafe beef dead face feed fee1
+]
+
+first_class_commit = []
+second_class_commit = []
+
+def included_speak(hex, speaks)
+  speaks.select {|speak| hex.include? speak }
+end
+
+
+STDIN.each do |l|
+  hex = l.split(" ")[0]
+  included = included_speak(hex, first_class)
+  unless included.empty?
+    first_class_commit << [included, l]
+    next
+  end
+  included = included_speak(hex, second_class)
+  unless included.empty?
+    second_class_commit << [included, l]
+    next
+  end
+end
+
+first_class_commit.each do |d|
+  puts "#{d[0].join(',')} #{d[1]}"
+end
+
+second_class_commit.each do |d|
+  puts "#{d[0].join(',')} #{d[1]}"
+end
