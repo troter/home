@@ -28,3 +28,5 @@ svn co http://svn.apache.org/repos/asf/wicket/trunk/ wicket-trunk
 git clone git://github.com/KentBeck/junit
 git clone git://github.com/jenkinsci/jenkins.git
 git clone git://github.com/yusuke/twitter4j.git
+
+git clone git://github.com/espenhw/malabar-mode.git
