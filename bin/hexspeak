@@ -7,9 +7,15 @@
 first_class = %w[
   abadbabe baadf00d baddcafe cafebabe deadbeef defec8ed
   facefeed fee1dead badcab1e feedface deaddead beadface
+  00000000 11111111 22222222 33333333 44444444
+  55555555 66666666 77777777 88888888 99999999
+  aaaaaaaa bbbbbbbb cccccccc dddddddd eeeeeeee ffffffff
 ]
 second_class = %w[
   c0ed f00d cafe beef dead face feed fee1
+  0000 1111 2222 3333 4444
+  5555 6666 7777 8888 9999
+  aaaa bbbb cccc dddd eeee ffff
 ]
 
 first_class_commit = []
