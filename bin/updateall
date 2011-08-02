@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+# -*- coding:utf-8 -*-
+
+require 'pathname'
+
+class Pathname
+  @@metadata2command = {
+    '.git' => 'git pull',
+    '.hg' => 'hg pull -u',
+    '.svn' => 'svn up',
+    '.bzr' => 'bzr up',
+  }
+
+  def repo?(metadata)
+    self.directory? && self.entries.any? {|d| File.basename(d) == metadata }
+  end
+
+  def update()
+    return unless self.directory?
+    Dir::chdir(self) do
+      p = Pathname::pwd()
+      @@metadata2command.each do |metadata, command|
+        next unless p.repo?(metadata)
+        puts "UPDATE \"#{p}\""
+        system(command)
+      end
+    end
+  end
+end
+
+dir = ARGV.shift || '.'
+Pathname.new(dir).each_child {|p| p.update }
+
