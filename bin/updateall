@@ -4,7 +4,7 @@
 require 'pathname'
 
 class Pathname
-  @@metadata2command = {
+  @@vcs_update_command_table = {
     '.git' => 'git pull',
     '.hg' => 'hg pull -u',
     '.svn' => 'svn up',
@@ -12,14 +12,13 @@ class Pathname
   }
 
   def repo?(metadata)
-    self.directory? && self.entries.any? {|d| File.basename(d) == metadata }
+    self.directory? && self.children.any? {|d| File.basename(d) == metadata }
   end
 
   def update()
-    return unless self.directory?
     Dir::chdir(self) do
       p = Pathname::pwd()
-      @@metadata2command.each do |metadata, command|
+      @@vcs_update_command_table.each do |metadata, command|
         next unless p.repo?(metadata)
         puts "UPDATE \"#{p}\""
         system(command)
@@ -29,5 +28,7 @@ class Pathname
 end
 
 dir = ARGV.shift || '.'
-Pathname.new(dir).each_child {|p| p.update }
-
+Pathname.new(dir).each_child do |p|
+  next unless p.directory?
+  p.update
+end

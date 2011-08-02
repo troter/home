@@ -1,0 +1,6 @@
+#!/bin/bash
+
+[ -d .git ] && git pull
+[ -d .hg  ] && hg pull -u
+[ -d .svn ] && svn update
+[ -d .bzr ] && bzr update
