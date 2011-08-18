@@ -5,6 +5,7 @@ hg clone http://selenic.com/repo/hg-stable
 hg clone https://bitbucket.org/tksoh/hgshelve -r 41e13e800fb6
 hg clone https://bitbucket.org/alu/hgtasks
 hg clone https://bitbucket.org/spookylukey/histedit
+hg clone http://bitbucket.org/durin42/hgsubversion/
 
 # ruby
 git clone git://github.com/rack/rack.git
