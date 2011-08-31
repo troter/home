@@ -37,6 +37,7 @@ diff = diff --git
 # log
 l = log
 lb = log -b
+show = log --color=always -pr
 gl = glog
 gll = glog --limit
 
@@ -62,7 +63,7 @@ qr = qrefresh
 qf = qfinish
 
 [pager]
-attend = annotate, cat, diff, export, glog, log, qdiff, help
+attend = annotate, cat, diff, export, glog, log, qdiff, help, show
 
 [diff]
 git = True
