@@ -17,6 +17,7 @@ histedit = $HOME/src/histedit/hg_histedit.py
 hgshelve = $HOME/src/hgshelve/hgshelve.py
 hgsubversion = $HOME/src/hgsubversion/hgsubversion
 review = $HOME/src/hg-review/review
+hggit = $HOME/src/hg-git/hggit
 mq =
 pager =
 parentrevspec =
