@@ -64,6 +64,9 @@ qf = qfinish
 [pager]
 attend = annotate, cat, diff, export, glog, log, qdiff, help
 
+[diff]
+git = True
+
 # include settings
 %include $HOME/.hgrc.d/extension.rc
 %include $HOME/.hgrc.d/araxis.rc
