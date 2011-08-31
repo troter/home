@@ -84,3 +84,5 @@ araxis.checkconflict = True
 araxis.binary = True
 #araxis.gui = True
 
+%include $HOME/.hgrc.local
+
