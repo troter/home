@@ -1,0 +1,6 @@
+# -*- coding:utf-8; mode:conf; -*-
+# local.rc
+
+[ui]
+#merge = araxis
+
