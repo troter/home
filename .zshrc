@@ -17,8 +17,8 @@ function load_directory_files() {
   }
 }
 
-load_directory_files "~/etc/config/zsh/init" "*.sh"
-load_directory_files "~/etc/config/zsh/function" "*.sh"
+load_directory_files "~/.zsh/init" "*.sh"
+load_directory_files "~/.zsh/function" "*.sh"
 unfunction load_directory_files
 
 # Load local configuration file.
