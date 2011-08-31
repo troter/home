@@ -1,0 +1,88 @@
+# -*- coding:utf-8; mode:conf; -*-
+# hgrc
+
+[ui]
+username = Takumi IINO <trot.thunder@gmail.com>
+#merge = araxis
+
+[extensions]
+bookmarks =
+color =
+convert =
+eol =
+extdiff =
+fetch =
+graphlog =
+histedit = $HOME/src/histedit/hg_histedit.py
+hgshelve = $HOME/src/hgshelve/hgshelve.py
+hgsubversion = $HOME/src/hgsubversion/hgsubversion
+review = $HOME/src/hg-review/review
+mq =
+pager =
+parentrevspec =
+progress =
+rebase =
+record =
+transplant =
+
+[alias]
+# misc
+cm = commit --message
+. = summary
+: = status
+h = help
+
+# branch
+b = branch
+bs = branches -a
+
+# diff
+diff = diff --git
+
+# log
+l = log
+lb = log -b
+gl = glog
+gll = glog --limit
+
+# resolve
+mark = resolve -m
+unmark = resolve -u
+
+# pull & push
+pr = pull --rebase
+nudge = push --rev .
+push = ! echo "(use 'hg nudge' to push changesets)"
+
+# shelve
+sh = shelve
+ush = unshelve
+
+# transplant
+transplant = transplant --log
+#transplantverify=status | grep '.rej' | awk '{print $2}' | xargs -n 1 -I '{}' echo patch -p0 -i '{}' '`echo '{}' | sed -e s/.rej$//`' | sh
+
+# mq
+qi = qimport
+qr = qrefresh
+qf = qfinish
+
+[pager]
+attend = annotate, cat, diff, export, glog, log, qdiff, help
+
+[hooks]
+#prechangegroup.mq-no-pull = ! hg qtop > /dev/null 2>&1
+#preoutgoing.mq-no-push = ! hg qtop > /dev/null 2>&1
+
+[extdiff]
+cmd.araxisdiff = bash
+opts.araxisdiff = -c '"/cygdrive/C/Program Files/Araxis/Araxis Merge/ConsoleCompare.exe" /2 /wait "$(cygpath -w "$0")" "$(cygpath -w "$1")"'
+
+[merge-tools]
+araxis.premerge = False
+araxis.executable = bash
+araxis.args = -c '"/cygdrive/C/Program Files/Araxis/Araxis Merge/ConsoleCompare.exe" /3 /a2 /wait /title1:"Other" /title2:"Base" /title3:"Local:$(cygpath -w "$0")" "$(cygpath -w "$1")" "$(cygpath -w "$2")" "$(cygpath -w "$0")" "$(cygpath -w "$3")"' $local $other $base $output
+araxis.checkconflict = True
+araxis.binary = True
+#araxis.gui = True
+
