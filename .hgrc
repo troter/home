@@ -3,7 +3,6 @@
 
 [ui]
 username = Takumi IINO <trot.thunder@gmail.com>
-#merge = araxis
 
 [extensions]
 bookmarks =
@@ -20,8 +19,6 @@ progress =
 rebase =
 record =
 transplant =
-
-%include $HOME/.hgrc.d/extension.rc
 
 [alias]
 # misc
@@ -58,7 +55,6 @@ ush = unshelve
 
 # transplant
 transplant = transplant --log
-#transplantverify=status | grep '.rej' | awk '{print $2}' | xargs -n 1 -I '{}' echo patch -p0 -i '{}' '`echo '{}' | sed -e s/.rej$//`' | sh
 
 # mq
 qi = qimport
@@ -68,11 +64,8 @@ qf = qfinish
 [pager]
 attend = annotate, cat, diff, export, glog, log, qdiff, help
 
-[hooks]
-#prechangegroup.mq-no-pull = ! hg qtop > /dev/null 2>&1
-#preoutgoing.mq-no-push = ! hg qtop > /dev/null 2>&1
-
+# include settings
+%include $HOME/.hgrc.d/extension.rc
 %include $HOME/.hgrc.d/araxis.rc
-
 %include $HOME/.hgrc.d/local.rc
 
