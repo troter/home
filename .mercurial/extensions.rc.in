@@ -1,5 +1,5 @@
 # -*- coding:utf-8; mode:conf; -*-
-# extension.rc
+# extensions.rc
 
 [extensions]
 histedit = $HOME/.mercurial/extensions/histedit/hg_histedit.py
