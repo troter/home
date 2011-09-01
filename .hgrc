@@ -41,6 +41,7 @@ gll = glog --limit
 # resolve
 mark = resolve -m
 unmark = resolve -u
+conflicts = resolve -l
 
 # pull & push
 pr = pull --rebase
