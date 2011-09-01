@@ -1,25 +1,20 @@
 # -*- mode: ruby; coding: utf-8; indent-tabs-mode: nil -*-
 # .irbrc
+require 'logger'
 require 'irb/completion'
 require 'pp'
-begin
-  require 'rubygems'
-rescue LoadError
-  STDERR.puts "WARN: please install 'rubygems'."
-end
+
+log = Logger.new(STDOUT)
+log.level = Logger::DEBUG
 
 IRB.conf[:SAVE_HISTORY] = 100000
 
-begin
-  require 'win32console'
-rescue LoadError
-  STDERR.puts "WARN: please install 'win32console'."
-end
-
-begin
-  require 'utility_belt'
-rescue LoadError
-  STDERR.puts "WARN: please install 'utility_belt'."
+['rubygems', 'win32console', 'utility_belt'].each do |feature|
+  begin
+    require feature
+  rescue LoadError
+    log.warn("please install '#{feature}'.")
+  end
 end
 
 # http://eigenclass.org/hiki.rb?irb+ri+completion
