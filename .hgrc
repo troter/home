@@ -69,7 +69,7 @@ attend = annotate, cat, diff, export, glog, log, qdiff, help, show
 git = True
 
 # include settings
-%include $HOME/.hgrc.d/extension.rc
-%include $HOME/.hgrc.d/araxis.rc
-%include $HOME/.hgrc.d/local.rc
+%include $HOME/.mercurial/extension.rc
+%include $HOME/.mercurial/araxis.rc
+%include $HOME/.mercurial/local.rc
 
