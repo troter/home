@@ -31,9 +31,6 @@ h = help
 b = branch
 bs = branches -a
 
-# diff
-diff = diff --git
-
 # log
 l = log
 lb = log -b
