@@ -52,9 +52,6 @@ push = ! echo "(use 'hg nudge' to push changesets)"
 sh = shelve
 ush = unshelve
 
-# transplant
-transplant = transplant --log
-
 # mq
 qi = qimport
 qr = qrefresh
