@@ -65,6 +65,18 @@ qf = qfinish
 # power of commit
 poc = churn -t '{author|email}' -c
 
+# fix latest commit message (hg 1.8.x only)
+fix = ! \
+  $HG shelve --all -n 'tmp.hg-fix' && \
+  if $HG qtop > /dev/null; then \
+    $HG qrefresh -m "$1"; \
+  else \
+    $HG qimport -r .; \
+    $HG qrefresh -m "$1"; \
+    $HG qfinish -a; \
+  fi; \
+  $HG unshelve -n 'tmp.hg-fix'
+
 [pager]
 attend = annotate, cat, diff, export, glog, log, qdiff, help, show, shortlog, gshortlog
 
