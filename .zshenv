@@ -50,4 +50,8 @@ if [ "${PATH/$HOME/}" = "$PATH" ] ; then # if $HOME/bin is not in $PATH ...
 fi
 export PATH MANPATH INFOPATH LD_LIBRARY_PATH
 
+# PYTHONSTARTUP
+# =============
+export PYTHONSTARTUP=$HOME/.pythonstartup
+
 # __END__
