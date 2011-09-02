@@ -6,6 +6,7 @@ username = Takumi IINO <trot.thunder@gmail.com>
 
 [extensions]
 bookmarks =
+churn =
 color =
 convert =
 eol =
@@ -60,6 +61,9 @@ ush = unshelve
 qi = qimport
 qr = qrefresh
 qf = qfinish
+
+# power of commit
+poc = churn -t '{author|email}' -c
 
 [pager]
 attend = annotate, cat, diff, export, glog, log, qdiff, help, show, shortlog, gshortlog
