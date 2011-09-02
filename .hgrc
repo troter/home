@@ -61,6 +61,8 @@ ush = unshelve
 qi = qimport
 qr = qrefresh
 qf = qfinish
+qls = qseries
+qst = status --change qtip
 
 # power of commit
 poc = churn -t '{author|email}' -c
