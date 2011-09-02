@@ -51,7 +51,7 @@ conflicts = resolve -l
 # pull & push
 pr = pull --rebase
 nudge = push --rev .
-push = ! echo "(use 'hg nudge' to push changesets)"
+push = ! echo -e "\033[31m(use 'hg nudge' to push changesets)\033[m"
 
 # shelve
 sh = shelve
