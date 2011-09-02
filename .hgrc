@@ -47,6 +47,8 @@ gshortlog = glog --template '\033[31m{rev}:{node|short}\033[m | {date|shortdate}
 mark = resolve -m
 unmark = resolve -u
 conflicts = resolve -l
+uselocal = resolve --tool internal:local
+useother = resolve --tool internal:other
 
 # pull & push
 pr = pull --rebase
