@@ -42,8 +42,8 @@
 ;; gem install fastri
 (when (and (executable-find "rdoc")
              (executable-find "ri"))
-  (let ((ri-emacs (expand-file-name "ri-emacs/ri-emacs.rb" plugins-directory))
-        (ri-ruby-el (expand-file-name "ri-emacs/ri-ruby.el" plugins-directory)))
+  (let ((ri-emacs (expand-file-name "ri-emacs/ri-emacs.rb" site-lisp-directory))
+        (ri-ruby-el (expand-file-name "ri-emacs/ri-ruby.el" site-lisp-directory)))
     (setq ri-ruby-script ri-emacs)
     (autoload 'ri ri-ruby-el nil t)))
 

@@ -10,7 +10,7 @@
   (add-to-list 'yas/known-modes 'php-mode)
 
   (setq yas/root-directory
-        (expand-file-name "yasnippet-0.6.1c/snippets" plugins-directory))
+        (expand-file-name "yasnippet-0.6.1c/snippets" site-lisp-directory))
 
   ;; 自分用スニペットディレクトリ(リストで複数指定可)
   (defvar my-snippet-directories

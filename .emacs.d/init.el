@@ -98,13 +98,13 @@
 ;; (@* "various path")
 ;; - (@file :file-name libraries-directory)
 ;; - (@file :file-name initialize-directory)
-;; - (@file :file-name plugins-directory)
+;; - (@file :file-name site-lisp-directory)
 ;; - (@file :file-name info-directory)
 (setq base-directory "~/.emacs.d"
       libraries-directory (expand-file-name "library" base-directory)
       auto-install-directory (expand-file-name "auto-install" base-directory)
       initialize-directory (expand-file-name "initialize" base-directory)
-      plugins-directory (expand-file-name "plugins" base-directory)
+      site-lisp-directory (expand-file-name "site-lisp" base-directory)
       info-directory (expand-file-name "info" base-directory))
 
 (defun load-path-recompile (dir)
@@ -122,10 +122,10 @@
 (setq load-path
       (merge-path-list
        load-path
-       (list plugins-directory
+       (list site-lisp-directory
              libraries-directory
              auto-install-directory)))
-(load-path-recompile plugins-directory)
+(load-path-recompile site-lisp-directory)
 (load-path-recompile libraries-directory)
 
 (setq exec-path
@@ -178,7 +178,7 @@
 ;; - (@file :file-name libraries-directory)
 ;; - (@file :file-name initialize-directory)
 (load-directory-files libraries-directory "^.+el$")
-(load-directory-files plugins-directory "^subdirs\\.el$")
+(load-directory-files site-lisp-directory "^subdirs\\.el$")
 (load-directory-files initialize-directory "^\\+?init.+el$")
 
 ;;; End of .emacs.el
