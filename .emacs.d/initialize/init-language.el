@@ -9,7 +9,7 @@
   (set-language-environment "Japanese")
 
   (mapc #'prefer-coding-system
-        '(shift_jis iso-2022-jp euc-jp utf-8))
+        '(shift_jis iso-2022-jp euc-jp utf-8-unix))
 
   ;; 文脈依存な文字幅問題を解決
   ;; http://www.pqrs.org/tekezo/emacs/doc/wide-character/index.html
