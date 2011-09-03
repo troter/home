@@ -58,6 +58,21 @@
 (defadvice kill-new (before ys:no-kill-new-duplicates activate)
   (setq kill-ring (delete (ad-get-arg 0) kill-ring)))
 
+;; (auto-install-from-url "https://raw.github.com/m2ym/popwin-el/v0.3/popwin.el")
+(require 'popwin)
+(setq display-buffer-function 'popwin:display-buffer)
+(push '(dired-mode :position top) popwin:special-display-config)
+(defun-eval-after-load 'anything
+  (setq anything-samewindow nil)
+  (setq tr:anything-buffer-name-list
+        '(
+          "*anything*"
+          "*anything find-file*"
+          "*anything for files*"
+          "*anything apropos*"))
+  (dolist (b tr:anything-buffer-name-list)
+    (push (list b :height 20) popwin:special-display-config)))
+
 
 ;; org-remember
 (org-remember-insinuate)
