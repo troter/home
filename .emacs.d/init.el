@@ -36,9 +36,6 @@
 ;; Common Lisp extensions for Emacs.
 (require 'cl)
 
-;; Emacs program.
-(setq emacs-bin (car command-line-args))
-
 ;; Startup Helper Functions.
 (require 'startup-helper "~/.emacs.d/startup-helper.el")
 
