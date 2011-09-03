@@ -7,7 +7,8 @@
     "elscreen-1.4.6" "elscreen-dired-0.1.0" "apel-10.8"
     "ri-emacs"
     "auto-complete-1.3.1"
-    "rinari"))
+    "rinari"
+    "haskell-mode-2.8.0"))
 
 (setq load-path
       (merge-path-list
