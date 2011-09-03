@@ -13,7 +13,7 @@
       (merge-path-list
        load-path
        (mapcar #'(lambda (package) (expand-file-name package site-lisp-directory))
-	       package-resource)))
+               package-resource)))
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
