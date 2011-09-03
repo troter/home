@@ -1,6 +1,11 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
 ;; (auto-install-batch "anything")
+
+;;; ref: http://d.hatena.ne.jp/fu7mu4/20110116/1295173582
+(setq warning-suppress-types nil) ;; magic word to prevent bellow error
+;;; symbol's value as variable is void : warning-suppress-types
+
 (when (require 'anything-startup)
   ;; replace completion commands with `anything'
   (anything-read-string-mode 1)
