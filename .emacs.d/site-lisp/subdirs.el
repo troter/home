@@ -12,7 +12,7 @@
 (setq load-path
       (merge-path-list
        load-path
-       (mapcar #'(lambda (package) (expand-file-name package plugins-directory))
+       (mapcar #'(lambda (package) (expand-file-name package site-lisp-directory))
 	       package-resource)))
 ;; Local Variables:
 ;; version-control: never
