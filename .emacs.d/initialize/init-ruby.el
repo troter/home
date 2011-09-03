@@ -1,6 +1,6 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
-(require 'rinari)
+;(require 'rinari)
 (when (autoload-if-found 'ruby-mode "ruby-mode" "Mode for editing ruby source file")
   ;;(autoload-if-found 'run-ruby "inf-ruby" "Run an inferior Ruby process")
   ;; (auto-install-from-url "http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-electric.el?view=co")
@@ -29,8 +29,8 @@
         'ruby-reindent-then-newline-and-indent))
     )
 
-  (defun-eval-after-load 'auto-complete-config
-    (ac-rcodetools-initialize))
+;  (defun-eval-after-load 'auto-complete-config
+;    (ac-rcodetools-initialize))
 )
 
 ;; (auto-install-from-emacswiki "anything-rurima.el")
