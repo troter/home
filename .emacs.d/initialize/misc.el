@@ -42,7 +42,11 @@
 ;; (auto-save-buffers-enhanced t)
 
 ;; (auto-install-from-url "http://www.emacswiki.org/emacs/download/recentf-ext.el")
-(require 'recentf-ext)
+(when (require 'recentf-ext nil t)
+  (setq recentf-max-saved-items 2000)
+  (setq recentf-exclude '(".recentf"))
+  (setq recentf-auto-cleanup 10)
+  (run-with-idle-timer 30 t 'recentf-save-list))
 
 ;; minibufferの内容を保持
 ;; ref: http://d.hatena.ne.jp/rubikitch/20091216/minibuffer
