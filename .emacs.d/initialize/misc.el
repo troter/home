@@ -70,7 +70,7 @@
   (setq anything-samewindow nil)
   (setq tr:anything-buffer-name-list
         '(
-          "*anything*"
+          ;;"*anything*"
           "*anything find-file*"
           "*anything for files*"
           "*anything apropos*"))
