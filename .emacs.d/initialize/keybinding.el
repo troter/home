@@ -38,6 +38,9 @@
   (global-set-key [(control c) (r)] 'anything-rurima)
   (global-set-key [(control c) (control r)] 'anything-rurima-at-point))
 
+(defun-eval-after-load 'popwin
+  (global-set-key (kbd "C-x C-p") popwin:keymap))
+
 ;(global-set-key "\C-z" 'undo)                       ;;UNDO
 (global-set-key [f1] 'one-key-menu-help)
 
