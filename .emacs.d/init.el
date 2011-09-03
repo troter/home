@@ -102,6 +102,7 @@
 ;; - (@file :file-name info-directory)
 (setq base-directory "~/.emacs.d"
       libraries-directory (expand-file-name "library" base-directory)
+      auto-install-directory (expand-file-name "auto-install" base-directory)
       initialize-directory (expand-file-name "initialize" base-directory)
       plugins-directory (expand-file-name "plugins" base-directory)
       info-directory (expand-file-name "info" base-directory))
@@ -122,7 +123,8 @@
       (merge-path-list
        load-path
        (list plugins-directory
-             libraries-directory)))
+             libraries-directory
+             auto-install-directory)))
 (load-path-recompile plugins-directory)
 (load-path-recompile libraries-directory)
 
