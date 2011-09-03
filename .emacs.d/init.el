@@ -2,9 +2,6 @@
 
 ;;; (@* "TODO")
 ;;
-;; - init-loader.elへの移行
-;; -- ref: http://d.hatena.ne.jp/kitokitoki/20101205/p1
-;; -- ref: http://tech.kayac.com/archive/divide-dot-emacs.html
 ;; - anything-with-everything.elの導入
 ;; -- ref: http://d.hatena.ne.jp/yaotti/20101208/1291778282
 ;; - anything-fileslit+の設定
@@ -39,32 +36,29 @@
 ;; Startup Helper Functions.
 (require 'startup-helper "~/.emacs.d/startup-helper.el")
 
-;; (@* "various path")
-;; - (@file :file-name libraries-directory)
-;; - (@file :file-name initialize-directory)
-;; - (@file :file-name site-lisp-directory)
-;; - (@file :file-name info-directory)
-(setq base-directory "~/.emacs.d"
-      libraries-directory (expand-file-name "library" base-directory)
+;; Setup directory variables.
+(setq base-directory         "~/.emacs.d"
+      libraries-directory    (expand-file-name "library" base-directory)
       auto-install-directory (expand-file-name "auto-install" base-directory)
-      initialize-directory (expand-file-name "initialize" base-directory)
-      site-lisp-directory (expand-file-name "site-lisp" base-directory)
-      info-directory (expand-file-name "info" base-directory))
+      site-lisp-directory    (expand-file-name "site-lisp" base-directory)
+      initialize-directory   (expand-file-name "initialize" base-directory)
+      info-directory         (expand-file-name "info" base-directory))
 
+;; Setup load-path.
+(setq tr:addition-load-path
+      (list libraries-directory
+            auto-install-directory
+            site-lisp-directory))
+;; set load-path
+(setq load-path (merge-path-list load-path tr:addition-load-path))
+(load-directory-files site-lisp-directory "^subdirs\\.el$")
+;; recompile
+(dolist (dir tr:addition-load-path)
+  (load-path-recompile dir))
 
-(setq load-path
-      (merge-path-list
-       load-path
-       (list site-lisp-directory
-             libraries-directory
-             auto-install-directory)))
-(load-path-recompile site-lisp-directory)
-(load-path-recompile libraries-directory)
-
-(setq exec-path
-      (merge-path-list
-       exec-path
-       (list "~/bin"
+;; Setup exec-path.
+(setq tr:addition-exec-path
+      (list "~/bin"
              "~/local/bin"
              "/bin"
              "/opt/local/bin"
@@ -78,29 +72,29 @@
              (concat (getenv "SystemDrive") "/cygwin/usr/bin")
              (concat (getenv "SystemDrive") "/cygwin/usr/sbin")
              (concat (getenv "SystemDrive") "/cygwin/usr/local/bin")
-             (concat (getenv "SystemDrive") "/cygwin/usr/local/sbin"))))
+             (concat (getenv "SystemDrive") "/cygwin/usr/local/sbin")))
+(setq exec-path (merge-path-list exec-path tr:addition-exec-path))
 
+;; Setup Info-default-directory-list
+(setq tr:addition-info-directory
+      (list info-directory
+            "/Applications/Emacs.app/Contents/Resources/info/"
+            "/opt/local/share/info"
+            "/usr/local/share/info/"
+            "/usr/share/info/"
+            (concat (getenv "SystemDrive") "/cygwin/usr/local/share/info/")
+            (concat (getenv "SystemDrive") "/cygwin/usr/share/info/")))
 (setq Info-additional-directory-list
       (merge-path-list
-       nil
-       (list info-directory
-             "/Applications/Emacs.app/Contents/Resources/info/"
-             "/opt/local/share/info"
-             "/usr/local/share/info/"
-             "/usr/share/info/"
-             (concat (getenv "SystemDrive") "/cygwin/usr/local/share/info/")
-             (concat (getenv "SystemDrive") "/cygwin/usr/share/info/"))))
+       Info-default-directory-list
+       tr:addition-info-directory))
 
-(when
-    (load
-     (expand-file-name "~/.emacs.d/elpa/package.el"))
+;; Setup elpa.
+(when (load (expand-file-name "~/.emacs.d/elpa/package.el") t)
   (package-initialize))
 
 ;; load direcotry files.
-;; - (@file :file-name libraries-directory)
-;; - (@file :file-name initialize-directory)
 (load-directory-files libraries-directory "^.+el$")
-(load-directory-files site-lisp-directory "^subdirs\\.el$")
 (load-directory-files initialize-directory "^\\+?init.+el$")
 
 ;;; End of .emacs.el
