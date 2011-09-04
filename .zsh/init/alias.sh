@@ -50,4 +50,4 @@ darwin*)
 esac
 
 # editor
-alias es="emacsclient"
+alias ec="emacsclient"
