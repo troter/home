@@ -41,8 +41,8 @@
   (setq anything-find-file-additional-sources-at-first
         '(anything-c-source-ffap-line
           anything-c-source-ffap-guesser))
-  (setq anything-find-file-additional-sources
-        '(anything-c-source-locate))
+;;  (setq anything-find-file-additional-sources
+;;        '(anything-c-source-locate))
   (defadvice arfn-sources
     (after additional-arfn-sources-at-first activate)
     "Add additional sources at first."
