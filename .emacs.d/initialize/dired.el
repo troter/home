@@ -1,7 +1,8 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
-;; wdired
+(require 'dired-x)
 (require 'wdired)
+
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 
 ;; sorter.el
@@ -20,10 +21,4 @@
    major-mode
    (list '(my-dired-today-search . my-face-f-2))))
 
-;; ls -alh
-(defadvice dired-sort-order
-  (around dired-sort-order-h activate)
-  (ad-set-arg 0 (concat (ad-get-arg 0) "h"))
-  ad-do-it
-  (setq dired-actual-switches
-        (dired-replace-in-string "h" "" dired-actual-switches)))
+(setq dired-listing-switches "-alh")
