@@ -10,9 +10,7 @@
   ;; replace completion commands with `anything'
   (anything-read-string-mode 1)
 
-  (unless (functionp 'dired-dwim-target-directory)
-    ;; for emacs 22 ??
-    (defun dired-dwim-target-directory () dired-dwim-target))
+  (require 'dired-aux)
   ;; replace dired commands with `anything'
   (anything-dired-bindings 1)
 
