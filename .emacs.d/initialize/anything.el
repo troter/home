@@ -40,17 +40,6 @@
   (anything-lisp-complete-symbol-set-timer 100)
   (anything-read-string-mode '(string file buffer variable command))
 
-  (defadvice anything-read-buffer
-    (around transmissive-keyboard-quit-anything-read-buffer)
-    "abort-recursive-edit 時にアクションを行わない"
-    (let ((it ad-do-it))
-      (if (and (not it)
-               (or (not this-command) ;; this-commandがnilの場合がある。。。
-                   (eq this-command 'abort-recursive-edit)))
-          (keyboard-quit)
-        it)))
-  (ad-activate 'anything-read-buffer)
-
   ;; anything-find-file setting.
   (setq anything-find-file-additional-sources-at-first
         '(anything-c-source-ffap-line
