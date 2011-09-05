@@ -8,6 +8,7 @@
 
 ;; Setup directory variables.
 (setq base-directory         "~/.emacs.d"
+      costom-file            (expand-file-name "custom.el" base-directory)
       libraries-directory    (expand-file-name "library" base-directory)
       auto-install-directory (expand-file-name "auto-install" base-directory)
       site-lisp-directory    (expand-file-name "site-lisp" base-directory)
@@ -66,5 +67,6 @@
 ;; load direcotry files.
 (load-directory-files libraries-directory "^.+el$")
 (load-directory-files initialize-directory "^.+el$")
+(load costom-file t)
 
 ;;; End of .emacs.el
