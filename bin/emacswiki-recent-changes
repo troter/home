@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+# -*- mode:ruby; coding:utf-8 -*-
+
+require 'rss'
+require 'open-uri'
+
+url = "http://www.emacswiki.org/emacs/?action=rss;days=7;all=0;showedit=0"
+rss = RSS::Parser.parse(open(url).read, true)
+puts rss.channel.title
+rss.channel.items.each do |item|
+  puts "#{item.title} : #{item.link}"
+end

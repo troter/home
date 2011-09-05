@@ -49,7 +49,6 @@ bind -c launch t screen top
 #bind -c launch c screen -t CPAN perl -MCPAN -e shell
 #bind -c launch w screen w3m ~/bookmark.html
 
-# show emacswiki recent changes
-blankerprg ruby -rrss -ropen-uri -e 'rss = RSS::Parser.parse(open("http://www.emacswiki.org/emacs/?action=rss;days=7;all=0;showedit=0").read, true);puts rss.channel.title;rss.channel.items.each {|item| puts "#{item.title} : #{item.link}"}'
+blankerprg emacswiki-recent-changes
 
 setenv SCREEN t
