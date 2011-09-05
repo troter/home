@@ -45,6 +45,9 @@
  (setq line-number-mode t)   ;;カーソルのある行番号を表示
  (setq column-number-mode t) ;;カーソルのある列番号を表示
  (display-time)              ;;時計を表示
+ (setq eol-mnemonic-unix  "(LF)")
+ (setq eol-mnemonic-dos  "(CRLF)")
+ (setq eol-mnemonic-mac  "(CR)")
 )
 
 (and ; window
