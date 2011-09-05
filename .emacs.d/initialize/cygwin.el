@@ -6,6 +6,12 @@
   (setq cygwin-mount-cygwin-bin-directory
         (concat (getenv "SYSTEMDRIVE") "\\cygwin\\bin"))
   (require 'setup-cygwin)
+
+  (defun cygstart (filename)
+    "Open file with specified application."
+    (interactive "fOpen file: ")
+    (when (stringp filename)
+      (start-process "cygstart" nil "cygstart.exe" (expand-file-name filename))))
 )
 
 (when (and windows-p (getenv "SHLVL"))

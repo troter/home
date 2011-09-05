@@ -53,3 +53,7 @@
 
 (global-set-key [(control x) (control r)] 'reopen-file)
 (global-set-key [(control x) (J)] 'open-junk-file)
+
+;; open
+(when (functionp 'cygstart)
+  (global-set-key "\C-c\C-f" 'cygstart))
