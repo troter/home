@@ -39,6 +39,7 @@
         '(
           ;;"*anything*"
           "*anything find-file*"
+          "*anything file list*"
           "*anything for files*"
           "*anything apropos*"))
   (dolist (b tr:anything-buffer-name-list)
