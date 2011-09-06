@@ -15,6 +15,13 @@
 (auto-compression-mode t) ;;日本語infoの文字化け防止
 (setq system-uses-terminfo nil)
 (setq require-final-newline t)
+(delete-selection-mode 1)
+(setq completion-ignore-case t)
+(setq read-file-name-completion-ignore-case t)
+(setq read-buffer-completion-ignore-case t)
+(setq enable-recursive-minibuffers t)
+(setq x-select-enable-clipboard t)
+
 ;; (setq-default truncate-lines t)
 ;; (setq make-backup-files nil)                       ;バックアップファイルを作成しない
 ;; (setq kill-whole-line t)                           ;カーソルが行頭にある場合も行全体を削除
