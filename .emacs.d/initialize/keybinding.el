@@ -48,9 +48,6 @@
 (global-set-key [(meta \[)] (lambda () (interactive) (other-window -1)))
 (global-set-key [(meta \])] (lambda () (interactive) (other-window 1)))
 
-(global-set-key [(control h)] 'backward-delete-char)
-(define-key isearch-mode-map [(control h)] 'isearch-delete-char)
-
 (global-set-key [(control x) (control r)] 'reopen-file)
 (global-set-key [(control x) (J)] 'open-junk-file)
 

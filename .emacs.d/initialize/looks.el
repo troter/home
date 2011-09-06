@@ -15,9 +15,6 @@
 
   (add-to-list 'default-frame-alist '(alpha . 92))
   (set-frame-parameter nil 'alpha '(85 50))
-
-  (set-scroll-bar-mode 'right) ;;スクロールバーを右に表示
-  (tool-bar-mode -1)           ;;ツールバーを消す
 )
 
 (when (require 'color-theme nil t)
@@ -41,17 +38,7 @@
  ;;(setq hl-line-face 'underline)
  (global-hl-line-mode t))
 
-(and ; mode line
- (setq line-number-mode t)   ;;カーソルのある行番号を表示
- (setq column-number-mode t) ;;カーソルのある列番号を表示
- (display-time)              ;;時計を表示
- (setq eol-mnemonic-unix  "(LF)")
- (setq eol-mnemonic-dos  "(CRLF)")
- (setq eol-mnemonic-mac  "(CR)")
-)
-
 (and ; window
- (menu-bar-mode -1)       ;;メニューバーを消す
  (setq frame-title-format ;;フレームのタイトル指定
        (concat "%b - emacs@" system-name))
 )
