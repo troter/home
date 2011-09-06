@@ -1,5 +1,8 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
+;; Basic configuration.
+(load "~/.emacs.d/basic.el")
+
 ;; Common Lisp extensions for Emacs.
 (require 'cl)
 
