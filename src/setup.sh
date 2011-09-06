@@ -43,3 +43,7 @@
 
 # groovy
 ! [ -d 'grails-core' ] && git clone git://github.com/grails/grails-core.git
+
+# erlang
+! [ -d 'rabbitmq-codegen' ] && hg clone http://hg.rabbitmq.com/rabbitmq-codegen
+! [ -d 'rabbitmq-server'  ] && hg clone http://hg.rabbitmq.com/rabbitmq-server
