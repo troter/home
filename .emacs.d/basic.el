@@ -38,6 +38,13 @@
 (setq eol-mnemonic-mac  "(CR)")
 
 
+;; language
+;; --------
+(set-language-environment "Japanese")
+(mapc #'prefer-coding-system
+        '(shift_jis iso-2022-jp euc-jp utf-8-unix))
+
+
 ;; editting
 ;; --------
 ;; typed text replaces the selection.
