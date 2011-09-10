@@ -94,6 +94,6 @@ git = True
 
 # include settings
 %include $HOME/.mercurial/extensions.rc
+%include $HOME/.mercurial/hooks.rc
 %include $HOME/.mercurial/araxis.rc
 %include $HOME/.mercurial/local.rc
-
