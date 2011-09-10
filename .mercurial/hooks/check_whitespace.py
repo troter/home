@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     added = 0
     for filename, linenum in trailing_whitespace(os.popen('hg export tip')):
-        print >> sys.stderr, ('%s, line %d: trailing whitespace added' %
+        print >> sys.stderr, ('file %s, line %d: trailing whitespace added' %
                               (filename, linenum))
         added += 1
     if added:
