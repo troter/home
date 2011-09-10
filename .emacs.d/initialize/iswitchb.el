@@ -1,19 +1,6 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
 (unless (require 'anything nil t)
-  ;; iswitch buffers
-  (iswitchb-mode 1)
-  (add-hook 'iswitchb-define-mode-map-hook 'iswitchb-my-keys)
-
-  (defun iswitchb-my-keys ()
-    "Add my keybindings for iswitchb."
-    (define-key iswitchb-mode-map [right] 'iswitchb-next-match)
-    (define-key iswitchb-mode-map [left] 'iswitchb-prev-match)
-    (define-key iswitchb-mode-map "\C-f" 'iswitchb-next-match)
-    (define-key iswitchb-mode-map " " 'iswitchb-next-match)
-    (define-key iswitchb-mode-map "\C-b" 'iswitchb-prev-match)
-    )
-
   (defadvice iswitchb-exhibit
     (after
      iswitchb-exhibit-with-display-buffer
