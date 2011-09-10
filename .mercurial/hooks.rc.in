@@ -1,0 +1,6 @@
+# -*- coding:utf-8; mode:conf; -*-
+# hooks.rc
+
+[hooks]
+pretxncommit.whitespace = $HOME/.mercurial/hooks/check_whitespace.py
+pretxncommit.conflicts = $HOME/.mercurial/hooks/detect_merge_conflicts.py
