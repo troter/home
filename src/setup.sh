@@ -6,7 +6,7 @@
 ! [ -d 'jython'    ] && hg clone https://bitbucket.org/jython/jython
 ! [ -d 'pypy'      ] && hg clone https://bitbucket.org/pypy/pypy
 ! [ -d 'hg-stable' ] && hg clone http://selenic.com/repo/hg-stable
-
+! [ -d 'freehg'    ] && hg clone https://bitbucket.org/danielmartins/freehg
 
 # ruby
 ! [ -d 'ruby'            ] && git clone git://github.com/shyouhei/ruby.git
