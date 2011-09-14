@@ -36,6 +36,7 @@ bs = branches -a
 l = log
 lb = log -b
 show = log --color=always -pr
+less = log -pr "reverse(not merge())"
 gl = glog
 gll = glog --limit
 
@@ -87,7 +88,7 @@ fix = ! \
   $HG unshelve -n 'tmp.hg-fix'
 
 [pager]
-attend = annotate, cat, diff, export, glog, log, qdiff, help, show, shortlog, gshortlog
+attend = annotate, cat, diff, export, glog, log, qdiff, help, show, shortlog, gshortlog, less
 
 [diff]
 git = True
