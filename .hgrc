@@ -22,10 +22,12 @@ record =
 transplant =
 
 [alias]
+__mystatus = status
+st = ! $HG __mystatus $($HG root) $HG_ARGS
 # misc
 cm = commit --message
 . = summary
-: = status
+: = st
 h = help
 
 # branch
