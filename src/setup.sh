@@ -27,7 +27,8 @@
 ! [ -d 'google-guice-read-only'  ] && svn co http://google-guice.googlecode.com/svn/trunk/ google-guice-read-only
 ! [ -d 'primefaces-read-only'    ] && svn co http://primefaces.googlecode.com/svn/primefaces/trunk/ primefaces-read-only
 ! [ -d 'h2database-read-only'    ] && svn co http://h2database.googlecode.com/svn/trunk/ h2database-read-only
-! [ -d 'jersey-1.6'              ] && svn co https://svn.java.net/svn/jersey~svn/tags/jersey-1.6
+! [ -d 'jersey-1.9.1'            ] && svn co https://svn.java.net/svn/jersey~svn/tags/jersey-1.9.1
+! [ -d 'jersey-trunk'            ] && svn co https://svn.java.net/svn/jersey~svn/trunk/jersey jersey-trunk
 ! [ -d 'resteasy-trunk'          ] && svn co https://resteasy.svn.sourceforge.net/svnroot/resteasy/trunk resteasy-trunk
 ! [ -d 'resteasy-jaxrs-2.1.0-ga' ] && svn co https://resteasy.svn.sourceforge.net/svnroot/resteasy/tags/RESTEASY_JAXRS_2_1_0_GA/ resteasy-jaxrs-2.1.0-ga
 ! [ -d 'geronimo-specs-trunk'    ] && svn co http://svn.apache.org/repos/asf/geronimo/specs/trunk/ geronimo-specs-trunk
