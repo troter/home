@@ -10,9 +10,11 @@
 ;; window
 ;; ------
 ;; display scroll bar at right
-(set-scroll-bar-mode 'right)
+(when window-system
+  (set-scroll-bar-mode 'right))
 ;; tool-bar mode is disabled
-(tool-bar-mode 0)
+(when window-system
+  (tool-bar-mode 0))
 ;; tool-bar mode is disabled
 (menu-bar-mode -1)
 
