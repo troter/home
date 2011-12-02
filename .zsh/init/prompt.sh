@@ -27,7 +27,7 @@ function prompt_setup() {
     PROMPT="[${c_user}%n${c_reset}@${c_green}%m${c_reset}:${c_cyan}%~${c_reset}${shlevel}]
 ${c_prompt}%#${c_reset} "
     PROMPT2="${c_prompt}%_>${c_reset} "
-    RPROMPT="[%h]"
+    RPROMPT="[${c_green}%D{%Y/%m/%d %H:%M:%S}${c_reset}]"
     SPROMPT="${c_magenta}%r is correct? [n,y,a,e]:${c_reset} "
 }
 prompt_setup; unset -f prompt_setup
