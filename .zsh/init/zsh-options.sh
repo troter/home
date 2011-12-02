@@ -11,5 +11,6 @@ function setup_options() {
     setopt nolistbeep # no beep sound when complete list displayed
     setopt nopromptcr # print last line without linefeed(\n)
     setopt auto_remove_slash
+    setopt interactive_comments # enable commandline comment
 }
 setup_options; unset -f setup_options
