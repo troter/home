@@ -77,7 +77,7 @@ safeclone = ! \
   echo -e "[paths]\ndefault = $1" >> "$(basename "$1")"/.hg/hgrc && \
   ( cd "$(basename "$1")" && $HG pull -u )
 
-# fix latest commit message (hg 1.8.x only)
+# fix latest commit message
 fix = ! \
   $HG shelve --all -n 'tmp.hg-fix' && \
   if $HG qtop > /dev/null; then \
