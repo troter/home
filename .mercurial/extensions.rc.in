@@ -8,3 +8,4 @@ hgsubversion = $HOME/.mercurial/extensions/hgsubversion/hgsubversion
 review = $HOME/.mercurial/extensions/hg-review/review
 hggit = $HOME/.mercurial/extensions/hg-git/hggit
 collapse = $HOME/.mercurial/extensions/hgcollapse/hgext/collapse.py
+flow = $HOME/.mercurial/extensions/hgflow/src/hgflow.py
