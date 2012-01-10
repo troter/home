@@ -1,0 +1,44 @@
+#!/bin/sh
+# refs: http://d.hatena.ne.jp/nekop/20111228/1325043254
+
+PID=$1
+
+if [ -z $PID ]; then
+  echo "Usage: $0 <pid>"
+  exit 1
+fi
+
+DATE=`date +%Y%m%d%H%M%S`
+
+DUMPFILE=dumpj-$DATE.txt
+
+{
+    date
+
+    echo "============ jinfo $PID ============"
+    jinfo $PID
+
+    echo "============ jmap -heap $PID ============"
+    jmap -heap $PID
+
+    echo "============ jmap -histo:live $PID ============"
+    jmap -histo:live $PID
+
+    echo "============ jmap -dump:live,format=b,file=heap-$DATE.bin $PID ============"
+    jmap -dump:live,format=b,file=heap-$DATE.bin $PID
+
+    # Take thread dump every 5 sec for 3 min
+    MAX_COUNT=36
+    INTERVAL=5
+    COUNT=0
+    while [ $COUNT -lt $MAX_COUNT ]
+    do
+        COUNT=`expr $COUNT + 1`
+        echo "============ jstack $PID loop $COUNT ============"
+        jstack $PID
+        echo "============ top -b -n 1 -H -p $PID =========="
+        top -b -n 1 -H -p $PID
+        sleep $INTERVAL
+    done
+} > $DUMPFILE
+
