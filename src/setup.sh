@@ -16,6 +16,47 @@
 ! [ -d 'rack-contrib'    ] && git clone git://github.com/rack/rack-contrib.git
 ! [ -d 'sinatra'         ] && git clone git://github.com/sinatra/sinatra.git
 ! [ -d 'sinatra-contrib' ] && git clone git://github.com/sinatra/sinatra-contrib.git
+! [ -d 'omniauth'        ] && git clone git://github.com/intridea/omniauth.git
+! [ -d 'factory_girl'    ] && git clone git://github.com/thoughtbot/factory_girl.git
+! [ -d 'state_machine'   ] && git clone git://github.com/pluginaweek/state_machine.git
+! [ -d 'aasm'            ] && git clone git://github.com/rubyist/aasm.gti
+
+# rails
+! [ -d 'rails'           ] && git clone git://github.com/rails/rails.git
+! [ -d 'arel'            ] && git clone git://github.com/rails/arel.git
+# rails data structure
+! [ -d 'acts_as_list'    ] && git clone git://github.com/swanandp/acts_as_list.git
+! [ -d 'acts_as_tree'    ] && git clone git://github.com/amerine/acts_as_tree.git
+! [ -d 'ancestry'        ] && git clone git://github.com/stefankroes/ancestry.git
+# rails auth
+! [ -d 'clearance'       ] && git clone git://github.com/thoughtbot/clearance.git
+! [ -d 'devise'          ] && git clone git://github.com/plataformatec/devise.git
+! [ -d 'authlogic'       ] && git clone git://github.com/binarylogic/authlogic.git
+! [ -d 'sorcery'         ] && git clone git://github.com/NoamB/sorcery.git
+! [ -d 'restful-authentication' ] && git clone git://github.com/technoweenie/restful-authentication.git
+# rails file upload
+! [ -d 'paperclip'       ] && git clone git://github.com/thoughtbot/paperclip.git
+! [ -d 'file-uploader'   ] && git clone git://github.com/valums/file-uploader.git
+# rails paginate
+! [ -d 'will_paginate'   ] && git clone git://github.com/mislav/will_paginate.git
+! [ -d 'kaminari'        ] && git clone git://github.com/amatsuda/kaminari.git
+# rails test
+! [ -d 'email-spec'      ] && git clone git://github.com/bmabey/email-spec.git
+! [ -d 'rspec-rails'     ] && git clone git://github.com/rspec/rspec-rails.git
+! [ -d 'factory_girl_rails' ] && git clone git://github.com/thoughtbot/factory_girl_rails.git
+# rails etc
+! [ -d 'rails3-application-templates' ] && git clone git://github.com/RailsApps/rails3-application-templates.git
+! [ -d 'complex-form-examples' ] && git clone git://github.com/ryanb/complex-form-examples.git
+! [ -d 'exception_notification' ] && git clone git://github.com/smartinez87/exception_notification.git
+! [ -d 'rails_best_practices' ] && git clone git://github.com/railsbp/rails_best_practices.git
+! [ -d 'rails-style-guide' ] && git clone git://github.com/bbatsov/rails-style-guide.git
+! [ -d 'rails3_acts_as_paranoid' ] && git clone git://github.com/goncalossilva/rails3_acts_as_paranoid.git
+! [ -d 'dm-rails'        ] && git clone git://github.com/datamapper/dm-rails.git
+! [ -d 'dm-core'         ] && git clone git://github.com/datamapper/dm-core.git
+! [ -d 'acts_as_api'     ] && git clone git://github.com/fabrik42/acts_as_api.git
+! [ -d 'rails-footnotes' ] && git clone git://github.com/josevalim/rails-footnotes.git
+! [ -d 'pjax_rails'      ] && git clone git://github.com/rails/pjax_rails.git
+! [ -d 'nested_form'     ] && git clone git://github.com/ryanb/nested_form.git
 ! [ -d 'teambox'         ] && git clone git://github.com/teambox/teambox.git
 
 # java
