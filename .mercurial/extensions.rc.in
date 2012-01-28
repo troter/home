@@ -2,11 +2,11 @@
 # extensions.rc
 
 [extensions]
-histedit = $HOME/.mercurial/extensions/histedit/hg_histedit.py
-hgshelve = $HOME/.mercurial/extensions/hgshelve/hgshelve.py
-hgattic = $HOME/.mercurial/extensions/hgshelve/hgshelve.py
-hgsubversion = $HOME/.mercurial/extensions/hgsubversion/hgsubversion
-review = $HOME/.mercurial/extensions/hg-review/review
-hggit = $HOME/.mercurial/extensions/hg-git/hggit
 collapse = $HOME/.mercurial/extensions/hgcollapse/hgext/collapse.py
 flow = $HOME/.mercurial/extensions/hgflow/src/hgflow.py
+hgattic = $HOME/.mercurial/extensions/hgshelve/hgshelve.py
+hggit = $HOME/.mercurial/extensions/hg-git/hggit
+hgshelve = $HOME/.mercurial/extensions/hgshelve/hgshelve.py
+hgsubversion = $HOME/.mercurial/extensions/hgsubversion/hgsubversion
+histedit = $HOME/.mercurial/extensions/histedit/hg_histedit.py
+review = $HOME/.mercurial/extensions/hg-review/review
