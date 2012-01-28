@@ -4,6 +4,7 @@
 [extensions]
 histedit = $HOME/.mercurial/extensions/histedit/hg_histedit.py
 hgshelve = $HOME/.mercurial/extensions/hgshelve/hgshelve.py
+hgattic = $HOME/.mercurial/extensions/hgshelve/hgshelve.py
 hgsubversion = $HOME/.mercurial/extensions/hgsubversion/hgsubversion
 review = $HOME/.mercurial/extensions/hg-review/review
 hggit = $HOME/.mercurial/extensions/hg-git/hggit

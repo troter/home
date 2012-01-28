@@ -1,5 +1,6 @@
 #!/bin/sh
 ! [ -d 'hgshelve'     ] && hg clone https://bitbucket.org/tksoh/hgshelve
+! [ -d 'hgattic'      ] && hg clone https://bitbucket.org/Bill_Barry/hgattic
 ! [ -d 'hgtasks'      ] && hg clone https://bitbucket.org/alu/hgtasks
 ! [ -d 'histedit'     ] && hg clone https://bitbucket.org/spookylukey/histedit
 ! [ -d 'hgsubversion' ] && hg clone https://bitbucket.org/durin42/hgsubversion/
