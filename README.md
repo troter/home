@@ -35,5 +35,5 @@ Install eggs.
     pip install virtualenv
     pip install mercurial
     pip install sphinx
-    pip install ipythion
+    pip install ipython
     pip install readline
