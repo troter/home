@@ -3,8 +3,17 @@ $HOME
 
 My home directory.
 
+Prepare for home directory
+--------------------------
+
+My home directory depends on some software. If you not install following software, see PREPARE.md.
+
+- my favorite dvcs, mercural.
+- compilers(gcc, g++) and development libraries.
+- some useful command line tools(zsh, screen, curl, etc..).
+
 Installation
-============
+------------
 
 Clone repository and setup.
 
