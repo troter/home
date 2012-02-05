@@ -11,7 +11,7 @@ Clone repository and setup.
     hg clone https://bitbucket.org/troter/home $HOME/home
     mv $HOME/home/.hg $HOME/.hg
     mv $HOME/home/.hgignore $HOME/.hgignore
-    hg revert --no-backup
+    hg revert --no-backup --all
 
 Install from source code.
 
