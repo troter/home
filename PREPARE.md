@@ -12,7 +12,10 @@ RHEL (CentOS)
 Upgrade system and install development tools:
 
     sudo yum upgrade
+    # 5.x
     sudo yum groupinstall 'Development tools' 'Development Libraries'
+    # 6.x
+    sudo yum groupinstall 'Development tools' 'Additional Development'
 
 Add repoforge:
 
@@ -32,4 +35,5 @@ Install useful tools:
 
     sudo yum install screen zsh
     sudo yum install mercurial
+    # 5.x
     sudo yum install gcc44 gcc44-c++
