@@ -37,7 +37,7 @@ Install environment managers and install latest version.
 
 Install gems.
 
-    gem install pry
+    gem install pry pry-doc
 
 Install eggs.
 
