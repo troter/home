@@ -1,25 +1,14 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
 (when window-system
-  (add-to-list 'default-frame-alist '(foreground-color . "azure3"))
-  (add-to-list 'default-frame-alist '(background-color . "black"))
-  (add-to-list 'default-frame-alist '(cursor-color . "white"))
-  (add-to-list 'default-frame-alist '(mouse-color . "white"))
-  (set-face-background 'modeline "grey10")
-  (set-face-foreground 'modeline "SkyBlue")
-  (set-face-background 'highlight "grey10")
-  (set-face-foreground 'highlight "red")
-  (set-face-background 'region "LightSteelBlue1")
-  (set-face-foreground 'mode-line-inactive "gray30")
-  (set-face-background 'mode-line-inactive "gray85")
-
-  (add-to-list 'default-frame-alist '(alpha . 92))
-  (set-frame-parameter nil 'alpha '(85 50))
-)
-
-(when (require 'color-theme nil t)
+  (require 'color-theme)
+  (require 'color-theme-solarized)
   (color-theme-initialize)
-  (color-theme-arjen))
+  (color-theme-solarized-dark)
+
+  ;(add-to-list 'default-frame-alist '(alpha . 92))
+  ;(set-frame-parameter nil 'alpha 95)
+  )
 
 (and ; hl-line
  (defface hlline-face
