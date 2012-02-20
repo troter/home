@@ -21,3 +21,6 @@
 
   (fset 'xml-mode 'nxml-mode)
   (fset 'html-mode 'nxml-mode))
+
+(when (require 'yaml-mode)
+  (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
