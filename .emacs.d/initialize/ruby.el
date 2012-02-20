@@ -2,10 +2,8 @@
 
 ;(require 'rinari)
 (when (autoload-if-found 'ruby-mode "ruby-mode" "Mode for editing ruby source file")
-  ;;(autoload-if-found 'run-ruby "inf-ruby" "Run an inferior Ruby process")
-  ;; (auto-install-from-url "http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-electric.el?view=co")
+  (autoload-if-found 'run-ruby "inf-ruby" "Run an inferior Ruby process")
   (require 'ruby-electric nil t)
-  ;; (auto-install-from-url "http://www.emacswiki.org/emacs/download/ruby-block.el")
   (require 'ruby-block nil t)
 
   (dolist (regexp '("\\.rb$" "Rakefile" "\\.rake$"))
