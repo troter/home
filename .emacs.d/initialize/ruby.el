@@ -4,6 +4,8 @@
   (autoload-if-found 'run-ruby "inf-ruby" "Run an inferior Ruby process")
   (require 'ruby-electric nil t)
   (require 'ruby-block nil t)
+  ;; (auto-install-from-url "https://raw.github.com/pezra/rspec-mode/master/rspec-mode.el")
+  (require 'rspec-mode nil t)
 
   (dolist (regexp '("\\.rb$" "Rakefile" "\\.rake$"))
     (add-to-list 'auto-mode-alist (cons regexp 'ruby-mode)))
