@@ -11,9 +11,11 @@
 
 ;; Setup directory variables.
 (setq base-directory         "~/.emacs.d"
+      vendor-directory       (expand-file-name "vendor" base-directory)
       costom-file            (expand-file-name "custom.el" base-directory)
       libraries-directory    (expand-file-name "library" base-directory)
-      auto-install-directory (expand-file-name "auto-install" base-directory)
+      auto-install-directory (expand-file-name "auto-install" vendor-directory)
+      elpa-directory         (expand-file-name "elpa" vendor-directory)
       site-lisp-directory    (expand-file-name "site-lisp" base-directory)
       initialize-directory   (expand-file-name "initialize" base-directory)
       info-directory         (expand-file-name "info" base-directory))
@@ -69,6 +71,7 @@
              '("elpa" . "http://tromey.com/elpa/"))
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
+(setq package-user-dir (concat user-emacs-directory "vendor/elpa"))
 (package-initialize)
 
 ;; load direcotry files.
