@@ -71,7 +71,7 @@
              '("elpa" . "http://tromey.com/elpa/"))
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
-(setq package-user-dir (concat user-emacs-directory "vendor/elpa"))
+(setq package-user-dir elpa-directory)
 (package-initialize)
 
 ;; load direcotry files.
