@@ -64,8 +64,10 @@
        tr:addition-info-directory))
 
 ;; Setup elpa.
-(when (load (expand-file-name "~/.emacs.d/elpa/package.el") t)
-  (package-initialize))
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
 
 ;; load direcotry files.
 (load-directory-files libraries-directory "^.+el$")
