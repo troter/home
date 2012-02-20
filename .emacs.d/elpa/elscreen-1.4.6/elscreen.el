@@ -1,3 +1,4 @@
+;;; elscreen.el ---  Screen for Emacsen
 ;; -*- Mode: Emacs-Lisp -*-
 ;;
 ;; elscreen.el
@@ -8,6 +9,7 @@
 ;; Based on: screens.el
 ;;              by Heikki T. Suopanki <suopanki@stekt1.oulu.fi>
 ;; Created:  June 22, 1996
+;; Version: 1.4.6
 ;; Revised:  December 30, 2007
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -1785,4 +1787,6 @@ Use \\[toggle-read-only] to permit editing."
         (elscreen-prefix-key nil))
     (elscreen-set-prefix-key prefix-key)))
 
-(elscreen-start)
+;;(elscreen-start)
+;;; elscreen.el ends here
+;;
