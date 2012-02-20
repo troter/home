@@ -63,7 +63,7 @@
        Info-default-directory-list
        tr:addition-info-directory))
 
-;; Setup elpa.
+;; Setup marmalade.
 (require 'package)
 (add-to-list 'package-archives
              '("elpa" . "http://tromey.com/elpa/"))
