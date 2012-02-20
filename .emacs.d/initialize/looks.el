@@ -2,9 +2,7 @@
 
 (when window-system
   (require 'color-theme)
-  (require 'color-theme-solarized)
-  (color-theme-initialize)
-  (color-theme-solarized-dark)
+  (require 'color-theme-tangotango)
 
   ;(add-to-list 'default-frame-alist '(alpha . 92))
   ;(set-frame-parameter nil 'alpha 95)
@@ -23,8 +21,9 @@
                    :underline nil))
      (t ()))
    "*Face used by hl-line.")
- (setq hl-line-face 'hlline-face)
- ;;(setq hl-line-face 'underline)
+ (if window-system
+     (setq hl-line-face 'hlline-face)
+   (setq hl-line-face 'underline))
  (global-hl-line-mode t))
 
 (and ; window
