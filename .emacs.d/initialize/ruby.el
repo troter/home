@@ -1,6 +1,5 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
-;(require 'rinari)
 (when (autoload-if-found 'ruby-mode "ruby-mode" "Mode for editing ruby source file")
   (autoload-if-found 'run-ruby "inf-ruby" "Run an inferior Ruby process")
   (require 'ruby-electric nil t)
@@ -30,6 +29,14 @@
 ;  (defun-eval-after-load 'auto-complete-config
 ;    (ac-rcodetools-initialize))
 )
+
+;; rinari
+(when (require 'rinari nil t)
+  (require 'rhtml-mode)
+  (add-to-list 'auto-mode-alist '("\\.rhtml$" . rhtml-mode))
+  (add-to-list 'auto-mode-alist '("\\.html\\.erb$" . rhtml-mode))
+  (add-hook 'rhtml-mode-hook
+            (lambda () (rinari-launch))))
 
 ;; (auto-install-from-emacswiki "anything-rurima.el")
 (let ((rurima.e (expand-file-name "misc/rubydoc/rurema.e" base-directory)))
