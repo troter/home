@@ -65,7 +65,7 @@ ush = unshelve
 qi = qimport
 qr = qrefresh
 qf = qfinish
-qls = qseries
+qls = qseries --summary
 qst = status --change qtip
 
 # power of commit
