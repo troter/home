@@ -7,6 +7,40 @@
 ! [ -d 'pypy'      ] && hg clone https://bitbucket.org/pypy/pypy
 ! [ -d 'hg-stable' ] && hg clone http://selenic.com/repo/hg-stable
 ! [ -d 'freehg'    ] && hg clone https://bitbucket.org/danielmartins/freehg
+! [ -d 'sqlalchemy' ] && hg clone https://bitbucket.org/zzzeek/sqlalchemy
+! [ -d 'requests'   ] && git clone git://github.com/kennethreitz/requests.git
+! [ -d 'werkzeug'   ] && git clone git://github.com/mitsuhiko/werkzeug.git
+! [ -d 'jinja2'     ] && git clone git://github.com/mitsuhiko/jinja2.git
+! [ -d 'tornado'    ] && git clone git://github.com/facebook/tornado.git
+
+# flask
+! [ -d 'flask'            ] && git clone git://github.com/mitsuhiko/flask.git
+! [ -d 'flask-oauth'      ] && git clone git://github.com/mitsuhiko/flask-oauth.git
+! [ -d 'flask-evolution'  ] && git clone git://github.com/adamrt/flask-evolution.git
+! [ -d 'flask-sqlalchemy' ] && git clone git://github.com/mitsuhiko/flask-sqlalchemy.git
+
+# django
+! [ -d 'django'                ] && hg clone https://bitbucket.org/django/django
+! [ -d 'django-piston'         ] && hg clone https://bitbucket.org/jespern/django-piston
+! [ -d 'django-registration'   ] && hg clone https://bitbucket.org/ubernostrum/django-registration
+! [ -d 'django-admin-tools'    ] && hg clone https://bitbucket.org/izi/django-admin-tools
+! [ -d 'django-storages'       ] && hg clone https://bitbucket.org/david/django-storages
+! [ -d 'south'                 ] && hg clone https://bitbucket.org/andrewgodwin/south
+! [ -d 'django-nonrel'         ] && hg clone https://bitbucket.org/wkornewald/django-nonrel
+! [ -d 'django-profiles'       ] && hg clone https://bitbucket.org/ubernostrum/django-profiles
+! [ -d 'django-mediagenerator' ] && hg clone https://bitbucket.org/wkornewald/django-mediagenerator
+! [ -d 'django-autocomplete'   ] && hg clone https://bitbucket.org/tyrion/django-autocomplete
+! [ -d 'django-oauth'          ] && hg clone https://bitbucket.org/david/django-oauth
+! [ -d 'django-oauth-plus'     ] && hg clone https://bitbucket.org/david/django-oauth-plus
+! [ -d 'django-localeurl'      ] && hg clone https://bitbucket.org/carljm/django-localeurl
+! [ -d 'django-model-utils'    ] && hg clone https://bitbucket.org/carljm/django-model-utils
+! [ -d 'django-form-utils'     ] && hg clone https://bitbucket.org/carljm/django-form-utils
+! [ -d 'django-filetransfers'  ] && hg clone https://bitbucket.org/wkornewald/django-filetransfers
+! [ -d 'django-rest-framework' ] && git clone git://github.com/tomchristie/django-rest-framework.git
+! [ -d 'django-extensions'     ] && git clone git://github.com/django-extensions/django-extensions.git
+! [ -d 'django-notification'   ] && git clone git://github.com/jtauber/django-notification.git
+! [ -d 'easy-thumbnails'       ] && git clone git://github.com/SmileyChris/easy-thumbnails.git
+! [ -d 'django-nose'           ] && git clone git://github.com/jbalogh/django-nose.git
 
 # ruby
 ! [ -d 'ruby'            ] && git clone git://github.com/shyouhei/ruby.git
@@ -57,6 +91,7 @@
 ! [ -d 'rails-footnotes' ] && git clone git://github.com/josevalim/rails-footnotes.git
 ! [ -d 'pjax_rails'      ] && git clone git://github.com/rails/pjax_rails.git
 ! [ -d 'nested_form'     ] && git clone git://github.com/ryanb/nested_form.git
+! [ -d 'simple_form'     ] && git clone git://github.com/plataformatec/simple_form.git
 ! [ -d 'teambox'         ] && git clone git://github.com/teambox/teambox.git
 
 # java
