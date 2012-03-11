@@ -2,22 +2,44 @@
 # -*- mode:sh; coding:utf-8-unix -*-
 
 # python
-! [ -d 'cpython'   ] && hg clone http://hg.python.org/cpython
+! [ -d 'cpython'   ] && hg clone https://bitbucket.org/mirror/cpython
 ! [ -d 'jython'    ] && hg clone https://bitbucket.org/jython/jython
 ! [ -d 'pypy'      ] && hg clone https://bitbucket.org/pypy/pypy
+! [ -d 'hg'        ] && hg clone http://selenic.com/repo/hg
 ! [ -d 'hg-stable' ] && hg clone http://selenic.com/repo/hg-stable
 ! [ -d 'freehg'    ] && hg clone https://bitbucket.org/danielmartins/freehg
 ! [ -d 'sqlalchemy' ] && hg clone https://bitbucket.org/zzzeek/sqlalchemy
+! [ -d 'whoosh'     ] && hg clone https://bitbucket.org/mchaput/whoosh
+! [ -d 'rhodecode'  ] && hg clone https://bitbucket.org/marcinkuzminski/rhodecode
+! [ -d 'gevent'     ] && hg clone https://bitbucket.org/denis/gevent
+! [ -d 'cherrypy'   ] && hg https://bitbucket.org/cherrypy/cherrypy
+! [ -d 'wtforms'    ] && hg https://bitbucket.org/simplecodes/wtforms
+! [ -d 'moin-2.0'   ] && hg clone https://bitbucket.org/thomaswaldmann/moin-2.0
+! [ -d 'distribute' ] && hg clone https://bitbucket.org/tarek/distribute
+! [ -d 'scons'      ] && hg clone https://bitbucket.org/scons/scons
+! [ -d 'newsmeme'   ] && hg clone https://bitbucket.org/danjac/newsmeme
+! [ -d 'blockdiag'  ] && hg clone https://bitbucket.org/tk0miya/blockdiag
+! [ -d 'pytest'     ] && hg clone https://bitbucket.org/hpk42/pytest
+! [ -d 'paste'      ] && hg clone https://bitbucket.org/ianb/paste
+! [ -d 'pastedeploy' ] && hg clone https://bitbucket.org/ianb/pastedeploy
+! [ -d 'pastescript' ] && hg clone https://bitbucket.org/ianb/pastescript
+! [ -d 'pygments-main' ] && hg https://bitbucket.org/birkenfeld/pygments-main
+! [ -d 'lodgeit-main'  ] && hg clone https://bitbucket.org/EnTeQuAk/lodgeit-main
 ! [ -d 'requests'   ] && git clone git://github.com/kennethreitz/requests.git
 ! [ -d 'werkzeug'   ] && git clone git://github.com/mitsuhiko/werkzeug.git
 ! [ -d 'jinja2'     ] && git clone git://github.com/mitsuhiko/jinja2.git
+! [ -d 'nose'       ] && git clone git://github.com/nose-devs/nose.git
 ! [ -d 'tornado'    ] && git clone git://github.com/facebook/tornado.git
+! [ -d 'virtualenv' ] && git clone git://github.com/pypa/virtualenv.git
+! [ -d 'webob'      ] && git clone git://github.com/Pylons/webob.git
 
 # flask
 ! [ -d 'flask'            ] && git clone git://github.com/mitsuhiko/flask.git
 ! [ -d 'flask-oauth'      ] && git clone git://github.com/mitsuhiko/flask-oauth.git
 ! [ -d 'flask-evolution'  ] && git clone git://github.com/adamrt/flask-evolution.git
 ! [ -d 'flask-sqlalchemy' ] && git clone git://github.com/mitsuhiko/flask-sqlalchemy.git
+! [ -d 'flask-login'      ] && hg clone https://bitbucket.org/leafstorm/flask-login
+! [ -d 'flask-wtf'        ] && hg clone https://bitbucket.org/danjac/flask-wtf
 
 # django
 ! [ -d 'django'                ] && hg clone https://bitbucket.org/django/django
@@ -41,6 +63,7 @@
 ! [ -d 'django-notification'   ] && git clone git://github.com/jtauber/django-notification.git
 ! [ -d 'easy-thumbnails'       ] && git clone git://github.com/SmileyChris/easy-thumbnails.git
 ! [ -d 'django-nose'           ] && git clone git://github.com/jbalogh/django-nose.git
+! [ -d 'django-imagekit'       ] && git clone git://github.com/jdriscoll/django-imagekit.git
 
 # ruby
 ! [ -d 'ruby'            ] && git clone git://github.com/shyouhei/ruby.git
