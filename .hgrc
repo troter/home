@@ -95,6 +95,9 @@ attend = annotate, cat, diff, export, glog, log, qdiff, help, show, shortlog, gs
 [diff]
 git = True
 
+[mq]
+secret = True
+
 # include settings
 %include $HOME/.mercurial/extensions.rc
 %include $HOME/.mercurial/hooks.rc
