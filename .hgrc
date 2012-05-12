@@ -3,6 +3,7 @@
 
 [ui]
 username = Takumi IINO <trot.thunder@gmail.com>
+ignore = .mercurial/hgignore
 
 [extensions]
 churn =
