@@ -21,6 +21,7 @@
       (setcdr (assoc 'font default-frame-alist) "fontset-default")
       (set-frame-font "fontset-default"))))
    (carbon-p)
+   (ns-p)
    (t
     (dolist (weight '(((name . "medium") (suffix . "r"))
                       ((name . "bold") (suffix . "b"))))
