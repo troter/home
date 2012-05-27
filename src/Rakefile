@@ -77,6 +77,7 @@ REPOSITORIES = [
   %w[git git://github.com/mozilla/kuma.git kuma],
   %w[git git://github.com/mozilla/kitsune.git kitsune],
   %w[git git://github.com/mozilla/mozilla-taskboard.git mozilla-taskboard],
+  %w[git git://github.com/mozilla/zamboni.git zamboni],
   %w[git git://github.com/django-de/djangosnippets.org.git djangosnippets.org],
   # ruby
   %w[git git://github.com/shyouhei/ruby.git ruby],
