@@ -1,0 +1,187 @@
+# -*- utf-8 -*-
+
+REPOSITORIES = [
+  # python
+  %w[hg https://bitbucket.org/mirror/cpython cpython],
+  %w[hg https://bitbucket.org/jython/jython jython],
+  %w[hg https://bitbucket.org/pypy/pypy pypy],
+  %w[hg http://selenic.com/repo/hg hg],
+  %w[hg http://selenic.com/repo/hg-stable hg-stable],
+  %w[hg https://bitbucket.org/danielmartins/freehg freehg],
+  %w[hg https://bitbucket.org/zzzeek/sqlalchemy sqlalchemy],
+  %w[hg https://bitbucket.org/mchaput/whoosh whoosh],
+  %w[hg https://bitbucket.org/marcinkuzminski/rhodecode rhodecode],
+  %w[hg https://bitbucket.org/denis/gevent gevent],
+  %w[hg https://bitbucket.org/cherrypy/cherrypy cherrypy],
+  %w[hg https://bitbucket.org/simplecodes/wtforms wtforms],
+  %w[hg https://bitbucket.org/thomaswaldmann/moin-2.0 moin-2.0],
+  %w[hg https://bitbucket.org/tarek/distribute distribute],
+  %w[hg https://bitbucket.org/scons/scons scons],
+  %w[hg https://bitbucket.org/danjac/newsmeme newsmeme],
+  %w[hg https://bitbucket.org/tk0miya/blockdiag blockdiag],
+  %w[hg https://bitbucket.org/hpk42/pytest pytest],
+  %w[hg https://bitbucket.org/ianb/paste paste],
+  %w[hg https://bitbucket.org/ianb/pastedeploy pastedeploy],
+  %w[hg https://bitbucket.org/ianb/pastescript pastescript],
+  %w[hg https://bitbucket.org/birkenfeld/pygments-main pygments-main],
+  %w[hg https://bitbucket.org/EnTeQuAk/lodgeit-main lodgeit-main],
+  %w[git git://github.com/kennethreitz/requests.git requests],
+  %w[git git://github.com/mitsuhiko/werkzeug.git werkzeug],
+  %w[git git://github.com/mitsuhiko/jinja2.git jinja2],
+  %w[git git://github.com/nose-devs/nose.git nose],
+  %w[git git://github.com/facebook/tornado.git tornado],
+  %w[git git://github.com/pypa/virtualenv.git virtualenv],
+  %w[git git://github.com/Pylons/webob.git webob],
+  # flask
+  %w[git git://github.com/mitsuhiko/flask.git flask],
+  %w[git git://github.com/mitsuhiko/flask-oauth.git flask-oauth],
+  %w[git git://github.com/adamrt/flask-evolution.git flask-evolution],
+  %w[git git://github.com/mitsuhiko/flask-sqlalchemy.git flask-sqlalchemy],
+  %w[hg https://bitbucket.org/leafstorm/flask-login flask-login],
+  %w[hg https://bitbucket.org/danjac/flask-wtf flask-wtf],
+  # django
+  %w[hg https://bitbucket.org/django/django django],
+  %w[hg https://bitbucket.org/jespern/django-piston django-piston],
+  %w[hg https://bitbucket.org/ubernostrum/django-registration django-registration],
+  %w[hg https://bitbucket.org/izi/django-admin-tools django-admin-tools],
+  %w[hg https://bitbucket.org/david/django-storages django-storages],
+  %w[hg https://bitbucket.org/andrewgodwin/south south],
+  %w[hg https://bitbucket.org/wkornewald/django-nonrel django-nonrel],
+  %w[hg https://bitbucket.org/ubernostrum/django-profiles django-profiles],
+  %w[hg https://bitbucket.org/wkornewald/django-mediagenerator django-mediagenerator],
+  %w[hg https://bitbucket.org/tyrion/django-autocomplete django-autocomplete],
+  %w[hg https://bitbucket.org/david/django-oauth django-oauth],
+  %w[hg https://bitbucket.org/david/django-oauth-plus django-oauth-plus],
+  %w[hg https://bitbucket.org/carljm/django-localeurl django-localeurl],
+  %w[hg https://bitbucket.org/carljm/django-model-utils django-model-utils],
+  %w[hg https://bitbucket.org/carljm/django-form-utils django-form-utils],
+  %w[hg https://bitbucket.org/wkornewald/django-filetransfers django-filetransfers],
+  %w[git git://github.com/tomchristie/django-rest-framework.git django-rest-framework],
+  %w[git git://github.com/django-extensions/django-extensions.git django-extensions],
+  %w[git git://github.com/jtauber/django-notification.git django-notification],
+  %w[git git://github.com/SmileyChris/easy-thumbnails.git easy-thumbnails],
+  %w[git git://github.com/jbalogh/django-nose.git django-nose],
+  %w[git git://github.com/jdriscoll/django-imagekit.git django-imagekit],
+  # ruby
+  %w[git git://github.com/shyouhei/ruby.git ruby],
+  %w[git git://github.com/jruby/jruby.git jruby],
+  %w[git git://github.com/rubinius/rubinius.git rubinius],
+  %w[git git://github.com/rack/rack.git rack],
+  %w[git git://github.com/rack/rack-contrib.git rack-contrib],
+  %w[git git://github.com/sinatra/sinatra.git sinatra],
+  %w[git git://github.com/sinatra/sinatra-contrib.git sinatra-contrib],
+  %w[git git://github.com/intridea/omniauth.git omniauth],
+  %w[git git://github.com/thoughtbot/factory_girl.git factory_girl],
+  %w[git git://github.com/pluginaweek/state_machine.git state_machine],
+  %w[git git://github.com/rubyist/aasm.gti aasm],
+  # rails
+  %w[git git://github.com/rails/rails.git rails],
+  %w[git git://github.com/rails/arel.git arel],
+  # rails data structure
+  %w[git git://github.com/swanandp/acts_as_list.git acts_as_list],
+  %w[git git://github.com/amerine/acts_as_tree.git acts_as_tree],
+  %w[git git://github.com/stefankroes/ancestry.git ancestry],
+  # rails auth
+  %w[git git://github.com/thoughtbot/clearance.git clearance],
+  %w[git git://github.com/plataformatec/devise.git devise],
+  %w[git git://github.com/binarylogic/authlogic.git authlogic],
+  %w[git git://github.com/NoamB/sorcery.git sorcery],
+  %w[git git://github.com/technoweenie/restful-authentication.git restful-authentication],
+  # rails file upload
+  %w[git git://github.com/thoughtbot/paperclip.git paperclip],
+  %w[git git://github.com/valums/file-uploader.git file-uploader],
+  # rails paginate
+  %w[git git://github.com/mislav/will_paginate.git will_paginate],
+  %w[git git://github.com/amatsuda/kaminari.git kaminari],
+  # rails test
+  %w[git git://github.com/bmabey/email-spec.git email-spec],
+  %w[git git://github.com/rspec/rspec-rails.git rspec-rails],
+  %w[git git://github.com/thoughtbot/factory_girl_rails.git factory_girl_rails],
+  # rails etc
+  %w[git git://github.com/RailsApps/rails3-application-templates.git rails3-application-templates],
+  %w[git git://github.com/ryanb/complex-form-examples.git complex-form-examples],
+  %w[git git://github.com/smartinez87/exception_notification.git exception_notification],
+  %w[git git://github.com/railsbp/rails_best_practices.git rails_best_practices],
+  %w[git git://github.com/bbatsov/rails-style-guide.git rails-style-guide],
+  %w[git git://github.com/goncalossilva/rails3_acts_as_paranoid.git rails3_acts_as_paranoid],
+  %w[git git://github.com/datamapper/dm-rails.git dm-rails],
+  %w[git git://github.com/datamapper/dm-core.git dm-core],
+  %w[git git://github.com/fabrik42/acts_as_api.git acts_as_api],
+  %w[git git://github.com/josevalim/rails-footnotes.git rails-footnotes],
+  %w[git git://github.com/rails/pjax_rails.git pjax_rails],
+  %w[git git://github.com/ryanb/nested_form.git nested_form],
+  %w[git git://github.com/plataformatec/simple_form.git simple_form],
+  %w[git git://github.com/teambox/teambox.git teambox],
+  # java
+  %w[svn https://www.seasar.org/svn/s2container/trunk/seasar2/ seasar2],
+  %w[svn https://www.seasar.org/svn/s2container/trunk/s2-tiger/ s2-tiger],
+  %w[svn https://www.seasar.org/svn/cubby/trunk/cubby-project/ cubby-project],
+  %w[svn https://www.seasar.org/svn/doma/trunk/doma/ doma],
+  %w[svn http://slim3.googlecode.com/svn/trunk/ slim3-read-only],
+  %w[svn http://google-guice.googlecode.com/svn/trunk/ google-guice-read-only],
+  %w[svn http://primefaces.googlecode.com/svn/primefaces/trunk/ primefaces-read-only],
+  %w[svn http://h2database.googlecode.com/svn/trunk/ h2database-read-only],
+  %w[svn https://svn.java.net/svn/jersey~svn/tags/jersey-1.9.1 jersey-1.9.1],
+  %w[svn https://svn.java.net/svn/jersey~svn/trunk/jersey jersey-trunk],
+  %w[svn https://resteasy.svn.sourceforge.net/svnroot/resteasy/trunk resteasy-trunk],
+  %w[svn https://resteasy.svn.sourceforge.net/svnroot/resteasy/tags/RESTEASY_JAXRS_2_1_0_GA/ resteasy-jaxrs-2.1.0-ga],
+  %w[svn http://svn.apache.org/repos/asf/geronimo/specs/trunk/ geronimo-specs-trunk],
+  %w[svn http://svn.apache.org/repos/asf/tomcat/trunk/ tomcat-trunk],
+  %w[svn http://svn.apache.org/repos/asf/wicket/trunk/ wicket-trunk],
+  %w[svn http://svn.apache.org/repos/asf/maven/maven-3/trunk maven-3],
+  %w[git http://git.eclipse.org/c/jetty/org.eclipse.jetty.project.git org.eclipse.jetty.project],
+  %w[git git://github.com/KentBeck/junit junit],
+  %w[git git://github.com/jenkinsci/jenkins.git jenkins],
+  %w[git git://github.com/yusuke/twitter4j.git twitter4j],
+  %w[git git://github.com/espenhw/malabar-mode.git malabar-mode],
+  # clojure
+  %w[git git://github.com/clojure/clojure.git clojure],
+  %w[git git://github.com/clojure/clojure-contrib.git clojure-contrib],
+  %w[git git://github.com/clojure/java.jdbc.git java.jdbc],
+  %w[git git://github.com/clojure/tools.macro.git tools.macro],
+  %w[git git://github.com/clojure/data.json.git data.json],
+  %w[git git://github.com/mmcgrana/ring.git ring],
+  %w[git git://github.com/mmcgrana/clj-html.git clj-html],
+  %w[git git://github.com/duelinmarkers/clj-record.git clj-record],
+  %w[git git://github.com/medSage/clj-http.git clj-http],
+  # groovy
+  %w[git git://github.com/russel/groovy.git groovy],
+  %w[git git://github.com/grails/grails-core.git grails-core],
+  # erlang
+  %w[hg http://hg.rabbitmq.com/rabbitmq-codegen rabbitmq-codegen],
+  %w[hg http://hg.rabbitmq.com/rabbitmq-server rabbitmq-server],
+  # scheme
+  %w[git git://gauche.git.sourceforge.net/gitroot/gauche/Gauche Gauche],
+  %w[git git://github.com/kiyoka/nendo.git nendo],
+  %w[hg http://www.stklos.net/hg/hgweb.cgi stklos],
+  %w[git git://code.call-cc.org/chicken-core chicken-core],
+]
+
+VCS_COMMAND = {
+  :hg => 'clone',
+  :git => 'clone',
+  :svn => 'checkout',
+}
+
+desc "Display repositories"
+task :list do
+  REPOSITORIES.each do |repository|
+    vcs, url, name = *repository
+    puts "#{name} [#{vcs}] #{url}"
+  end
+end
+
+REPOSITORIES.each do |repository|
+  vcs, url, name = *repository
+
+  desc "Clone #{name}"
+  task "clone-#{name}" do
+    if File.directory?(name)
+      STDERR.puts "WARNING: already exists #{name} directory."
+    else
+      sh "#{vcs} #{VCS_COMMAND[vcs.to_sym]} #{url} #{name}"
+    end
+  end
+end
+
+task :default => :list
