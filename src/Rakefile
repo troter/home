@@ -32,6 +32,9 @@ REPOSITORIES = [
   %w[git git://github.com/facebook/tornado.git tornado],
   %w[git git://github.com/pypa/virtualenv.git virtualenv],
   %w[git git://github.com/Pylons/webob.git webob],
+  %w[git git://github.com/Pylons/pyramid.git pyramid],
+  %w[git git://github.com/fabric/fabric.git fabric],
+  %w[git git://github.com/fabric/patchwork.git patchwork],
   # flask
   %w[git git://github.com/mitsuhiko/flask.git flask],
   %w[git git://github.com/mitsuhiko/flask-oauth.git flask-oauth],
@@ -40,7 +43,7 @@ REPOSITORIES = [
   %w[hg https://bitbucket.org/leafstorm/flask-login flask-login],
   %w[hg https://bitbucket.org/danjac/flask-wtf flask-wtf],
   # django
-  %w[hg https://bitbucket.org/django/django django],
+  %w[git git://github.com/django/django django],
   %w[hg https://bitbucket.org/jespern/django-piston django-piston],
   %w[hg https://bitbucket.org/ubernostrum/django-registration django-registration],
   %w[hg https://bitbucket.org/izi/django-admin-tools django-admin-tools],
@@ -62,6 +65,19 @@ REPOSITORIES = [
   %w[git git://github.com/SmileyChris/easy-thumbnails.git easy-thumbnails],
   %w[git git://github.com/jbalogh/django-nose.git django-nose],
   %w[git git://github.com/jdriscoll/django-imagekit.git django-imagekit],
+  %w[git git://github.com/pinax/pinax.git pinax],
+  %w[git git://github.com/toastdriven/django-tastypie.git django-tastypie],
+  %w[git git://github.com/omab/django-social-auth.git django-social-auth],
+  %w[git git://github.com/alex/django-taggit.git django-taggit],
+  %w[git git://github.com/ashchristopher/django-sass.git django-sass],
+  # django site
+  %w[git git://github.com/rtfd/readthedocs.org.git readthedocs.org],
+  %w[git git://github.com/mozilla/mozillians.git mozillians],
+  %w[git git://github.com/mozilla/bedrock.git bedrock],
+  %w[git git://github.com/mozilla/kuma.git kuma],
+  %w[git git://github.com/mozilla/kitsune.git kitsune],
+  %w[git git://github.com/mozilla/mozilla-taskboard.git mozilla-taskboard],
+  %w[git git://github.com/django-de/djangosnippets.org.git djangosnippets.org],
   # ruby
   %w[git git://github.com/shyouhei/ruby.git ruby],
   %w[git git://github.com/jruby/jruby.git jruby],
@@ -74,6 +90,7 @@ REPOSITORIES = [
   %w[git git://github.com/thoughtbot/factory_girl.git factory_girl],
   %w[git git://github.com/pluginaweek/state_machine.git state_machine],
   %w[git git://github.com/rubyist/aasm.gti aasm],
+  %w[git git://github.com/capistrano/capistrano.git capistrano],
   # rails
   %w[git git://github.com/rails/rails.git rails],
   %w[git git://github.com/rails/arel.git arel],
