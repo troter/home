@@ -68,6 +68,7 @@ qr = qrefresh
 qf = qfinish
 qls = qseries --summary
 qst = status --change qtip
+qdrag = qpush --move
 
 # power of commit
 poc = churn -t '{author|email}' -c
