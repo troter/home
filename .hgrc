@@ -22,8 +22,8 @@ record =
 transplant =
 
 [alias]
-__mystatus = status
-st = ! $HG __mystatus $($HG root) $HG_ARGS
+_status = status
+st = ! $HG _status $($HG root) $HG_ARGS
 # misc
 cm = commit --message
 . = summary
