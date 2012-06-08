@@ -44,5 +44,5 @@ Install eggs.
     pip install virtualenv
     pip install mercurial
     pip install sphinx
-    pip install ipython
+    pip install bpython
     pip install readline
