@@ -41,7 +41,7 @@ Install gems.
 
 Install eggs.
 
-    pip install virtualenv
+    pip install virtualenv virtualenvwrapper
     pip install mercurial
     pip install sphinx
     pip install bpython
