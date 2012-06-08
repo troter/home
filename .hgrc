@@ -54,7 +54,6 @@ uselocal = resolve --tool internal:local
 useother = resolve --tool internal:other
 
 # pull & push
-pr = pull --rebase
 nudge = push --rev .
 push = ! echo -e "\033[31m(use 'hg nudge' to push changesets)\033[m"
 
@@ -72,11 +71,6 @@ qdrag = qpush --move
 
 # power of commit
 poc = churn -t '{author|email}' -c
-
-safeclone = ! \
-  $HG init "$(basename "$1")" && \
-  echo -e "[paths]\ndefault = $1" >> "$(basename "$1")"/.hg/hgrc && \
-  ( cd "$(basename "$1")" && $HG pull -u )
 
 qnow = ! $HG qnew $(date +'%Y-%m-%d_%H-%M-%S.diff') -m "[from now] $(date +'%Y-%m-%d %H:%M:%S')" $@
 
