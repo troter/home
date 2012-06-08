@@ -90,7 +90,7 @@ fix = ! \
   fi; \
   $HG unshelve -n 'tmp.hg-fix'
 
-qnow = ! $HG qnew $(date +'%Y-%m-%d_%H-%M-%S.diff') -m "[from now] $(date +'%Y-%m-%d %H:%M:%S')"
+qnow = ! $HG qnew $(date +'%Y-%m-%d_%H-%M-%S.diff') -m "[from now] $(date +'%Y-%m-%d %H:%M:%S')" $@
 
 [pager]
 pager = LESS='FRX' less
