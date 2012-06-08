@@ -78,18 +78,6 @@ safeclone = ! \
   echo -e "[paths]\ndefault = $1" >> "$(basename "$1")"/.hg/hgrc && \
   ( cd "$(basename "$1")" && $HG pull -u )
 
-# fix latest commit message
-fix = ! \
-  $HG shelve --all -n 'tmp.hg-fix' && \
-  if $HG qtop > /dev/null; then \
-    $HG qrefresh -m "$1"; \
-  else \
-    $HG qimport -r .; \
-    $HG qrefresh -m "$1"; \
-    $HG qfinish -a; \
-  fi; \
-  $HG unshelve -n 'tmp.hg-fix'
-
 qnow = ! $HG qnew $(date +'%Y-%m-%d_%H-%M-%S.diff') -m "[from now] $(date +'%Y-%m-%d %H:%M:%S')" $@
 
 [pager]
