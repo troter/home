@@ -35,6 +35,8 @@ REPOSITORIES = [
   %w[git git://github.com/Pylons/pyramid.git pyramid],
   %w[git git://github.com/fabric/fabric.git fabric],
   %w[git git://github.com/fabric/patchwork.git patchwork],
+  %w[git git://github.com/basho/riak-python-client.git riak-python-client],
+  %w[git git://github.com/Linux2Go/riakalchemy.git riakalchemy],
   # flask
   %w[git git://github.com/mitsuhiko/flask.git flask],
   %w[git git://github.com/mitsuhiko/flask-oauth.git flask-oauth],
@@ -168,6 +170,9 @@ REPOSITORIES = [
   # erlang
   %w[hg http://hg.rabbitmq.com/rabbitmq-codegen rabbitmq-codegen],
   %w[hg http://hg.rabbitmq.com/rabbitmq-server rabbitmq-server],
+  %w[git git://github.com/basho/riak.git riak],
+  %w[git git://github.com/basho/riak_core.git riak_core],
+  %w[git git://github.com/basho/riak_kv.git riak_kv],
   # scheme
   %w[git git://gauche.git.sourceforge.net/gitroot/gauche/Gauche Gauche],
   %w[git git://github.com/kiyoka/nendo.git nendo],
