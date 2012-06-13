@@ -94,6 +94,8 @@ REPOSITORIES = [
   %w[git git://github.com/pluginaweek/state_machine.git state_machine],
   %w[git git://github.com/rubyist/aasm.gti aasm],
   %w[git git://github.com/capistrano/capistrano.git capistrano],
+  %w[git git://github.com/github/gollum.git gollum],
+  %w[git git://github.com/dreverri/gollum-site.git gollum-site],
   # rails
   %w[git git://github.com/rails/rails.git rails],
   %w[git git://github.com/rails/arel.git arel],
