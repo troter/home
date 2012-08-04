@@ -7,4 +7,3 @@
 ! [ -d 'hgshelve'     ] && hg clone https://bitbucket.org/tksoh/hgshelve
 ! [ -d 'hgsubversion' ] && hg clone https://bitbucket.org/durin42/hgsubversion/
 ! [ -d 'hgtasks'      ] && hg clone https://bitbucket.org/alu/hgtasks
-! [ -d 'histedit'     ] && hg clone https://bitbucket.org/spookylukey/histedit
