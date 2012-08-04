@@ -12,7 +12,6 @@ convert =
 eol =
 extdiff =
 fetch =
-graphlog =
 histedit =
 mq =
 pager =
@@ -41,6 +40,7 @@ l = log
 lb = log -b
 show = log --color=always -pr
 less = log -pr "reverse(not merge())"
+glog = log --graph
 gl = glog
 gll = glog --limit
 
