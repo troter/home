@@ -58,10 +58,6 @@ useother = resolve --tool internal:other
 nudge = push --rev .
 push = ! echo -e "\033[31m(use 'hg nudge' to push changesets)\033[m"
 
-# shelve
-sh = shelve
-ush = unshelve
-
 # mq
 qi = qimport
 qr = qrefresh
