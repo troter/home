@@ -5,3 +5,4 @@
 ! [ -d 'hgflow'       ] && hg clone https://bitbucket.org/yujiewu/hgflow
 ! [ -d 'hgsubversion' ] && hg clone https://bitbucket.org/durin42/hgsubversion/
 ! [ -d 'hgtasks'      ] && hg clone https://bitbucket.org/alu/hgtasks
+! [ -d 'hg-grepfile'  ] && hg clone https://bitbucket.org/troter/hg-grepfile

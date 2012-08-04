@@ -48,7 +48,7 @@ shortlog  = log  --template '\033[31m{rev}:{node|short}\033[m | {date|shortdate}
 gshortlog = glog --template '\033[31m{rev}:{node|short}\033[m | {date|shortdate} | {author|user}: {desc|strip|firstline}\n\033[36m{branches}\033[m\n'
 
 # locate
-grepfile = ! $HG locate --print0 | xargs --null grep $@
+#grepfile = ! $HG locate --print0 | xargs --null grep $@
 gf = grepfile
 
 # resolve
