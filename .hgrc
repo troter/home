@@ -13,6 +13,7 @@ eol =
 extdiff =
 fetch =
 graphlog =
+histedit =
 mq =
 pager =
 parentrevspec =
