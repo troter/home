@@ -20,6 +20,7 @@ parentrevspec =
 progress =
 rebase =
 record =
+schemes =
 transplant =
 
 [alias]
