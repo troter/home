@@ -4,7 +4,7 @@
   (cond
    (windows-p
     (cond
-     (emacs23-p
+     ((or emacs23-p emacs24-p)
       ;(set-default-font "M+2VM+IPAG circle-8")
       (set-default-font "M+2VM+IPAG circle-10"))
      (t
