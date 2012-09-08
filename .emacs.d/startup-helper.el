@@ -33,7 +33,7 @@
 
 ;; (@* "predicates")
 ;; emacs-version predicates
-(dolist (ver '("22" "23" "23.0" "23.1" "23.2"))
+(dolist (ver '("22" "23" "23.0" "23.1" "23.2" "24" "24.0" "24.1" "24.2"))
   (set (intern (concat "emacs" ver "-p"))
        (if (string-match (concat "^" ver) emacs-version)
            t nil)))
