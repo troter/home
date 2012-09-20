@@ -1,12 +1,20 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
 (when window-system
-  (require 'color-theme)
-  (require 'color-theme-tangotango)
+;  (require 'color-theme)
+;  (require 'color-theme-tangotango)
 
   ;(add-to-list 'default-frame-alist '(alpha . 92))
   ;(set-frame-parameter nil 'alpha 95)
+  (setq initial-frame-alist
+        (append (list
+                 '(width . 120)
+                 '(height . 36)
+                 )
+                initial-frame-alist))
+  (setq default-frame-alist initial-frame-alist)
   )
+
 
 (and ; hl-line
  (defface hlline-face
@@ -21,9 +29,9 @@
                    :underline nil))
      (t ()))
    "*Face used by hl-line.")
- (if window-system
-     (setq hl-line-face 'hlline-face)
-   (setq hl-line-face 'underline))
+ ;(if window-system
+ ;    (setq hl-line-face 'hlline-face)
+ ;  (setq hl-line-face 'underline))
  (global-hl-line-mode t))
 
 (and ; window
