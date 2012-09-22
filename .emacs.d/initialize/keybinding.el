@@ -54,3 +54,10 @@
 ;; open
 (when (functionp 'cygstart)
   (global-set-key [(control c) (control f)] 'cygstart))
+
+(cond
+ ((string-match "apple-darwin" system-configuration)
+  (setq ns-command-modifier (quote meta))
+  (setq ns-alternate-modifier (quote super))
+  )
+)
