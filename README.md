@@ -33,7 +33,7 @@ Install environment managers and install latest version.
 - [rvm](https://github.com/wayneeseguin/rvm)
 - [pythonbrew](https://github.com/utahta/pythonbrew)
 - [perlbrew](https://github.com/gugod/App-perlbrew)
-- [nvm](https://github.com/creationix/nvm)
+- [nodebrew](https://github.com/hokaccha/nodebrew)
 
 Install gems.
 
