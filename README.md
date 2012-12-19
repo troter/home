@@ -34,6 +34,7 @@ Install environment managers and install latest version.
 - [pythonbrew](https://github.com/utahta/pythonbrew)
 - [perlbrew](https://github.com/gugod/App-perlbrew)
 - [nodebrew](https://github.com/hokaccha/nodebrew)
+- [gvm](http://gvmtool.net/)
 
 Install gems.
 
