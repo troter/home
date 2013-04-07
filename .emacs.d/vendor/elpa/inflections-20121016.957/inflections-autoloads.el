@@ -4,22 +4,23 @@
 
 
 ;;;### (autoloads (pluralize-string singularize-string) "inflections"
-;;;;;;  "inflections.el" (20290 7049))
+;;;;;;  "inflections.el" (20833 14443 0 0))
 ;;; Generated autoloads from inflections.el
 
 (autoload 'singularize-string "inflections" "\
-Not documented
+
 
 \(fn STR)" nil nil)
 
 (autoload 'pluralize-string "inflections" "\
-Not documented
+
 
 \(fn STR)" nil nil)
 
 ;;;***
 
-;;;### (autoloads nil nil ("inflections-pkg.el") (20290 7049 325000))
+;;;### (autoloads nil nil ("inflections-pkg.el") (20833 14443 993847
+;;;;;;  0))
 
 ;;;***
 
