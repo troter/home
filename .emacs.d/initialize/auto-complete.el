@@ -13,7 +13,6 @@
 ;;  ;;  (set-default 'ac-sources '(ac-source-yasnippet ac-source-abbrev ac-source-words-in-buffer)))
 ;;
 ;;  (defun-eval-after-load 'helm
-;;    ;; (package-install 'ac-helm)
 ;;    (require 'ac-helm)
 ;;    (define-key ac-mode-map [(meta i)] 'ac-complete-with-helm))
 

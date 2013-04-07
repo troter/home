@@ -1,8 +1,5 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
-;; (package-install 'helm)
-;; (package-install 'helm-descbinds)
-
 (when (require 'helm-config)
   (require 'helm-command)
   (require 'helm-descbinds)
@@ -28,8 +25,6 @@
   (define-key helm-find-files-map [(meta i)] 'helm-execute-persistent-action)
   (define-key helm-read-file-map [(meta i)] 'helm-execute-persistent-action)
 
-  ;; ;; (package-install 'shell-history)
-  ;; ;; (package-install 'shell-command)
   ;; (require 'shell-history)
   ;; (require 'shell-command)
   ;; ;; Bind C-o to complete shell history

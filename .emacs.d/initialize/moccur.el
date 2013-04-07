@@ -1,7 +1,6 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
 ;; color-moccur
-;; (package-install 'color-moccur)
 ;; (auto-install-from-url "http://www.emacswiki.org/emacs/download/moccur-edit.el")
 (progn
   (require 'color-moccur)
@@ -14,7 +13,6 @@
   (setq moccur-use-migemo t))
 
 (defun-eval-after-load 'helm
-  ;; (package-install 'helm-c-moccur)
   (when (require 'helm-c-moccur nil t)
     (setq helm-c-moccur-helm-idle-delay 0.2
           helm-c-moccur-higligt-info-line-flag t

@@ -25,11 +25,9 @@
   (setq recentf-auto-cleanup 10)
   (run-with-idle-timer 30 t 'recentf-save-list))
 
-;; (package-install 'undo-tree)
 (require 'undo-tree)
 (global-undo-tree-mode)
 
-;; (package-install 'popwin)
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 (push '(dired-mode :position top) popwin:special-display-config)

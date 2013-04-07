@@ -1,14 +1,9 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
-;; (package-install 'ruby-mode)
-;; (package-install 'ruby-electric)
-;; (package-install 'ruby-block)
-;; (package-install 'ruby-compilation)
 (when (autoload-if-found 'ruby-mode "ruby-mode" "Mode for editing ruby source file")
   (autoload-if-found 'run-ruby "inf-ruby" "Run an inferior Ruby process")
   (require 'ruby-electric nil t)
   (require 'ruby-block nil t)
-  ;; (auto-install-from-url "https://raw.github.com/pezra/rspec-mode/master/rspec-mode.el")
   (require 'rspec-mode nil t)
 
   (dolist (regexp '("\\.rb$" "Rakefile" "\\.rake$"))
@@ -37,7 +32,6 @@
 )
 
 ;; rinari
-;; (package-install 'rinari)
 (when (require 'rinari nil t)
   (require 'rhtml-mode)
   (add-to-list 'auto-mode-alist '("\\.rhtml$" . rhtml-mode))
