@@ -106,6 +106,7 @@
     jump
     melpa
     php-mode
+    python
     popup
     popwin
     rinari
