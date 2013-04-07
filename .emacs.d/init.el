@@ -106,9 +106,9 @@
     jump
     melpa
     php-mode
-    python
     popup
     popwin
+    python
     rinari
     ruby-block
     ruby-compilation
