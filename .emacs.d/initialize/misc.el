@@ -25,7 +25,7 @@
   (setq recentf-auto-cleanup 10)
   (run-with-idle-timer 30 t 'recentf-save-list))
 
-;; (auto-install-from-url "http://www.dr-qubit.org/undo-tree/undo-tree.el")
+;; (package-install 'undo-tree)
 (require 'undo-tree)
 (global-undo-tree-mode)
 
