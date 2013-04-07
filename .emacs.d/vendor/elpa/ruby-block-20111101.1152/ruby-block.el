@@ -1,10 +1,9 @@
-
 ;;; ruby-block.el --- highlight matching block
+;; Version: 20111101.1152
 
 ;; Copyright (C) 2007-2011  khiker
 
 ;; Author: khiker <khiker.mail+elisp@gmail.com>
-;; Version: 0.0.11
 ;; Keywords: languages, faces, ruby
 
 ;; This file is free software; you can redistribute it and/or modify

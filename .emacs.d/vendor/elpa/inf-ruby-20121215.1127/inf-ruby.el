@@ -6,7 +6,7 @@
 ;; URL: http://github.com/nonsequitur/inf-ruby
 ;; Created: 8 April 1998
 ;; Keywords: languages ruby
-;; Version: 2.2.3
+;; Version: 20121215.1127
 
 ;;; Commentary:
 ;;
@@ -16,18 +16,15 @@
 ;; * drop the file somewhere on your load path (perhaps ~/.emacs.d)
 ;; * Add the following lines to your .emacs file:
 ;;    (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
-;;    (autoload 'inf-ruby-keys "inf-ruby" "" t)
+;;    (autoload 'inf-ruby-setup-keybindings "inf-ruby" "" t)
 ;;    (eval-after-load 'ruby-mode
-;;      '(add-hook 'ruby-mode-hook 'inf-ruby-keys))
+;;      '(add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings))
 
 ;;; TODO:
 ;;
 ;; inferior-ruby-error-regexp-alist doesn't match this example
 ;;   SyntaxError: /home/eschulte/united/org/work/arf/arf/lib/cluster.rb:35: syntax error, unexpected '~', expecting kEND
 ;;               similarity = comparison_cache[m][n] ||= clusters[m] ~ clusters[n]
-;;
-;; M-p skips the first entry in the input ring.
-;;
 
 (require 'comint)
 (require 'compile)
@@ -80,7 +77,7 @@ next one.")
     ("^\tfrom \\([^\(].*\\):\\([1-9][0-9]*\\)\\(:in `.*'\\)?$" 1 2)))
 
 ;;;###autoload
-(defun inf-ruby-keys ()
+(defun inf-ruby-setup-keybindings ()
   "Set local key defs to invoke inf-ruby from ruby-mode."
   (define-key ruby-mode-map "\M-\C-x" 'ruby-send-definition)
   (define-key ruby-mode-map "\C-x\C-e" 'ruby-send-last-sexp)
@@ -136,21 +133,12 @@ to continue it."
   (setq mode-name "Inf-Ruby")
   (setq mode-line-process '(":%s"))
   (use-local-map inf-ruby-mode-map)
-  (setq comint-input-filter (function inf-ruby-input-filter))
   (add-to-list 'comint-output-filter-functions 'inf-ruby-output-filter)
   (setq comint-get-old-input (function inf-ruby-get-old-input))
   (make-local-variable 'compilation-error-regexp-alist)
   (setq compilation-error-regexp-alist inf-ruby-error-regexp-alist)
   (compilation-shell-minor-mode t)
   (run-hooks 'inf-ruby-mode-hook))
-
-(defvar inf-ruby-filter-regexp "\\`\\s *\\S ?\\S ?\\s *\\'"
-  "*Input matching this regexp are not saved on the history list.
-Defaults to a regexp ignoring all inputs of 0, 1, or 2 letters.")
-
-(defun inf-ruby-input-filter (str)
-  "Don't save anything matching inf-ruby-filter-regexp"
-  (not (string-match inf-ruby-filter-regexp str)))
 
 (defun inf-ruby-output-filter (output)
   "Check if the current prompt is a top-level prompt"
@@ -208,7 +196,7 @@ of `ruby-program-name').  Runs the hooks `inferior-ruby-mode-hook'
   (setq name (or name "ruby"))
 
   (if (not (comint-check-proc inf-ruby-buffer))
-      (let ((commandlist (split-string command)))
+      (let ((commandlist (split-string-and-unquote command)))
         (set-buffer (apply 'make-comint name (car commandlist)
                            nil (cdr commandlist)))
         (inf-ruby-mode)))
@@ -269,7 +257,7 @@ Must not contain ruby meta characters.")
 (defun ruby-send-last-sexp ()
   "Send the previous sexp to the inferior Ruby process."
   (interactive)
-  (ruby-send-region (save-excursion (backward-sexp) (point)) (point)))
+  (ruby-send-region (save-excursion (ruby-backward-sexp) (point)) (point)))
 
 (defun ruby-send-block ()
   "Send the current block to the inferior Ruby process."
@@ -326,8 +314,15 @@ Then switch to the process buffer."
 
 (defun ruby-escape-single-quoted (str)
   (replace-regexp-in-string "'" "\\\\'"
-    (replace-regexp-in-string "\n" "\\\\n" 
+    (replace-regexp-in-string "\n" "\\\\n"
       (replace-regexp-in-string "\\\\" "\\\\\\\\" str))))
+
+(defsubst inf-ruby-fix-completions-on-windows ()
+  "On Windows, the string received by `accept-process-output'
+starts with the last line that was sent to the Ruby process.
+The reason for this is unknown. Remove this line from `completions'."
+  (if (eq system-type 'windows-nt)
+    (setq completions (cdr completions))))
 
 (defun inf-ruby-completions (seed)
   "Return a list of completions for the line of ruby code starting with SEED."
@@ -339,7 +334,8 @@ Then switch to the process buffer."
                                       (ruby-escape-single-quoted seed)))
     (while (and (not (string-match inf-ruby-prompt-pattern kept))
                 (accept-process-output proc 2)))
-    (setq completions (cdr (butlast (split-string kept "\r?\n") 2)))
+    (setq completions (butlast (split-string kept "\r?\n") 2))
+    (inf-ruby-fix-completions-on-windows)
     (set-process-filter proc comint-filt)
     completions))
 
@@ -373,7 +369,7 @@ Module used by readline when running irb through a terminal"
 
 ;;;###autoload
 (eval-after-load 'ruby-mode
-  '(add-hook 'ruby-mode-hook 'inf-ruby-keys))
+  '(inf-ruby-setup-keybindings))
 
 (provide 'inf-ruby)
 ;;; inf-ruby.el ends here

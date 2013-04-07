@@ -3,7 +3,7 @@
 ;;; Code:
 
 
-;;;### (autoloads (defjump) "jump" "jump.el" (20290 7055))
+;;;### (autoloads (defjump) "jump" "jump.el" (20833 14445 0 0))
 ;;; Generated autoloads from jump.el
 
 (autoload 'defjump "jump" "\
@@ -33,11 +33,11 @@ MAKE `find-file' will be used to open the path.
 Optional argument METHOD-COMMAND overrides the function used to
 find the current method which defaults to `which-function'.
 
-\(fn NAME SPECS ROOT &optional DOC MAKE METHOD-COMMAND)" nil nil)
+\(fn NAME SPECS ROOT &optional DOC MAKE METHOD-COMMAND)" nil t)
 
 ;;;***
 
-;;;### (autoloads nil nil ("jump-pkg.el") (20290 7055 288000))
+;;;### (autoloads nil nil ("jump-pkg.el") (20833 14445 649011 0))
 
 ;;;***
 
