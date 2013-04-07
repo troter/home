@@ -29,7 +29,7 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
-;; (auto-install-from-url "https://raw.github.com/m2ym/popwin-el/v0.3/popwin.el")
+;; (package-install 'popwin)
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 (push '(dired-mode :position top) popwin:special-display-config)
