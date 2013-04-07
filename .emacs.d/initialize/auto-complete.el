@@ -12,10 +12,10 @@
 ;;  ;;(when (ac-yasnippet-initialize)
 ;;  ;;  (set-default 'ac-sources '(ac-source-yasnippet ac-source-abbrev ac-source-words-in-buffer)))
 ;;
-;;  (defun-eval-after-load 'anything
-;;    ;; (auto-install-from-url "http://www.emacswiki.org/emacs/download/ac-anything.el")
-;;    (require 'ac-anything)
-;;    (define-key ac-mode-map [(meta i)] 'ac-complete-with-anything))
+;;  (defun-eval-after-load 'helm
+;;    ;; (package-install 'ac-helm)
+;;    (require 'ac-helm)
+;;    (define-key ac-mode-map [(meta i)] 'ac-complete-with-helm))
 
   ;;; keybindings
   (ac-set-trigger-key "TAB")

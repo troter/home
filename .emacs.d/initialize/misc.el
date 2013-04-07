@@ -33,21 +33,13 @@
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 (push '(dired-mode :position top) popwin:special-display-config)
-(defun-eval-after-load 'anything
-  (setq anything-samewindow nil)
-  (setq tr:anything-buffer-name-list
-        '(
-          ;;"*anything*"
-          "*anything find-file*"
-          "*anything file list*"
-          "*anything for files*"
-          "*anything apropos*"))
-  (dolist (b tr:anything-buffer-name-list)
-    (push (list b :height 20) popwin:special-display-config)))
+(defun-eval-after-load 'helm
+  (setq helm-samewindow nil)
+  (push '("^\*helm-.+\*$" :regexp t) popwin:special-display-config))
 
 
 ;; org-remember
-(org-remember-insinuate)
+;;(org-remember-insinuate)
 (setq org-directory "~/Dropbox/memo/")
 (setq org-default-notes-file (concat org-directory "note.org"))
 (setq org-remember-templates

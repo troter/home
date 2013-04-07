@@ -1,26 +1,24 @@
 ;;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
-;; (@* "anything")
-(defun-eval-after-load 'anything
-  ;;(global-set-key [(control x) (k)] 'anything-kill-buffers) ; kill-buffers
-  ;;(global-set-key [(control x) (b)] 'anything-for-buffers)    ; switch-to-buffer
-  ;;(global-set-key [(control x) (control f)] 'anything-filelist+)    ;find-fine
-  (global-set-key [(control x) (b)] 'anything-filelist+)    ; switch-to-buffer
-  (global-set-key [(meta y)] 'anything-show-kill-ring)        ; yank-pop
-  (global-set-key [(meta %)] 'anything-regexp)  ; query-replace-regexp
+;; (@* "helm")
+(defun-eval-after-load 'helm
+  ;;(global-set-key [(control x) (b)] 'helm-buffers-list)    ; switch-to-buffer
+  ;;(global-set-key [(control x) (control f)] 'helm-find-files)    ; find-file
+  (global-set-key [(control x) (b)] 'helm-for-files)    ; switch-to-buffer
+  (global-set-key [(meta y)] 'helm-show-kill-ring)        ; yank-pop
+  (global-set-key [(meta %)] 'helm-regexp)  ; query-replace-regexp
   ;; C-x a prefix
-  (defun-eval-after-load 'anything-complete
-    (global-set-key [(control x) (a) (a)] 'anything-apropos))
-  (global-set-key [(control x) (a) (r)] 'anything-regexp)
-  (global-set-key [(control x) (a) (m)] 'anything-mark-ring)
-  (global-set-key [(control x) (a) (M)] 'anything-global-mark-ring)
-  (defun-eval-after-load 'descbinds-anything
-    (global-set-key [(control x) (a) (d)] 'descbinds-anything))
+  (global-set-key [(control x) (a) (a)] 'helm-apropos)
+  (global-set-key [(control x) (a) (r)] 'helm-regexp)
+  (global-set-key [(control x) (a) (m)] 'helm-mark-ring)
+  (global-set-key [(control x) (a) (M)] 'helm-global-mark-ring)
+  (defun-eval-after-load 'helm-descbinds
+    (global-set-key [(control x) (a) (d)] 'helm-descbinds))
 )
 
-(defun-eval-after-load 'anything-c-moccur
-  (global-set-key [(meta o)] 'anything-c-moccur-occur-by-moccur) ; buffer
-  (global-set-key [(control meta o)] 'anything-c-moccur-dmoccur) ; directory
+(defun-eval-after-load 'helm-c-moccur
+  (global-set-key [(meta o)] 'helm-c-moccur-occur-by-moccur) ; buffer
+  (global-set-key [(control meta o)] 'helm-c-moccur-dmoccur) ; directory
 )
 
 (defun-eval-after-load 'key-chord

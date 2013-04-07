@@ -46,11 +46,12 @@
       (setq flymake-is-active-flag nil)))
 
   (defun-eval-after-load 'anything
+    ;; (package-install 'helm-c-yasnippet)
     ;; (auto-install-from-url "http://svn.coderepos.org/share/lang/elisp/anything-c-yasnippet/anything-c-yasnippet.el")
-    (require 'anything-c-yasnippet)
-    (setq anything-c-yas-display-key-on-candidate t)
-    (setq anything-c-yas-space-match-any-greedy t) ;スペース区切りで絞り込めるようにする デフォルトは nil
-    (global-set-key [(control c) (y)] 'anything-c-yas-complete))
+    (require 'helm-c-yasnippet)
+    (setq helm-c-yas-display-key-on-candidate t)
+    (setq helm-c-yas-space-match-any-greedy t) ;スペース区切りで絞り込めるようにする デフォルトは nil
+    (global-set-key [(control c) (y)] 'helm-c-yas-complete))
 
   ;; yasnipet use via auto-complete
   (setq yas/trigger-key nil)

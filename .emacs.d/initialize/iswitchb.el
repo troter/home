@@ -1,6 +1,6 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
-(unless (require 'anything nil t)
+(unless (require 'helm nil t)
   (defadvice iswitchb-exhibit
     (after
      iswitchb-exhibit-with-display-buffer
