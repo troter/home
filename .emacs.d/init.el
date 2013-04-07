@@ -115,6 +115,7 @@
     ruby-mode
     shell-command
     shell-history
+    mmm-mode
     slime
     undo-tree
     yaml-mode)
