@@ -104,6 +104,7 @@
     inf-ruby
     inflections
     jump
+    markdown-mode
     melpa
     php-mode
     popup
