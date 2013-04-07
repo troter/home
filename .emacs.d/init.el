@@ -73,15 +73,16 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (setq package-user-dir elpa-directory)
 
-(defadvice package-compute-transaction
-  (before
-   package-compute-transaction-reverse (package-list requirements)
-   activate compile)
-  "reverse the requirements"
-  (setq requirements (reverse requirements))
-  (print requirements))
-
 (package-initialize)
+
+(when (not (require 'melpa nil t))
+  (progn
+    (switch-to-buffer
+     (url-retrieve-synchronously
+        "https://raw.github.com/milkypostman/melpa/master/melpa.el"))
+    (package-install-from-buffer  (package-buffer-info) 'single))
+  (require 'melpa))
+
 
 ;; load direcotry files.
 (load-directory-files libraries-directory "^.+el$")
