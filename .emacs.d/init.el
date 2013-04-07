@@ -113,6 +113,7 @@
     ruby-compilation
     ruby-electric
     ruby-mode
+    rspec-mode
     shell-command
     shell-history
     mmm-mode
