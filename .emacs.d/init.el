@@ -83,6 +83,54 @@
     (package-install-from-buffer  (package-buffer-info) 'single))
   (require 'melpa))
 
+(defvar troter/packages
+  '(ac-helm
+    auto-complete
+    clojure-mode
+    color-moccur
+    color-theme
+    color-theme-solarized
+    elscreen
+    findr
+    flymake-php
+    flymake-ruby
+    haskell-mode
+    helm
+    helm-c-moccur
+    helm-c-yasnippet
+    helm-c-moccur
+    helm-c-yasnippet
+    helm-descbinds
+    inf-ruby
+    inflections
+    jump
+    melpa
+    php-mode
+    popup
+    popwin
+    rinari
+    ruby-block
+    ruby-compilation
+    ruby-electric
+    ruby-mode
+    shell-command
+    shell-history
+    slime
+    undo-tree
+    yaml-mode)
+  "Default packages")
+
+(defun abedra/packages-installed-p ()
+  (loop for pkg in troter/packages
+        when (not (package-installed-p pkg)) do (return nil)
+        finally (return t)))
+
+(unless (abedra/packages-installed-p)
+  (message "%s" "Refreshing package database...")
+  (package-refresh-contents)
+  (dolist (pkg troter/packages)
+    (when (not (package-installed-p pkg))
+      (package-install pkg))))
 
 ;; load direcotry files.
 (load-directory-files libraries-directory "^.+el$")
