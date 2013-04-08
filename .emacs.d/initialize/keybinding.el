@@ -32,10 +32,6 @@
 (defun-eval-after-load 'flymake
   (global-set-key [(control c) (d)] 'flymake-display-err-menu-for-current-line))
 
-(defun-eval-after-load 'anything-rurima
-  (global-set-key [(control c) (r)] 'anything-rurima)
-  (global-set-key [(control c) (control r)] 'anything-rurima-at-point))
-
 (defun-eval-after-load 'popwin
   (global-set-key [(control x) (control p)] popwin:keymap))
 

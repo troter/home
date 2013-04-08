@@ -39,11 +39,6 @@
   (add-hook 'rhtml-mode-hook
             (lambda () (rinari-launch))))
 
-;; (auto-install-from-emacswiki "anything-rurima.el")
-(let ((rurima.e (expand-file-name "misc/rubydoc/rurema.e" base-directory)))
-  (when (require 'anything-rurima nil t)
-    (setq anything-rurima-index-file rurima.e)))
-
 ;; ri emacs use fastri
 ;; gem install fastri
 (when (and (executable-find "rdoc")
