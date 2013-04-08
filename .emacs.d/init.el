@@ -12,7 +12,7 @@
 ;; Setup directory variables.
 (setq base-directory         "~/.emacs.d"
       vendor-directory       (expand-file-name "vendor" base-directory)
-      costom-file            (expand-file-name "custom.el" base-directory)
+      custom-file            (expand-file-name "custom.el" base-directory)
       libraries-directory    (expand-file-name "library" base-directory)
       auto-install-directory (expand-file-name "auto-install" vendor-directory)
       elpa-directory         (expand-file-name "elpa" vendor-directory)
@@ -139,6 +139,6 @@
 ;; load direcotry files.
 (load-directory-files libraries-directory "^.+el$")
 (load-directory-files initialize-directory "^.+el$")
-(load costom-file t)
+(load custom-file t)
 
 ;;; End of .emacs.el
