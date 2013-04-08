@@ -30,11 +30,8 @@ Install from source code.
 
 Install environment managers and install latest version.
 
-- [rvm](https://github.com/wayneeseguin/rvm)
-- [pythonbrew](https://github.com/utahta/pythonbrew)
-- [perlbrew](https://github.com/gugod/App-perlbrew)
-- [nodebrew](https://github.com/hokaccha/nodebrew)
-- [gvm](http://gvmtool.net/)
+    rake brew
+    rake brew:install
 
 Install gems.
 
