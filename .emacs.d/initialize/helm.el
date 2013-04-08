@@ -3,7 +3,8 @@
 (when (require 'helm-config)
   (require 'helm-command)
   (require 'helm-descbinds)
-  
+
+  (setq helm-buffer-max-length 45)
   (setq helm-su-or-sudo "sudo")
   (when nt-p
     (setq helm-c-locate-command "lfes -i -r %s"))
