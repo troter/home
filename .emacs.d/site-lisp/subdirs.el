@@ -5,7 +5,6 @@
 (defvar package-resource
   '("yasnippet-0.6.1c"
     "elscreen-dired-0.1.0" "apel-10.8"
-    "auto-complete-1.3.1"
     "rhtml"))
 
 (setq load-path
