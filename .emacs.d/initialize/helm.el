@@ -25,6 +25,9 @@
   (define-key helm-map [end] 'helm-scroll-other-window)
   (define-key helm-map [home] 'helm-scroll-other-window-down)
   (define-key helm-map [(control h)] 'backward-delete-char)
+  (define-key helm-find-files-map [(control d)] 'delete-char)
+  (define-key helm-find-files-map [(control D)] 'helm-ff-persistent-delete)
+  (define-key helm-find-files-map [(control h)] 'backward-delete-char)
 
   ;; (require 'shell-history)
   ;; (require 'shell-command)
