@@ -109,7 +109,6 @@
     php-mode
     popup
     popwin
-    python
     rinari
     ruby-block
     ruby-compilation
