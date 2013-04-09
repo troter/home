@@ -25,3 +25,8 @@ unfunction load_directory_files
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 # __END__
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/takumi/.gvm/bin/gvm-init.sh" && -z $(which gvm-init.sh | grep '/gvm-init.sh') ]] && source "/Users/takumi/.gvm/bin/gvm-init.sh"
+
+export JAVA_HOME=`/usr/libexec/java_home`

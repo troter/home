@@ -24,9 +24,6 @@
 (defun-eval-after-load 'key-chord
   ;; keybind
 )
-;; (@* "one key")
-(defun-eval-after-load 'one-key
-  (global-set-key [(control x) (v)] 'one-key-menu-VC))
 
 ;; (@* "others")
 (defun-eval-after-load 'flymake
