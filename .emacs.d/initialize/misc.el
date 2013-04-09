@@ -54,6 +54,7 @@
         "M-s"
         ))
 (setq guide-key/recursive-key-sequence-flag t)
+(setq guide-key/popup-window-position 'bottom)
 (guide-key-mode 1)
 
 ;; org-remember
