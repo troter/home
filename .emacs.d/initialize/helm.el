@@ -18,16 +18,18 @@
   (when nt-p
     (setq helm-c-locate-command "lfes -i -r %s"))
 
-  (define-key helm-map [(control i)] 'helm-execute-persistent-action)
+  (define-key helm-map [(control i)] 'helm-execute-persistent-action) ;; helm-select-action
+  (define-key helm-map [(control e)] 'move-end-of-line) ;; helm-select-2nd-action-or-end-of-line
   (define-key helm-map [(meta i)] 'helm-select-action)
   (define-key helm-map [(meta N)] 'helm-next-source)
   (define-key helm-map [(meta P)] 'helm-previous-source)
   (define-key helm-map [end] 'helm-scroll-other-window)
   (define-key helm-map [home] 'helm-scroll-other-window-down)
-  (define-key helm-map [(control h)] 'backward-delete-char)
-  (define-key helm-find-files-map [(control d)] 'delete-char)
+  (define-key helm-map [(control h)] 'backward-delete-char) ;; prefix-key
+  (define-key helm-find-files-map [(control d)] 'delete-char) ;; helm-ff-persistent-delete
   (define-key helm-find-files-map [(control D)] 'helm-ff-persistent-delete)
-  (define-key helm-find-files-map [(control h)] 'backward-delete-char)
+  (define-key helm-find-files-map [(control h)] 'backward-delete-char) ;; prefix-key
+  (define-key helm-find-files-map [(meta i)] 'helm-select-action) ;; helm-ff-properties-persistent
 
   ;; (require 'shell-history)
   ;; (require 'shell-command)
