@@ -94,6 +94,7 @@
     findr
     flymake-php
     flymake-ruby
+    guide-key
     haskell-mode
     helm
     helm-c-moccur

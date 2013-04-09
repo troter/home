@@ -35,6 +35,26 @@
   (setq helm-samewindow nil)
   (push '("^\*helm.+\*$" :regexp t) popwin:special-display-config))
 
+(require 'guide-key)
+(setq guide-key/guide-key-sequence
+      '(
+        "C-x C-p"
+        "C-x RET"
+        "C-x ESC"
+        "C-x 4"
+        "C-x 5"
+        "C-x 8"
+        "C-x a"
+        "C-x c"
+        "C-x n"
+        "C-x r"
+        "C-x @"
+        "C-c"
+        "M-g"
+        "M-s"
+        ))
+(setq guide-key/recursive-key-sequence-flag t)
+(guide-key-mode 1)
 
 ;; org-remember
 ;;(org-remember-insinuate)
