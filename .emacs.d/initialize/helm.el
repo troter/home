@@ -18,13 +18,13 @@
   (when nt-p
     (setq helm-c-locate-command "lfes -i -r %s"))
 
+  (define-key helm-map [(control i)] 'helm-execute-persistent-action)
+  (define-key helm-map [(meta i)] 'helm-select-action)
   (define-key helm-map [(meta N)] 'helm-next-source)
   (define-key helm-map [(meta P)] 'helm-previous-source)
   (define-key helm-map [end] 'helm-scroll-other-window)
   (define-key helm-map [home] 'helm-scroll-other-window-down)
   (define-key helm-map [(control h)] 'backward-delete-char)
-  (define-key helm-find-files-map [(meta i)] 'helm-execute-persistent-action)
-  (define-key helm-read-file-map [(meta i)] 'helm-execute-persistent-action)
 
   ;; (require 'shell-history)
   ;; (require 'shell-command)
