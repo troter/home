@@ -33,7 +33,7 @@
 (push '(dired-mode :position top) popwin:special-display-config)
 (defun-eval-after-load 'helm
   (setq helm-samewindow nil)
-  (push '("^\*helm-.+\*$" :regexp t) popwin:special-display-config))
+  (push '("^\*helm.+\*$" :regexp t) popwin:special-display-config))
 
 
 ;; org-remember
