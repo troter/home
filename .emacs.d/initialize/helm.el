@@ -4,11 +4,9 @@
   (require 'helm-command)
   (require 'helm-descbinds)
 
-  (setq helm-buffer-max-length 45)
-  (setq helm-su-or-sudo "sudo")
-  (when nt-p
-    (setq helm-c-locate-command "lfes -i -r %s"))
-
+  (setq helm-buffer-max-length 45
+        helm-ff-auto-update-initial-value nil
+        helm-su-or-sudo "sudo")
   (setq helm-for-files-preferred-list
         '(helm-source-buffers-list
           helm-source-recentf
@@ -17,6 +15,8 @@
           helm-source-file-cache
           helm-source-files-in-current-dir
           helm-source-locate))
+  (when nt-p
+    (setq helm-c-locate-command "lfes -i -r %s"))
 
   (define-key helm-map [(meta N)] 'helm-next-source)
   (define-key helm-map [(meta P)] 'helm-previous-source)
