@@ -1,8 +1,8 @@
 # -*- coding: utf-8; mode: sh; -*-
 
 # pager
-if which less &>/dev/null; then PAGER=less; fi
-if which lv &>/dev/null;   then PAGER=lv;   fi
+if exists less; then PAGER=less; fi
+if exists lv;   then PAGER=lv;   fi
 export PAGER
 export LESS='-dMr'
 export LV='-c'

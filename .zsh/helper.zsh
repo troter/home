@@ -14,3 +14,7 @@ function load_directory_files() {
     if_debug && echo "complete."
   }
 }
+
+function exists() {
+  which $1 &> /dev/null
+}
