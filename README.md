@@ -44,3 +44,4 @@ Install eggs.
     pip install sphinx
     pip install bpython
     pip install readline
+    pip install percol
