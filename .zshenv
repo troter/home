@@ -37,6 +37,15 @@ export TERM
 
 export PATH MANPATH INFOPATH LD_LIBRARY_PATH
 
+# JAVA_HOME
+# =========
+if [ -z "$JAVA_HOME" ]; then
+  [ -e "/usr/libexec/java_home"    ] && JAVA_HOME=$(/usr/libexec/java_home)
+  [ -d "/usr/lib/jvm/java-openjdk" ] && JAVA_HOME=/usr/lib/jvm/java-openjdk
+  [ -d "/usr/lib/jvm/open-jdk"     ] && JAVA_HOME=/usr/lib/jvm/open-jdk
+  export JAVA_HOME
+fi
+
 # PYTHONSTARTUP
 # =============
 export PYTHONSTARTUP=$HOME/.pythonstartup
