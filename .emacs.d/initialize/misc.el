@@ -1,8 +1,6 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
 ;;; misc
-(auto-compression-mode t) ;;日本語infoの文字化け防止
-(setq system-uses-terminfo nil)
 
 ;; (auto-install-from-url "http://stud4.tuwien.ac.at/~e0225855/linum/linum.el")
 (when emacs22-p

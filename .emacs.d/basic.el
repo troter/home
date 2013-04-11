@@ -115,6 +115,8 @@
 (add-hook 'comint-output-filter-functions
           'comint-watch-for-password-prompt)
 
+(setq system-uses-terminfo nil)
+
 
 ;; iswitch buffers
 ;; ---------------
@@ -130,6 +132,9 @@
   (define-key iswitchb-mode-map "\C-b" 'iswitchb-prev-match)
   )
 
+;; misc
+;; ----
+(auto-compression-mode t) ;; avoid mojibake (japanese info)
 
 ;; keybinding
 ;; ----------
