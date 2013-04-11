@@ -8,9 +8,10 @@ export LANG=ja_JP.UTF-8
 
 # TERM.
 # =====
-if [[ "$TERM" == (xterm*) ]] { TERM=xterm-color; }
-if [[ "$TERM" == (kterm*) ]] { TERM=kterm-color; }
-if [[ "$TERM" == (rxvt*)  ]] { TERM=rxvt-color;  }
+if [[ "$TERM" == (xterm*) ]] { TERM=xterm-256color; }
+if [[ "$TERM" == (kterm*) ]] { TERM=kterm-256color; }
+if [[ "$TERM" == (rxvt*)  ]] { TERM=rxvt-256color;  }
+if [[ "$TERM" == (screen*)  ]] { TERM=screen-256color;  }
 #if [[ "${OSTYPE}" == (cygwin*) ]] { TERM=cygwin;  }
 export TERM
 
@@ -51,3 +52,5 @@ fi
 export PYTHONSTARTUP=$HOME/.pythonstartup
 
 # __END__
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
