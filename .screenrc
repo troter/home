@@ -15,8 +15,9 @@ caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=s wb}%Y/%m/
 
 # KEYBINDING
 # global key binding
-bind ^w windowlist -b
 bind ^r source $HOME/.screenrc
+bind ^p prev
+bind ^w windowlist -b
 
 # switch encoding
 bind ^E eval 'echo -p "Encoding? -- Cp932 / Euc-jp / Utf-8"' 'command -c enc'
@@ -24,23 +25,18 @@ bind -c enc ^C eval 'encoding "sjis"'    'echo "cp932"'
 bind -c enc ^E eval 'encoding "euc-jp"'  'echo "euc-jp"'
 bind -c enc ^U eval 'encoding "utf-8"'   'echo "utf-8"'
 
-# emacs-like window split
-bind ^x eval 'echo -p "Window -- Split(2) / Only(1) / Remove(0)"' 'command -c region'
+# emacs-like window split and focus
+bind ^x eval 'echo -p "Window -- Split(2) / Only(1) / Remove(0) / Other(o) "' 'command -c region'
 bind -c region 0 remove
 bind -c region 1 only
-bind -c region 2 split
-
-# emacs like focus
-bind ^O focus down
-bind ^P focus up
-bind < focus top
-bind > focus down
+bind -c region 2 eval split focus "select 0"
+bind -c region o focus down
+bind -c region ^o focus down
 
 # resize
 bind r eval 'echo "Resize window j(+1) k(-1)"' 'command -c resize'
-bind -c resize ^]  command
-bind -c resize j eval 'resize +1' 'command -c resize'
-bind -c resize k eval 'resize -1' 'command -c resize'
+bind -c resize k eval 'resize +1' 'command -c resize'
+bind -c resize j eval 'resize -1' 'command -c resize'
 
 # launcher
 bind ^t command -c launch
