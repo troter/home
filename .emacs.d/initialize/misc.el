@@ -52,6 +52,8 @@
         "C-c"
         "M-g"
         "M-s"
+        "ESC g"
+        "ESC s"
         ))
 (setq guide-key/recursive-key-sequence-flag t)
 (setq guide-key/popup-window-position 'bottom)
