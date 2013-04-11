@@ -8,10 +8,10 @@ export LANG=ja_JP.UTF-8
 
 # TERM.
 # =====
-if [[ "$TERM" == (xterm*) ]] { TERM=xterm-256color; }
-if [[ "$TERM" == (kterm*) ]] { TERM=kterm-256color; }
-if [[ "$TERM" == (rxvt*)  ]] { TERM=rxvt-256color;  }
-if [[ "$TERM" == (screen*)  ]] { TERM=screen-256color;  }
+[[ "$TERM" == (xterm*)   ]] && TERM=xterm-256color
+[[ "$TERM" == (kterm*)   ]] && TERM=kterm-256color
+[[ "$TERM" == (rxvt*)    ]] && TERM=rxvt-256color
+[[ "$TERM" == (screen*)  ]] && TERM=screen-256color
 #if [[ "${OSTYPE}" == (cygwin*) ]] { TERM=cygwin;  }
 export TERM
 
