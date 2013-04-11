@@ -3,6 +3,9 @@
 ;; Basic configuration.
 (load "~/.emacs.d/basic.el")
 
+;; Load environment value if exists
+(load "~/.emacs.d/shellenv.el" t nil t)
+
 ;; Common Lisp extensions for Emacs.
 (require 'cl)
 
@@ -33,23 +36,8 @@
   (load-path-recompile dir))
 
 ;; Setup exec-path.
-(setq tr:addition-exec-path
-      (list "~/bin"
-             "~/local/bin"
-             "/bin"
-             "/opt/local/bin"
-             "/opt/local/sbin"
-             "/usr/local/bin"
-             "/usr/local/sbin"
-             "/sbin"
-             "/usr/bin"
-             "/usr/sbin"
-             "/usr/X11R6/bin"
-             (concat (getenv "SystemDrive") "/cygwin/usr/bin")
-             (concat (getenv "SystemDrive") "/cygwin/usr/sbin")
-             (concat (getenv "SystemDrive") "/cygwin/usr/local/bin")
-             (concat (getenv "SystemDrive") "/cygwin/usr/local/sbin")))
-(setq exec-path (merge-path-list exec-path tr:addition-exec-path))
+(dolist (path (reverse (split-string (getenv "PATH") ":")))
+  (add-to-list 'exec-path path))
 
 ;; Setup Info-default-directory-list
 (setq tr:addition-info-directory
