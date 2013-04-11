@@ -1,8 +1,7 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
 (when window-system
-;  (require 'color-theme)
-;  (require 'color-theme-tangotango)
+  (load-theme 'wombat)
 
   ;(add-to-list 'default-frame-alist '(alpha . 92))
   ;(set-frame-parameter nil 'alpha 95)
