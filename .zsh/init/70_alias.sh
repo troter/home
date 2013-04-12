@@ -13,6 +13,7 @@ alias -g L="| \$PAGER"
 alias -g W="w3m -T text/html"
 alias -g S="| sed"
 alias -g A="| awk"
+alias -g P="| percol"
 
 # Common alias.
 # -------------
@@ -39,6 +40,7 @@ alias g="git"
 alias gs="git svn"
 alias h="hg"
 alias c="cheat" # gem install cheat
+alias p="percol"
 
 # update commands
 case "${OSTYPE}" in
