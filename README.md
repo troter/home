@@ -6,11 +6,15 @@ My home directory.
 Prepare for home directory
 --------------------------
 
-My home directory depends on some software. If you not install following software, see PREPARE.md.
+My home directory depends on some software.
 
 - my favorite dvcs, mercural.
 - compilers(gcc, g++) and development libraries.
 - some useful command line tools(zsh, screen, curl, etc..).
+
+If you not install these software, see next command output.
+
+    rake prepare
 
 Installation
 ------------
