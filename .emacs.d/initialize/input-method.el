@@ -28,6 +28,6 @@
 (when (or linux-p bsd-p)
   ;; Anthy
   ;;    CTRL-\で入力モード切替え
-  (locate-library "anthy")
-  (load-library "anthy")
-  (setq default-input-method "japanese-anthy"))
+  (when (locate-library "anthy")
+    (load-library "anthy")
+    (setq default-input-method "japanese-anthy")))
