@@ -17,6 +17,7 @@
 )
 
 (defun-eval-after-load 'helm-c-moccur
+  (define-key isearch-mode-map [(meta o)] 'helm-c-moccur-from-isearch)
   (global-set-key [(meta o)] 'helm-c-moccur-occur-by-moccur) ; buffer
   (global-set-key [(control meta o)] 'helm-c-moccur-dmoccur) ; directory
 )
