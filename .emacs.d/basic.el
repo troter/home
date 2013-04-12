@@ -118,6 +118,19 @@
 (setq system-uses-terminfo nil)
 
 
+;; term
+;; ----
+(add-hook 'term-mode-hook 'term-my-keys)
+
+(defun term-my-keys ()
+  "Add my keybindings for term."
+  (define-key term-raw-map "\C-z"
+    (lookup-key (current-global-map) "\C-z"))
+  (define-key term-raw-map "\C-p" 'previous-line)
+  (define-key term-raw-map "\C-n" 'next-linen)
+  (term-set-escape-char ?\C-x))
+
+
 ;; iswitch buffers
 ;; ---------------
 (iswitchb-mode 1)
