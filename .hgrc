@@ -86,6 +86,7 @@ git = True
 secret = True
 
 # include settings
+%include $HOME/.mercurial/typo.rc
 %include $HOME/.mercurial/extensions.rc
 %include $HOME/.mercurial/hooks.rc
 %include $HOME/.mercurial/araxis.rc

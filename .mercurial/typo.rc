@@ -1,0 +1,13 @@
+# -*- coding:utf-8; mode:conf; -*-
+
+[alias]
+hsow = show
+how = show
+dfif = diff
+difff = diff
+nduge = nudge
+lgo = log
+paht = paths
+qop = qpop
+glgo = glog
+ghs = gsh
