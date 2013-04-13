@@ -58,92 +58,61 @@ task :prepare => [
 ]
 
 namespace :brew do
-  namespace :pythonbrew do
-    desc "pythonbrew install"
-    task :install do
-      sh "curl -kL http://xrl.us/pythonbrewinstall | bash"
-    end
 
-    desc "pythonbrew update"
-    task :update do
-      sh "pythonbrew update"
-    end
-  end
+  brews = {
+    pythonbrew: {
+      homepage: 'https://github.com/utahta/pythonbrew',
+      install: "curl -kL http://xrl.us/pythonbrewinstall | bash",
+      update: "pythonbrew update"
+    },
+    rvm: {
+      homepage: 'https://github.com/wayneeseguin/rvm',
+      install: "curl -L https://get.rvm.io | bash -s stable",
+      update: "rvm get stable"
+    },
+    perlbrew: {
+      homepage: 'https://github.com/gugod/App-perlbrew',
+      install: "curl -kL http://install.perlbrew.pl | bash",
+      update: "perlbrew self-upgrade",
+    },
+    nodebrew: {
+      homepage: 'https://github.com/hokaccha/nodebrew',
+      install: "curl -L git.io/nodebrew | perl - setup",
+      update: "nodebrew selfupdate",
+    },
+    gvm: {
+      homepage: 'http://gvmtool.net/',
+      install: "curl -s get.gvmtool.net | bash",
+      update: "gvm selfupdate"
+    }
+  }
 
-  namespace :rvm do
-    desc "rvm install"
-    task :install do
-      sh "curl -L https://get.rvm.io | bash -s stable"
-    end
+  brews.each do |name, defs|
+    namespace name do
+      desc "#{name} install"
+      task :install do
+        sh defs[:install]
+      end
 
-    desc "rvm update"
-    task :update do
-      sh "rvm get stable"
-    end
-  end
-
-  namespace :perlbrew do
-    desc "perlbrew install"
-    task :install do
-      sh "curl -kL http://install.perlbrew.pl | bash"
-    end
-
-    desc "perlbrew update"
-    task :update do
-      sh "perlbrew self-upgrade"
-    end
-  end
-
-  namespace :nodebrew do
-    desc "nodebrew install"
-    task :install do
-      sh "curl -L git.io/nodebrew | perl - setup"
-    end
-
-    desc "nodebrew update"
-    task :update do
-      sh "nodebrew selfupdate"
-    end
-  end
-
-  namespace :gvm do
-    desc "gvm install"
-    task :install do
-      sh "curl -s get.gvmtool.net | bash"
-    end
-
-    desc "gvm update"
-    task :update do
-      sh "gvm selfupdate"
+      desc "#{name} update"
+      task :update do
+        sh defs[:update]
+      end
     end
   end
 
   desc "brew install"
-  task :install => [
-    'brew:pythonbrew:install',
-    'brew:rvm:install',
-    'brew:perlbrew:install',
-    'brew:nodebrew:install',
-    'brew:gvm:install',
-  ]
+  task :install => brews.map {|name, _| "brew:#{name}:install"}
 
   desc "brew update"
-  task :update => [
-    'brew:pythonbrew:update',
-    'brew:rvm:update',
-    'brew:perlbrew:update',
-    'brew:nodebrew:update',
-    'brew:gvm:update',
-  ]
+  task :update => brews.map {|name, _| "brew:#{name}:update"}
+
+  task :homepage do
+    brews.each do |name, defs|
+      puts "[#{name}](#{defs[:homepage]})"
+    end
+  end
 end
 
 desc "Brews"
-task :brew do
-  puts <<-DOC.split(/\n/).map(&:lstrip)
-    - [rvm](https://github.com/wayneeseguin/rvm)
-    - [pythonbrew](https://github.com/utahta/pythonbrew)
-    - [perlbrew](https://github.com/gugod/App-perlbrew)
-    - [nodebrew](https://github.com/hokaccha/nodebrew)
-    - [gvm](http://gvmtool.net/)
-  DOC
-end
+task :brew => 'brew:homepage'
