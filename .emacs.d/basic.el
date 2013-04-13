@@ -149,6 +149,7 @@
 ;; misc
 ;; ----
 (auto-compression-mode t) ;; avoid mojibake (japanese info)
+(setq eval-expression-print-length nil)
 
 ;; keybinding
 ;; ----------
