@@ -2,10 +2,10 @@
 
 ;; (auto-install-from-url "http://github.com/imakado/emacs-smartchr/raw/master/smartchr.el")
 (when (require 'smartchr)
-  (global-set-key (kbd "=") (smartchr '("=" " = " " == " " === ")))
-  (global-set-key (kbd "{")
-                  (smartchr '("{" "{ `!!' }" "{ \"`!!'\" }")))
-  (global-set-key (kbd ">") (smartchr '(">" " => " " => '`!!''" " => \"`!!'\"")))
+  ;; (global-set-key (kbd "=") (smartchr '("=" " = " " == " " === ")))
+  ;; (global-set-key (kbd "{")
+  ;;                 (smartchr '("{" "{ `!!' }" "{ \"`!!'\" }")))
+  ;; (global-set-key (kbd ">") (smartchr '(">" " => " " => '`!!''" " => \"`!!'\"")))
 
   (defun ik:insert-eol (s)
     (interactive)
