@@ -1,5 +1,7 @@
 # -*- mode: ruby -*-
 
+load '.mercurial/task.rake'
+
 task :default => :readme
 
 desc 'Show readme'
