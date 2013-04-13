@@ -37,6 +37,10 @@ Install environment managers and install latest version.
     rake brew
     rake brew:install
 
+Install mercurial extensions.
+
+    rake mercurial:extensions:install
+
 Install gems.
 
     gem install pry pry-doc
