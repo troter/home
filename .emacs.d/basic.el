@@ -25,6 +25,7 @@
 (transient-mark-mode t)
 ;; When Show Paren mode is enabled, any matching parenthesis is highlighted
 (show-paren-mode t)
+(setq show-paren-style 'mixed)
 ;; Non-nil means try to flash the frame to represent a bell.
 (setq visible-bell t)
 
