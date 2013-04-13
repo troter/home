@@ -1,5 +1,5 @@
 #!/bin/sh
-if ! which es > /dev/null 2>&1; then
+if ! which es &> /dev/null; then
   echo "Not Install 'Everything'"
   echo "Download from http://www.voidtools.com/download.php"
   exit 1
