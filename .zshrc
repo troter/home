@@ -7,10 +7,10 @@ umask 022
 ulimit -c 0
 
 # Load helper functions
-source ~/.zsh/helper.zsh
+source ~/.zsh.d/helper.zsh
 
-load_directory_files "~/.zsh/init" "*.sh"
-load_directory_files "~/.zsh/function" "*.sh"
+load_directory_files "~/.zsh.d/init" "*.sh"
+load_directory_files "~/.zsh.d/function" "*.sh"
 
 # Load local configuration file.
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
