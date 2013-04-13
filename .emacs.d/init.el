@@ -76,6 +76,7 @@
     auto-complete
     clojure-mode
     color-moccur
+    direx
     elscreen
     findr
     flymake-php

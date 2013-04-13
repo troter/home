@@ -22,3 +22,8 @@
    (list '(my-dired-today-search . my-face-f-2))))
 
 (setq dired-listing-switches "-alh")
+
+(require 'direx)
+(defun-eval-after-load 'popwin
+  (push '(direx:direx-mode :position left :width 40 :dedicated t)
+        popwin:special-display-config))

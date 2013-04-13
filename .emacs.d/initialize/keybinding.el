@@ -36,6 +36,9 @@
 ;(global-set-key "\C-z" 'undo)                       ;;UNDO
 (global-set-key [f1] 'one-key-menu-help)
 
+(defun-eval-after-load 'direx
+  (global-set-key [(control x) (control j)] 'direx:jump-to-directory-other-window))
+
 ;; window switch
 (global-set-key [(meta \[)] (lambda () (interactive) (other-window -1)))
 (global-set-key [(meta \])] (lambda () (interactive) (other-window 1)))
