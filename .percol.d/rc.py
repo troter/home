@@ -1,5 +1,14 @@
+from percol.finder import FinderMultiQueryRegex
+
 # Prompt
 percol.view.PROMPT  = ur"<bold><yellow>Q</yellow></bold>: %q"
+percol.view.__class__.PROMPT = property(
+    lambda self:
+    ur"<bold><cyan>Q</cyan></bold> [a]: %q" if percol.model.finder.case_insensitive
+    else ur"<bold><yellow>Q</yellow></bold> [A]: %q"
+)
+
+percol.view.prompt_replacees["F"] = lambda self, **args: self.model.finder.get_name()
 percol.view.RPROMPT = ur"(%F) [%i/%I]"
 
 # Emacs like
@@ -21,4 +30,6 @@ percol.import_keymap({
     "C-m" : lambda percol: percol.finish(),
     "C-j" : lambda percol: percol.finish(),
     "C-g" : lambda percol: percol.cancel(),
+    "M-c" : lambda percol: percol.command.toggle_case_sensitive(),
+    "M-r" : lambda percol: percol.command.toggle_finder(FinderMultiQueryRegex),
 })
