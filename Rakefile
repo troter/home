@@ -58,7 +58,6 @@ task :prepare => [
 ]
 
 namespace :brew do
-
   brews = {
     pythonbrew: {
       homepage: 'https://github.com/utahta/pythonbrew',
