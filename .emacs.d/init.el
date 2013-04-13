@@ -96,6 +96,7 @@
     php-mode
     popup
     popwin
+    quickrun
     rinari
     ruby-block
     ruby-compilation

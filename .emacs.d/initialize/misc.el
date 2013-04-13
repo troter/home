@@ -64,3 +64,5 @@
         ("Idea" ?i "** %? %T\n   %i\n   %a" nil "New Ideas")
         ("Note" ?n "** %? %T\n   %i\n   %a" nil "Note")
         ))
+
+(require 'quickrun)
