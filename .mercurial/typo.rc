@@ -1,13 +1,13 @@
 # -*- coding:utf-8; mode:conf; -*-
 
 [alias]
-hsow = show
-how = show
-dfif = diff
-difff = diff
-nduge = nudge
-lgo = log
-paht = paths
-qop = qpop
-glgo = glog
-ghs = gsh
+hsow = ! $HG show $@
+how = ! $HG show $@
+dfif = ! $HG diff $@
+difff = ! $HG diff $@
+nduge = ! $HG nudge $@
+lgo = ! $HG log $@
+paht = ! $HG paths $@
+qop = ! $HG qpop $@
+glgo = ! $HG glog $@
+ghs = ! $HG gsh $@
