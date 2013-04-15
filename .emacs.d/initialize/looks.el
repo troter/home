@@ -1,7 +1,7 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
 (when window-system
-  (load-theme 'wombat)
+  (load-theme 'tsdh-dark)
 
   ;(add-to-list 'default-frame-alist '(alpha . 92))
   ;(set-frame-parameter nil 'alpha 95)
