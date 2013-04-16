@@ -1,5 +1,8 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
+(setq user-full-name "Takumi IINO"
+      user-mail-address "trot.thunder@gmail.com")
+
 ;; Basic configuration.
 (load "~/.emacs.d/basic.el")
 
