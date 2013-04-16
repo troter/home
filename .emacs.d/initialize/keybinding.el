@@ -1,5 +1,10 @@
 ;;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
+(defun-eval-after-load 'ace-jump-mode
+  (ace-jump-mode-enable-mark-sync)
+  (global-set-key [(control c) (?\ )] 'ace-jump-mode)
+  (global-set-key [(control x) (?\ )] 'ace-jump-mode-pop-mark))
+
 ;; (@* "helm")
 (defun-eval-after-load 'helm
   ;;(global-set-key [(control x) (b)] 'helm-buffers-list)    ; switch-to-buffer

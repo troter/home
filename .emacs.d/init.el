@@ -75,7 +75,8 @@
   (require 'melpa))
 
 (defvar troter/packages
-  '(ac-helm
+  '(ace-jump-mode
+    ac-helm
     auto-complete
     clojure-mode
     color-moccur

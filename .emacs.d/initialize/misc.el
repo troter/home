@@ -66,3 +66,5 @@
         ))
 
 (require 'quickrun)
+
+(require 'ace-jump-mode)
