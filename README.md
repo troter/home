@@ -35,7 +35,7 @@ Install from source code.
 Install environment managers and install latest version.
 
     rake brew
-    rake brew:install
+    rake brew:pythonbrew:install brew:rbenv:install
 
 Install mercurial extensions.
 
