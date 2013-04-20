@@ -69,6 +69,20 @@ namespace :brew do
       install: "curl -L https://get.rvm.io | bash -s stable",
       update: "rvm get stable"
     },
+    rbenv: {
+      homepage: 'https://github.com/sstephenson/rbenv/',
+      install: <<-INSTALL,
+        ([ -d $HOME/.rbenv ] || \
+         git clone git://github.com/sstephenson/rbenv.git $HOME/.rbenv) && \
+        mkdir -p $HOME/.rbenv/plugins && \
+        ([ -d $HOME/.rbenv/plugins/ruby-build ] || \
+         git clone https://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build)
+      INSTALL
+      update: <<-UPDATE,
+        ([ -d $HOME/.rbenv ] && cd $HOME/.rbenv && git pull) && \
+        ([ -d $HOME/.rbenv/plugins/ruby-build ] && cd $HOME/.rbenv/plugins/ruby-build && git pull)
+      UPDATE
+    },
     perlbrew: {
       homepage: 'https://github.com/gugod/App-perlbrew',
       install: "curl -kL http://install.perlbrew.pl | bash",

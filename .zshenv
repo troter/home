@@ -36,6 +36,10 @@ export TERM
 [ -d "$HOME/local/share/man" ] && MANPATH="$HOME/local/share/man:$MANPATH"
 [ -d "$HOME/local/info"      ] && INFOPATH="$HOME/local/info:$INFOPATH"
 
+# for rbenv
+[ -d "$HOME/.rbenv/bin"      ] && PATH="$HOME/.rbenv/bin:$PATH"
+[ -d "$HOME/.rbenv/shims"      ] && PATH="$HOME/.rbenv/shims:$PATH"
+
 export PATH MANPATH INFOPATH LD_LIBRARY_PATH
 
 # JAVA_HOME
