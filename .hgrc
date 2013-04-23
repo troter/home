@@ -91,8 +91,6 @@ gshortlog.branch.default = white
 gshortlog.branch.other = cyan bold
 gshortlog.bookmarks = red bold
 gshortlog.tags = green bold
-gshortlog.desc.notmerge = white bold
-gshortlog.desc.merge = white
 
 [diff]
 git = True
