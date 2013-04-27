@@ -64,6 +64,20 @@ namespace :brew do
       install: "curl -kL http://xrl.us/pythonbrewinstall | bash",
       update: "pythonbrew update"
     },
+    pyenv: {
+      homepage: 'https://github.com/yyuu/pyenv',
+      install: <<-INSTALL,
+        ([ -d $HOME/.pyenv ] || \
+         git clone git://github.com/yyuu/pyenv.git $HOME/.pyenv) && \
+        mkdir -p $HOME/.pyenv/plugins && \
+        ([ -d $HOME/.pyenv/plugins/pyenv-virtualenv ] || \
+         git clone git://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv)
+      INSTALL
+      update: <<-UPDATE,
+        ([ -d $HOME/.pyenv ] && cd $HOME/.pyenv && git pull) && \
+        ([ -d $HOME/.pyenv/plugins/pyenv-virtualenv ] && cd $HOME/.pyenv/plugins/pyenv-virtualenv && git pull)
+      UPDATE
+    },
     rvm: {
       homepage: 'https://github.com/wayneeseguin/rvm',
       install: "curl -L https://get.rvm.io | bash -s stable",
