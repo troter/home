@@ -1,3 +1,11 @@
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENV_USE_DISTRIBUTE=true
-which virtualenvwrapper.sh >/dev/null 2>&1 && source `which virtualenvwrapper.sh`
+if exists virtualenvwrapper.sh; then
+    if which virtualenvwrapper.sh | grep '.pyenv/shims' > /dev/null; then
+        # skip.
+        # if run virtualenvwrapper.sh via pyenv wrapper script, zsh quits.
+        # because pyenv wrapper script run command with exec.
+    else
+        source $(which virtualenvwrapper.sh)
+    fi
+fi
