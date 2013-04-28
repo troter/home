@@ -4,15 +4,16 @@
 ;; Description:
 ;; Author: Markus Hoenika
 ;; Maintainer: Drew Adams
-;; Copyright (C) 2004-2011, Drew Adams, all rights reserved.
+;; Copyright (C) 2004-2013, Drew Adams, all rights reserved.
 ;; Created: Thu Jan 15 11:13:38 2004
 ;; Version: 21.0
-;; Last-Updated: Tue Jan  4 13:57:04 2011 (-0800)
+;; Last-Updated: Sat Apr 27 12:06:01 2013 (-0700)
 ;;           By: dradams
-;;     Update #: 100
-;; URL: http://www.emacswiki.org/cgi-bin/wiki/setup-cygwin.el
+;;     Update #: 130
+;; URL: http://www.emacswiki.org/setup-cygwin.el
+;; Doc URL: http://www.emacswiki.org/NTEmacsWithCygwin
 ;; Keywords: os, unix, cygwin
-;; Compatibility: GNU Emacs: 20.x, 21.x, 22.x, 23.x
+;; Compatibility: GNU Emacs: 20.x, 21.x, 22.x, 23.x, 24.x
 ;;
 ;; Features that might be required by this library:
 ;;
@@ -29,6 +30,13 @@
 ;;
 ;;; Change Log:
 ;;
+;; 2013/04/27 dadams
+;;     Put Cygwin path stuff before the stuff from getenv.
+;; 2013/03/08 dadams
+;;     Added: defgroup setup-cygwin, option cygwin-root-directory.
+;;     Use cygwin-root-directory instead of hardcoding root dir.  Thx to Gabor Vida.
+;; 2011/08/11 dadams
+;;     Made settings that are based on Cygwin install directory conditional, per input from Tom Popovich.
 ;; 2011/01/04 dadams
 ;;     Added autoload cookies for commands.
 ;; 2009/10-15 dadams
@@ -67,6 +75,19 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(defgroup setup-cygwin nil
+  "Set up Emacs to use Cygwin.")
+
+(defcustom cygwin-root-directory "C:/cygwin/"
+  "Root directory of Cygwin installation.
+It should have subdirectories `bin' and `usr/info'.
+Subdirectory `bin' should have file `bin/bash.exe'."
+  :group 'setup-cygwin :type 'directory)
+
+(unless (file-directory-p cygwin-root-directory)
+  (error "Cannot find Cygwin - customize `cygwin-root-directory'"))
+
+
 ;;; Make Cygwin paths accessible
 (cygwin-mount-activate)
 
@@ -86,29 +107,27 @@ loaded as such.)"
           (re-search-forward
            "\x000\\([-A-Za-z0-9_\\.\\\\\\$%@(){}~!#^'`][-A-Za-z0-9_\\.\\\\\\$%@(){}~!#^'`]+\\)")
           (find-alternate-file (match-string 1)))
-      (if (looking-at "!<symlink>")
-          (progn
-            (re-search-forward "!<symlink>\\(.*\\)\0")
-            (find-alternate-file (match-string 1))))
-      )))
+      (when (looking-at "!<symlink>")
+        (re-search-forward "!<symlink>\\(.*\\)\0")
+        (find-alternate-file (match-string 1))))))
 (add-hook 'find-file-hooks 'follow-cygwin-symlink)
 
 ;;; Use Unix-style line endings.
 (setq-default buffer-file-coding-system 'undecided-unix)
 
-
 ;;; Add Cygwin Info pages
-(setq Info-default-directory-list (append Info-default-directory-list (list "c:/cygwin/usr/info/")))
-
+(add-to-list 'Info-default-directory-list (expand-file-name "usr/info" cygwin-root-directory) 'APPEND)
 
 ;;; Use `bash' as the default shell in Emacs.
-(setq exec-path (cons "C:/cygwin/bin" exec-path))
-(setq shell-file-name "C:/cygwin/bin/bash.exe") ; Subprocesses invoked via the shell.
+(add-to-list 'exec-path (expand-file-name "bin" cygwin-root-directory))
+(setq shell-file-name  (expand-file-name "bin/bash.exe" cygwin-root-directory)) ; Subprocesses invoked by shell.
 (setenv "SHELL" shell-file-name)
-(setenv "PATH" (concat (getenv "PATH") ";C:\\cygwin\\bin"))
-(setq explicit-shell-file-name shell-file-name) ; Interactive shell
-(setq ediff-shell shell-file-name)      ; Ediff shell
-(setq explicit-shell-args '("--login" "-i"))
+;; (setenv "PATH" (concat (getenv "PATH") ";" (expand-file-name "bin" cygwin-root-directory)))
+(setenv "PATH" (concat (expand-file-name "bin" cygwin-root-directory) ";" (getenv "PATH")))
+(setq explicit-shell-file-name  shell-file-name) ; Interactive shell
+(setq ediff-shell               shell-file-name)    ; Ediff shell
+(setq explicit-shell-args       '("--login" "-i"))
+
 ;;;;; (setq shell-command-switch "-ic") ; SHOULD THIS BE "-c" or "-ic"?
 (setq w32-quote-process-args ?\") ;; " @@@ IS THIS BETTER? ;@@@ WAS THIS BEFORE: (setq w32-quote-process-args t)
 
