@@ -6,4 +6,4 @@
         <not>VIRTUALMACHINE</not>
         <autogen>__KeyToKey__ KeyCode::BACKQUOTE, VK_COMMAND, KeyCode::VK_JIS_TOGGLE_EISUU_KANA</autogen>
     </item>
-</root> 
+</root>
