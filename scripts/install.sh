@@ -69,11 +69,16 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+cleanup_clone() {
+  [ -e "$TEMP_DIR/home" ] && rm -rf "$TEMP_DIR/home"
+}
+
 echo "Cloning $CLONE_URL"
-[ -e "$TEMP_DIR/home" ] && rm -rf $TEMP_DIR/home
+cleanup_clone
 hg clone $CLONE_URL $TEMP_DIR/home
 if [ $? -ne 0 ]; then
   echo "Cannnot clone $CLONE_URL"
+  cleanup_clone
   exit 1
 fi
 
@@ -81,14 +86,13 @@ echo "Installing into $HOME"
 mv $TEMP_DIR/home/.hg $HOME/.hg
 hg revert -R $HOME $HOME/.hgignore --no-backup
 hg revert -R $HOME --no-backup --all
+cleanup_clone
 
-if [ "$TEMP_DIR" != "/tmp" ];
-then
+if [ "$TEMP_DIR" != "/tmp" ]; then
   rm -r "$TEMP_DIR"
 fi
 
-if [ $? -ne 0 ];
-then
+if [ $? -ne 0 ]; then
   echo "Installation failed"
   exit 1
 fi
