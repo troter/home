@@ -19,12 +19,9 @@ If you not install these software, see next command output.
 Installation
 ------------
 
-Clone repository and setup.
+Using curl one liner.
 
-    hg clone https://bitbucket.org/troter/home $HOME/home
-    mv $HOME/home/.hg $HOME/.hg
-    mv $HOME/home/.hgignore $HOME/.hgignore
-    hg revert -R $HOME --no-backup --all
+    curl -L https://bitbucket.org/troter/home/raw/default/scripts/install.sh | bash
 
 Install from source code.
 
