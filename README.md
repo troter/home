@@ -50,7 +50,7 @@ Useful eggs.
     $ pip install bpython
     $ pip install readline
     $ pip install percol
-	$ pyenv rehash
+    $ pyenv rehash
 
 Launch zsh from bash
 --------------------
