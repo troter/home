@@ -4,7 +4,11 @@
         <name>Command+Backqute to KANA/EISUU (toggle)</name>
         <identifier>private.jis_commandBackquote2toggle_kana_eisuu_not_vm</identifier>
         <not>VIRTUALMACHINE</not>
-        <autogen>__KeyToKey__ KeyCode::BACKQUOTE, VK_COMMAND, KeyCode::VK_JIS_TOGGLE_EISUU_KANA</autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::BACKQUOTE, VK_COMMAND,
+          KeyCode::VK_JIS_TOGGLE_EISUU_KANA
+        </autogen>
     </item>
     <item>
         <name>Command+L to Sleep Displays</name>
