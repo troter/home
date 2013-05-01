@@ -17,5 +17,5 @@ defaults write com.apple.finder PathBarRootAtHome -bool TRUE
 defaults write com.apple.finder AppleShowAllFiles -bool TRUE
 killall Finder
 
-# don't write ds_sote on network store
-defaults write com.appple.desktopservices DSDontWriteNetworkStores -bool TRUE
+# Don't write ds_sote on network store
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
