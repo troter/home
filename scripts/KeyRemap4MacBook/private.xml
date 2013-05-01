@@ -6,4 +6,14 @@
         <not>VIRTUALMACHINE</not>
         <autogen>__KeyToKey__ KeyCode::BACKQUOTE, VK_COMMAND, KeyCode::VK_JIS_TOGGLE_EISUU_KANA</autogen>
     </item>
+    <item>
+        <name>Command+L to Sleep Displays</name>
+        <identifier>private.command_l_to_sleep_displays</identifier>
+        <not>VIRTUALMACHINE</not>
+        <autogen>
+          __KeyToKey__
+          KeyCode::L, VK_COMMAND,
+          KeyCode::VK_CONSUMERKEY_EJECT, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L
+        </autogen>
+    </item>
 </root>
