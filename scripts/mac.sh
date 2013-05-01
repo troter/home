@@ -19,3 +19,6 @@ killall Finder
 
 # Don't write ds_sote on network store
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+
+# Don't show run confirmation window
+defaults write com.apple.LaunchService LSQuarantine -bool FALSE
