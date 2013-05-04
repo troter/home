@@ -1,7 +1,7 @@
 #!/bin/bash
 
 exists() {
-  if command -v $1 $>/dev/null; then
+  if command -v $1 &>/dev/null; then
     return 0
   else
     return 1
