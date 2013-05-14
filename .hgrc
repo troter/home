@@ -38,7 +38,7 @@ bs = branches -a
 l = log
 lb = log -b
 show = log --color=always -vpr
-less = log -pr "reverse(not merge())"
+less = log -vpr "reverse(not merge())"
 glog = log --graph
 gl = glog
 gll = glog --limit
