@@ -62,7 +62,8 @@ uselocal = resolve --tool internal:local
 useother = resolve --tool internal:other
 
 # pull & push
-nudge = push --rev .
+_push = push
+nudge = _push --rev .
 push = ! echo -e "\033[31m(use 'hg nudge' to push changesets)\033[m"
 
 # mq
