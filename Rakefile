@@ -68,10 +68,10 @@ namespace :brew do
       homepage: 'https://github.com/yyuu/pyenv',
       install: <<-INSTALL,
         ([ -d $HOME/.pyenv ] || \
-         git clone git://github.com/yyuu/pyenv.git $HOME/.pyenv) && \
+         git clone http://github.com/yyuu/pyenv.git $HOME/.pyenv) && \
         mkdir -p $HOME/.pyenv/plugins && \
         ([ -d $HOME/.pyenv/plugins/pyenv-virtualenv ] || \
-         git clone git://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv)
+         git clone http://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv)
       INSTALL
       update: <<-UPDATE,
         ([ -d $HOME/.pyenv ] && cd $HOME/.pyenv && git pull) && \
@@ -87,7 +87,7 @@ namespace :brew do
       homepage: 'https://github.com/sstephenson/rbenv/',
       install: <<-INSTALL,
         ([ -d $HOME/.rbenv ] || \
-         git clone git://github.com/sstephenson/rbenv.git $HOME/.rbenv) && \
+         git clone http://github.com/sstephenson/rbenv.git $HOME/.rbenv) && \
         mkdir -p $HOME/.rbenv/plugins && \
         ([ -d $HOME/.rbenv/plugins/ruby-build ] || \
          git clone https://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build) && \
