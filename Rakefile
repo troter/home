@@ -106,6 +106,15 @@ namespace :brew do
         (grep pry $HOME/.rbenv/default-gems > /dev/null || echo pry >> $HOME/.rbenv/default-gems)
       UPDATE
     },
+    phpbrew: {
+      homepage: 'https://github.com/c9s/phpbrew/',
+      install: <<-INSTALL,
+        ([ -f $HOME/bin/phpbrew ] ||
+         curl -O https://raw.github.com/c9s/phpbrew/master/phpbrew && chmod +x phpbrew && mv phpbrew $HOME/bin ) && \
+        $HOME/bin/phpbrew init
+      INSTALL
+      update: "phpbrew self-update"
+    },
     perlbrew: {
       homepage: 'https://github.com/gugod/App-perlbrew',
       install: "curl -kL http://install.perlbrew.pl | bash",
