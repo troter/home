@@ -17,6 +17,15 @@ export TERM
 
 # PATH, MANPATH, INFOPATH, LD_LIBRARY_PATH.
 # =========================================
+# for Homebrew
+if [ -f "/usr/local/bin/brew" ]; then
+  [ -d "/usr/local/bin"        ] && PATH="/usr/local/bin:$PATH"
+  [ -d "/usr/local/sbin"       ] && PATH="/usr/local/sbin:$PATH"
+  [ -d "/usr/local/share/man"  ] && MANPATH="/usr/local/share/man:$MANPATH"
+  [ -d "/usr/local/share/info" ] && INFOPATH="/usr/local/share/info:$INFOPATH"
+  [ -d "/usr/local/lib"        ] && LD_LIBRARY_PATH="/usr/local/lib:$LD_LIBRARY_PATH"
+fi
+
 # for MacPorts
 [ -d "/opt/local/bin"        ] && PATH="/opt/local/bin:$PATH"
 [ -d "/opt/local/sbin"       ] && PATH="/opt/local/sbin:$PATH"
