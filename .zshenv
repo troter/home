@@ -18,8 +18,8 @@ export TERM
 # PATH, MANPATH, INFOPATH, LD_LIBRARY_PATH.
 # =========================================
 # for MacPorts
-[ -d "/opt/local/bin"        ] && MANPATH="/opt/local/bin:$PATH"
-[ -d "/opt/local/sbin"       ] && MANPATH="/opt/local/sbin:$PATH"
+[ -d "/opt/local/bin"        ] && PATH="/opt/local/bin:$PATH"
+[ -d "/opt/local/sbin"       ] && PATH="/opt/local/sbin:$PATH"
 [ -d "/opt/local/share/man"  ] && MANPATH="/opt/local/share/man:$MANPATH"
 [ -d "/opt/local/share/info" ] && INFOPATH="/opt/local/share/info:$INFOPATH"
 [ -d "/opt/local/lib"        ] && LD_LIBRARY_PATH="/opt/local/lib:$LD_LIBRARY_PATH"
