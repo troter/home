@@ -6,7 +6,7 @@ task :default => :readme
 
 desc 'Show readme'
 task :readme do
-  print File.open('README.md').read
+  print File.open('README.rst').read
 end
 
 namespace :prepare do
