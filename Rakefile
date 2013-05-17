@@ -59,33 +59,33 @@ task :prepare => [
 
 namespace :brew do
   brews = {
-    pythonbrew: {
-      homepage: 'https://github.com/utahta/pythonbrew',
-      install: "curl -kL http://xrl.us/pythonbrewinstall | bash",
-      update: "pythonbrew update"
+    :pythonbrew => {
+      :homepage => 'https://github.com/utahta/pythonbrew',
+      :install => "curl -kL http://xrl.us/pythonbrewinstall | bash",
+      :update => "pythonbrew update"
     },
-    pyenv: {
-      homepage: 'https://github.com/yyuu/pyenv',
-      install: <<-INSTALL,
+    :pyenv => {
+      :homepage => 'https://github.com/yyuu/pyenv',
+      :install => <<-INSTALL,
         ([ -d $HOME/.pyenv ] || \
          git clone http://github.com/yyuu/pyenv.git $HOME/.pyenv) && \
         mkdir -p $HOME/.pyenv/plugins && \
         ([ -d $HOME/.pyenv/plugins/pyenv-virtualenv ] || \
          git clone http://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv)
       INSTALL
-      update: <<-UPDATE,
+      :update => <<-UPDATE,
         ([ -d $HOME/.pyenv ] && cd $HOME/.pyenv && git pull) && \
         ([ -d $HOME/.pyenv/plugins/pyenv-virtualenv ] && cd $HOME/.pyenv/plugins/pyenv-virtualenv && git pull)
       UPDATE
     },
-    rvm: {
-      homepage: 'https://github.com/wayneeseguin/rvm',
-      install: "curl -L https://get.rvm.io | bash -s stable",
-      update: "rvm get stable"
+    :rvm => {
+      :homepage => 'https://github.com/wayneeseguin/rvm',
+      :install => "curl -L https://get.rvm.io | bash -s stable",
+      :update => "rvm get stable"
     },
-    rbenv: {
-      homepage: 'https://github.com/sstephenson/rbenv/',
-      install: <<-INSTALL,
+    :rbenv => {
+      :homepage => 'https://github.com/sstephenson/rbenv/',
+      :install => <<-INSTALL,
         ([ -d $HOME/.rbenv ] || \
          git clone http://github.com/sstephenson/rbenv.git $HOME/.rbenv) && \
         mkdir -p $HOME/.rbenv/plugins && \
@@ -97,7 +97,7 @@ namespace :brew do
         (grep bundler $HOME/.rbenv/default-gems > /dev/null || echo bundler >> $HOME/.rbenv/default-gems) && \
         (grep pry $HOME/.rbenv/default-gems > /dev/null || echo pry >> $HOME/.rbenv/default-gems)
       INSTALL
-      update: <<-UPDATE,
+      :update => <<-UPDATE,
         ([ -d $HOME/.rbenv ] && cd $HOME/.rbenv && git pull) && \
         ([ -d $HOME/.rbenv/plugins/ruby-build ] && cd $HOME/.rbenv/plugins/ruby-build && git pull) && \
         ([ -d $HOME/.rbenv/plugins/rbenv-default-gems ] && cd $HOME/.rbenv/plugins/rbenv-default-gems && git pull) && \
@@ -106,29 +106,29 @@ namespace :brew do
         (grep pry $HOME/.rbenv/default-gems > /dev/null || echo pry >> $HOME/.rbenv/default-gems)
       UPDATE
     },
-    phpbrew: {
-      homepage: 'https://github.com/c9s/phpbrew/',
-      install: <<-INSTALL,
+    :phpbrew => {
+      :homepage => 'https://github.com/c9s/phpbrew/',
+      :install => <<-INSTALL,
         ([ -f $HOME/bin/phpbrew ] ||
          curl -O https://raw.github.com/c9s/phpbrew/master/phpbrew && chmod +x phpbrew && mv phpbrew $HOME/bin ) && \
         $HOME/bin/phpbrew init
       INSTALL
-      update: "phpbrew self-update"
+      :update => "phpbrew self-update"
     },
-    perlbrew: {
-      homepage: 'https://github.com/gugod/App-perlbrew',
-      install: "curl -kL http://install.perlbrew.pl | bash",
-      update: "perlbrew self-upgrade",
+    :perlbrew => {
+      :homepage => 'https://github.com/gugod/App-perlbrew',
+      :install => "curl -kL http://install.perlbrew.pl | bash",
+      :update => "perlbrew self-upgrade",
     },
-    nodebrew: {
-      homepage: 'https://github.com/hokaccha/nodebrew',
-      install: "curl -L git.io/nodebrew | perl - setup",
-      update: "nodebrew selfupdate",
+    :nodebrew => {
+      :homepage => 'https://github.com/hokaccha/nodebrew',
+      :install => "curl -L git.io/nodebrew | perl - setup",
+      :update => "nodebrew selfupdate",
     },
-    gvm: {
-      homepage: 'http://gvmtool.net/',
-      install: "curl -s get.gvmtool.net | bash",
-      update: "gvm selfupdate"
+    :gvm => {
+      :homepage => 'http://gvmtool.net/',
+      :install => "curl -s get.gvmtool.net | bash",
+      :update => "gvm selfupdate"
     }
   }
 
