@@ -11,12 +11,12 @@
         </autogen>
     </item>
     <item>
-        <name>Command+L to Sleep Displays</name>
-        <identifier>private.command_l_to_sleep_displays</identifier>
+        <name>Option+L to Sleep Displays</name>
+        <identifier>private.option_l_to_sleep_displays</identifier>
         <not>VIRTUALMACHINE</not>
         <autogen>
           __KeyToKey__
-          KeyCode::L, VK_COMMAND,
+          KeyCode::L, VK_OPTION,
           KeyCode::VK_CONSUMERKEY_EJECT, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L
         </autogen>
     </item>
