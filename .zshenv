@@ -58,6 +58,6 @@ fi
 
 # PYTHONSTARTUP
 # =============
-export PYTHONSTARTUP=$HOME/.pythonstartup
+export PYTHONSTARTUP=$HOME/.pythonstartup.py
 
 # __END__
