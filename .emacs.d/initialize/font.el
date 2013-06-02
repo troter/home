@@ -21,7 +21,11 @@
       (setcdr (assoc 'font default-frame-alist) "fontset-default")
       (set-frame-font "fontset-default"))))
    (carbon-p)
-   (ns-p)
+   (ns-p
+    (condition-case nil
+        ;; https://launchpad.net/takao-fonts
+        (set-default-font "TakaoGothic 12")
+      (error nil)))
    (t
     (dolist (weight '(((name . "medium") (suffix . "r"))
                       ((name . "bold") (suffix . "b"))))
