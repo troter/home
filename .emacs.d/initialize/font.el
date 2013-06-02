@@ -24,7 +24,7 @@
    (ns-p
     (condition-case nil
         ;; https://launchpad.net/takao-fonts
-        (set-default-font "TakaoGothic 12")
+        (set-default-font "TakaoGothic 14")
       (error nil)))
    (t
     (dolist (weight '(((name . "medium") (suffix . "r"))
