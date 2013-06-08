@@ -81,6 +81,7 @@
     clojure-mode
     color-moccur
     direx
+    edit-server
     elscreen
     findr
     flymake-php
