@@ -59,5 +59,7 @@
  ((string-match "apple-darwin" system-configuration)
   (setq ns-command-modifier (quote meta))
   (setq ns-alternate-modifier (quote super))
+  (when window-system
+    (define-key global-map [ns-drag-file] 'ns-find-file))
   )
 )
