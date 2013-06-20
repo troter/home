@@ -9,6 +9,8 @@ clipboard = case
               {:copy => 'pbcopy', :paste => 'pbpaste'}
             when File.exists?('/dev/clipboard')
               {:copy => 'cat > /dev/clipboard', :paste => 'cat /dev/clipboard'} # cygwin
+            when command?('xclip')
+              {:copy => 'xclip', :paste => 'xclip -o'}
             else
               STDERR.puts "#{$0}: not supported platform or command not found"
               exit 1
