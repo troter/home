@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+def command?(command)
+  system("which #{command} > /dev/null 2>&1")
+end
+
+clipboard = case
+            when command?('pbcopy') && command?('pbpaste') # mac
+              {:copy => 'pbcopy', :paste => 'pbpaste'}
+            when File.exists?('/dev/clipboard')
+              {:copy => 'cat > /dev/clipboard', :paste => 'cat /dev/clipboard'} # cygwin
+            else
+              STDERR.puts "#{$0}: not supported platform or command not found"
+              exit 1
+            end
+
+if STDIN.tty?
+  system(clipboard[:paste])
+else
+  IO.copy_stream(STDIN, IO.popen(clipboard[:copy], mode='w'))
+end
