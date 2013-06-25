@@ -33,6 +33,17 @@
  ;  (setq hl-line-face 'underline))
  (global-hl-line-mode t))
 
+(when (require 'highlight-indentation)
+  (set-face-background 'highlight-indentation-face "#e3e3d3")
+  (set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
+  (add-hook 'highlight-indentation-mode-hook 'highlight-indentation-current-column-mode)
+
+  (defun-eval-after-load 'ruby-mode
+    (add-hook 'ruby-mode-hook 'highlight-indentation-mode))
+  (defun-eval-after-load 'python-mode
+    (add-hook 'python-mode-hook 'highlight-indentation-mode))
+)
+
 (and ; window
  (setq frame-title-format ;;フレームのタイトル指定
        (concat "%b - emacs@" system-name))

@@ -94,6 +94,7 @@
     helm-c-moccur
     helm-c-yasnippet
     helm-descbinds
+    highlight-indentation
     inf-ruby
     inflections
     jump
