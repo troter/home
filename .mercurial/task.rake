@@ -9,7 +9,6 @@ namespace :mercurial do
       %w[https://bitbucket.org/durin42/hg-git hg-git hggit hggit],
       %w[https://bitbucket.org/sjl/hg-review hg-review review review],
       %w[https://bitbucket.org/peerst/hgcollapse hgcollapse hgext/collapse.py collapse],
-      %w[https://bitbucket.org/yujiewu/hgflow hgflow src/hgflow.py flow],
       %w[https://bitbucket.org/durin42/hgsubversion/ hgsubversion hgsubversion hgsubversion],
       %w[https://bitbucket.org/alu/hgtasks hgtasks hgext/tasks.py tasks],
     ]
