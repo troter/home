@@ -53,6 +53,7 @@ namespace :mercurial do
       extension_dirs.each do |extension_dir|
         if File.exists? extension_dir
           cd extension_dir do
+            sh "hg pull"
             sh "hg update"
           end
         end
