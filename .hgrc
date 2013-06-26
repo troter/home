@@ -47,7 +47,7 @@ gll = glog --limit
 shortlog  = log  --template "{label('changeset.{phase}', '{rev}:{node|short}')}{ifeq(p2node|short, '000000000000', '', '\033[1m\033[30m')} | {date|shortdate} | {author|emailuser}: {desc|strip|firstline}\033[0m\n"
 gshortlog = glog --template "{label('changeset.{phase}', '{rev}:{node|short}')}{ifeq(p2node|short, '000000000000', '', '\033[1m\033[30m')} | {date|shortdate} | {author|emailuser}: {desc|strip|firstline}\033[0m
   {ifeq(branch, 'default', label('gshortlog.branch.default', 'default'), label('gshortlog.branch.other', '{branch}'))
-  } {label('gshortlog.bookmarks', join(bookmarks, ','))}{if(bookmarks, ' ')}{label('gshortlog.tags', join(tags, ','))}
+  }{if(bookmarks, '[')}{label('gshortlog.bookmarks', join(bookmarks, ','))}{if(bookmarks, ']')}{if(tags, '[')}{if(tags, label('gshortlog.tags', join(tags, ',')))}{if(tags, ']')}
   "
 
 # locate
