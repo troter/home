@@ -34,6 +34,7 @@ alias cp="nocorrect cp -i"
 alias rm="rm -i"
 alias m="make"
 
+alias ag="ag --pager=\$PAGER"
 alias s="svn"
 alias srevertall="svn revert --depth infinity"
 alias g="git"

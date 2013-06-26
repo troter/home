@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name       Github link for Gitray
 // @namespace  https://bitbucket.org/troter/home/raw/default/scripts/userscripts
-// @version    0.1
+// @version    0.1.1
 // @description  add github link
 // @match      http://gitray.com/*
 // @copyright  2012+, Takumi IINO
