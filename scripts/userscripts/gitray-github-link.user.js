@@ -17,7 +17,8 @@ $(function() {
       href,
       '">',
       href,
-      '</a>'
+      '</a>',
+      '</div>'
     ].join('');
     $(this).after(github);
   });
