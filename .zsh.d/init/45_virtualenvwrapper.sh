@@ -12,6 +12,11 @@ elif [ -x /usr/share/python/virtualenvwrapper.sh ]; then
     VIRTUALENVWRAPPER_SH=/usr/share/python/virtualenvwrapper.sh
 fi
 
+if grep $(dirname ${VIRTUALENVWRAPPER_SH}) <(echo $PATH) > /dev/null; then
+else
+    export PATH=$(dirname ${VIRTUALENVWRAPPER_SH}):$PATH
+fi
+
 if grep '.pyenv/shims' <(echo $VIRTUALENVWRAPPER_SH) > /dev/null; then
     # skip.
     # if run virtualenvwrapper.sh via pyenv wrapper script, zsh quits.
