@@ -9,7 +9,7 @@ elif exists virtualenvwrapper.sh; then
 elif [ -x /usr/local/share/python/virtualenvwrapper.sh ]; then
     VIRTUALENVWRAPPER_SH=/usr/local/share/python/virtualenvwrapper.sh
 elif [ -x /usr/share/python/virtualenvwrapper.sh ]; then
-    VIRTUALENVWRAPPER_SH=/usr/local/share/python/virtualenvwrapper.sh
+    VIRTUALENVWRAPPER_SH=/usr/share/python/virtualenvwrapper.sh
 fi
 
 if grep '.pyenv/shims' <(echo $VIRTUALENVWRAPPER_SH) > /dev/null; then
