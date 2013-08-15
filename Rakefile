@@ -91,6 +91,8 @@ namespace :brew do
         mkdir -p $HOME/.rbenv/plugins && \
         ([ -d $HOME/.rbenv/plugins/ruby-build ] || \
          git clone https://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build) && \
+        ([ -d $HOME/.rbenv/plugins/rbenv-gem-rehash ] || \
+         git clone https://github.com/sstephenson/rbenv-gem-rehash.git $HOME/.rbenv/plugins/rbenv-gem-rehash) && \
         ([ -d $HOME/.rbenv/plugins/rbenv-default-gems ] || \
          git clone https://github.com/sstephenson/rbenv-default-gems.git $HOME/.rbenv/plugins/rbenv-default-gems) && \
         touch $HOME/.rbenv/default-gems && \
@@ -100,6 +102,7 @@ namespace :brew do
       :update => <<-UPDATE,
         ([ -d $HOME/.rbenv ] && cd $HOME/.rbenv && git pull) && \
         ([ -d $HOME/.rbenv/plugins/ruby-build ] && cd $HOME/.rbenv/plugins/ruby-build && git pull) && \
+        ([ -d $HOME/.rbenv/plugins/rbenv-gem-rehash ] && cd $HOME/.rbenv/plugins/rbenv-gem-rehash && git pull) && \
         ([ -d $HOME/.rbenv/plugins/rbenv-default-gems ] && cd $HOME/.rbenv/plugins/rbenv-default-gems && git pull) && \
         touch $HOME/.rbenv/default-gems && \
         (grep bundler $HOME/.rbenv/default-gems > /dev/null || echo bundler >> $HOME/.rbenv/default-gems) && \
