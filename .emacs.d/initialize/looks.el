@@ -111,31 +111,31 @@
                                      :underline t))))))))
 
 (require 'powerline)
-(defface tr/powerline-active-major-mode
+(defface troter/powerline-active-major-mode
  '((t (:foreground "white" :background "gray22" :inherit mode-line)))
   "Powerline face 1."
   :group 'powerline)
-(defface tr/powerline-inactive-major-mode
+(defface troter/powerline-inactive-major-mode
   '((t (:foreground "white" :background "grey11" :inherit mode-line-inactive)))
   "Powerline face 1."
   :group 'powerline)
-(defface tr/powerline-active-minor-mode
+(defface troter/powerline-active-minor-mode
  '((t (:foreground "gray66" :background "gray22" :inherit mode-line)))
   "Powerline face 1."
   :group 'powerline)
-(defface tr/powerline-inactive-minor-mode
+(defface troter/powerline-inactive-minor-mode
   '((t (:foreground "gray66" :background "grey11" :inherit mode-line-inactive)))
   "Powerline face 1."
   :group 'powerline)
-(defface tr/powerline-active-position
+(defface troter/powerline-active-position
  '((t (:foreground "white" :background "gray22" :inherit mode-line)))
   "Powerline face 1."
   :group 'powerline)
-(defface tr/powerline-inactive-position
+(defface troter/powerline-inactive-position
   '((t (:foreground "white" :background "grey11" :inherit mode-line-inactive)))
   "Powerline face 1."
   :group 'powerline)
-(defun tr/powerline-theme ()
+(defun troter/powerline-theme ()
   "Setup the default mode-line."
   (interactive)
   (setq-default mode-line-format
@@ -144,9 +144,9 @@
                    (let* ((active (powerline-selected-window-active))
                           (mode-line (if active 'mode-line 'mode-line-inactive))
                           (face1 (if active 'powerline-active1 'powerline-inactive1))
-                          (face-major-mode (if active 'tr/powerline-active-major-mode 'tr/powerline-inactive-major-mode))
-                          (face-minor-mode (if active 'tr/powerline-active-minor-mode 'tr/powerline-inactive-minor-mode))
-                          (face-position (if active 'tr/powerline-active-position 'tr/powerline-inactive-position))
+                          (face-major-mode (if active 'troter/powerline-active-major-mode 'troter/powerline-inactive-major-mode))
+                          (face-minor-mode (if active 'troter/powerline-active-minor-mode 'troter/powerline-inactive-minor-mode))
+                          (face-position (if active 'troter/powerline-active-position 'troter/powerline-inactive-position))
                           (face2 (if active 'powerline-active2 'powerline-inactive2))
                           (separator-left (intern (format "powerline-%s-%s"
                                                           powerline-default-separator
@@ -183,4 +183,4 @@
                      (concat (powerline-render lhs)
                              (powerline-fill face2 (powerline-width rhs))
                              (powerline-render rhs)))))))
-(tr/powerline-theme)
+(troter/powerline-theme)
