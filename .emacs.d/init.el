@@ -103,6 +103,7 @@
     php-mode
     popup
     popwin
+    powerline
     quickrun
     rinari
     ruby-block
