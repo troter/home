@@ -1,18 +1,17 @@
 # -*- mode: sh -*-
 
-function if_debug() {
-  [[ -n $DEBUG ]]
-}
+function debug() { [ "$DEBUG" ] && echo ">>> $*"; }
 
 function load_directory_files() {
   local dir=$1
   local glob=$2
   if [[ -z $glob ]] { glob="*" }
+  debug "find $dir/$glob"
   for file ($(eval echo $dir/$glob | sort)) {
-    if_debug && echo -n "loding '$file' ... "
+    debug "  load '$file' ... "
     source $file
-    if_debug && echo "complete."
   }
+  debug "complete."
 }
 
 function exists() {
