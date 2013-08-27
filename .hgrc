@@ -80,7 +80,7 @@ poc = churn -t '{author|email}' -c
 qnow = ! $HG qnew $(date +'%Y-%m-%d_%H-%M-%S.diff') -m "[from now] $(date +'%Y-%m-%d %H:%M:%S')" $@
 
 [pager]
-pager = LESS='FRX' less
+pager = LESS='MFRX' less
 attend = annotate, cat, diff, export, glog, log, qdiff, help, show, shortlog, gshortlog, less, grepfile, gf
 
 [color]
