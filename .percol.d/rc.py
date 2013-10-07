@@ -2,13 +2,16 @@ from percol.key import SPECIAL_KEYS
 from percol.finder import FinderMultiQueryRegex
 
 # Prompt
-percol.view.PROMPT  = ur"<bold><yellow>Q</yellow></bold>: %q"
-percol.view.__class__.PROMPT = property(
-    lambda self:
-    ur"<bold><cyan>Q</cyan></bold> [a]: %q" if percol.model.finder.case_insensitive
-    else ur"<bold><yellow>Q</yellow></bold> [A]: %q"
-)
+def dynamic_prompt():
+    prompt = ur""
+    if percol.model.finder.case_insensitive:
+        prompt += "<bold><cyan>Q</cyan></bold> [a]"
+    else:
+        prompt += "<bold><yellow>Q</yellow></bold> [A]"
+    prompt += ": %q"
+    return prompt
 
+percol.view.__class__.PROMPT = property(lambda self: dynamic_prompt())
 percol.view.prompt_replacees["F"] = lambda self, **args: self.model.finder.get_name()
 percol.view.RPROMPT = ur"(%F) [%i/%I]"
 
