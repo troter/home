@@ -1,3 +1,4 @@
+from percol.key import SPECIAL_KEYS
 from percol.finder import FinderMultiQueryRegex
 
 # Prompt
@@ -11,6 +12,10 @@ percol.view.__class__.PROMPT = property(
 percol.view.prompt_replacees["F"] = lambda self, **args: self.model.finder.get_name()
 percol.view.RPROMPT = ur"(%F) [%i/%I]"
 
+# Mac で delete (backspace) が効くようにする
+SPECIAL_KEYS.update({
+    127: '<backspace>'
+})
 # Emacs like
 percol.import_keymap({
     "C-h" : lambda percol: percol.command.delete_backward_char(),
