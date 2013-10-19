@@ -1,5 +1,11 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
+(defvar tr-memo-file "~/Dropbox/memo/memo.org")
+
+(defun open-memo-file ()
+  (interactive)
+    (find-file-other-window tr-memo-file))
+
 (defun open-directory-with-helm-find-files (dir)
   (let ((default-directory (concat dir "/")))
     (if (functionp 'helm-find-files-1)
