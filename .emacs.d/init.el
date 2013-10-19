@@ -24,7 +24,8 @@
       elpa-directory         (expand-file-name "elpa" vendor-directory)
       site-lisp-directory    (expand-file-name "site-lisp" base-directory)
       initialize-directory   (expand-file-name "initialize" base-directory)
-      info-directory         (expand-file-name "info" base-directory))
+      info-directory         (expand-file-name "info" base-directory)
+      dropbox-directory      "~/Dropbox/")
 
 ;; Setup load-path.
 (setq tr:addition-load-path
