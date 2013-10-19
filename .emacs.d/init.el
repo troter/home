@@ -100,6 +100,7 @@
     jump
     markdown-mode
     melpa
+    open-junk-file
     php-mode
     popup
     popwin

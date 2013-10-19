@@ -65,6 +65,9 @@
         ("Note" ?n "** %? %T\n   %i\n   %a" nil "Note")
         ))
 
+(require 'open-junk-file)
+(setq open-junk-file-format "~/Dropbox/memo/junk/%Y/%m/%Y-%m-%d-%H%M%S.")
+
 (require 'quickrun)
 
 (require 'ace-jump-mode)
