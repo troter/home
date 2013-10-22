@@ -44,7 +44,8 @@
                              (file-name-directory buffer-file-name))))
           (list flymake-lint-elisp (list "-p" emacs-bin local-file))))
       (push '("\\.el$" flymake-elisp-init) flymake-allowed-file-name-masks)
-      (defun-add-hook 'emacs-lisp-mode-hook
-        (when buffer-file-name
-          (flymake-mode t)))))
+      ;(defun-add-hook 'emacs-lisp-mode-hook
+      ;  (when buffer-file-name
+      ;    (flymake-mode t)))
+      ))
 )
