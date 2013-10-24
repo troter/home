@@ -83,6 +83,7 @@
     color-moccur
     direx
     edit-server
+    editorconfig
     elscreen
     findr
     flymake-php
