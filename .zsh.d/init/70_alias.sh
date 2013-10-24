@@ -45,7 +45,7 @@ alias p="percol"
 
 # update commands
 case "${OSTYPE}" in
-darwin*)
+  darwin*)
     alias updateports="sudo port selfupdate; sudo port outdated"
     alias portupgrade="sudo port upgrade installed"
     alias portsearch="sudo port search"
