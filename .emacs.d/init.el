@@ -100,6 +100,7 @@
     inf-ruby
     inflections
     jump
+    js2-mode
     markdown-mode
     melpa
     open-junk-file
