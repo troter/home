@@ -2,6 +2,7 @@
 
 (setq user-full-name "Takumi IINO"
       user-mail-address "trot.thunder@gmail.com")
+(setq default-directory "~/")
 
 ;; Basic configuration.
 (load "~/.emacs.d/basic.el")
