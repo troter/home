@@ -4,6 +4,7 @@
   (add-to-list 'auto-mode-alist '("\\.php[s34]?\\'" . php-mode))
   (add-to-list 'auto-mode-alist '("\\.phtml\\'" . php-mode))
   (add-to-list 'auto-mode-alist '("\\.inc\\'" . php-mode))
+  (add-to-list 'auto-mode-alist '("\\.borisrc\\'" . php-mode))
   (setq php-manual-url "http://www.php.net/manual/ja/")
 
   ;; setup php-completion
