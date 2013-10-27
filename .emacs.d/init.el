@@ -117,6 +117,7 @@
     ruby-electric
     ruby-mode
     rspec-mode
+    sequential-command
     shell-command
     shell-history
     mmm-mode
