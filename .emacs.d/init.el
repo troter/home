@@ -110,6 +110,7 @@
     popwin
     powerline
     quickrun
+    rhtml-mode
     rinari
     ruby-block
     ruby-compilation
