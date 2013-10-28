@@ -1,7 +1,5 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
-;; (auto-install-from-url "http://www.emacswiki.org/cgi-bin/wiki/download/sequential-command.el")
-;; (auto-install-from-url "http://www.emacswiki.org/cgi-bin/wiki/download/sequential-command-config.el")
 (when (require 'sequential-command-config nil t)
   (sequential-command-setup-keys)
 
