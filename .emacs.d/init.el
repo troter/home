@@ -85,8 +85,8 @@
     direx
     edit-server
     editorconfig
-    elscreen
     el-mock
+    elscreen
     ert-expectations
     findr
     flymake-php
