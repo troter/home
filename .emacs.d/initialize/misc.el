@@ -12,7 +12,6 @@
 ;; (auto-save-buffers-enhanced-include-only-checkout-path t)
 ;; (auto-save-buffers-enhanced t)
 
-;; (auto-install-from-url "http://www.emacswiki.org/emacs/download/recentf-ext.el")
 (when (require 'recentf-ext nil t)
   (setq recentf-max-saved-items 2000)
   (setq recentf-exclude '(".recentf"))

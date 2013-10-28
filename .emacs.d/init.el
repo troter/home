@@ -114,6 +114,7 @@
     popwin
     powerline
     quickrun
+    recentf-ext
     rhtml-mode
     rinari
     ruby-block
