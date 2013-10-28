@@ -103,6 +103,7 @@
     highlight-indentation
     inf-ruby
     inflections
+    info+
     jump
     js2-mode
     markdown-mode
