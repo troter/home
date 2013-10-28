@@ -2,16 +2,6 @@
 
 ;;; misc
 
-;; protbuf
-;; (auto-install-from-url "http://www.splode.com/~friedman/software/emacs-lisp/src/protbuf.el")
-;; (require 'protbuf) 
-
-;; Auto save buffers enhanced
-;; (auto-install-from-url "http://svn.coderepos.org/share/lang/elisp/auto-save-buffers-enhanced/trunk/auto-save-buffers-enhanced.el" )
-;; (require 'auto-save-buffers-enhanced)
-;; (auto-save-buffers-enhanced-include-only-checkout-path t)
-;; (auto-save-buffers-enhanced t)
-
 (when (require 'recentf-ext nil t)
   (setq recentf-max-saved-items 2000)
   (setq recentf-exclude '(".recentf"))
