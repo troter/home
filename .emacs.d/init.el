@@ -83,6 +83,7 @@
     clojure-mode
     color-moccur
     direx
+    dsvn
     edit-server
     editorconfig
     el-mock
