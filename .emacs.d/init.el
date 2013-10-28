@@ -86,6 +86,8 @@
     edit-server
     editorconfig
     elscreen
+    el-mock
+    ert-expectations
     findr
     flymake-php
     flymake-ruby
