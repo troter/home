@@ -56,12 +56,7 @@
     ))
 
 ;; rinari
-(when (require 'rinari nil t)
-  (require 'rhtml-mode)
-  (add-to-list 'auto-mode-alist '("\\.rhtml$" . rhtml-mode))
-  (add-to-list 'auto-mode-alist '("\\.html\\.erb$" . rhtml-mode))
-  (defun-add-hook 'rhtml-mode-hook
-    (rinari-launch)))
+(require 'rinari)
 
 ;; rd-mode
 ;; rd-mode included rdtool

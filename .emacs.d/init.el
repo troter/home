@@ -115,7 +115,6 @@
     powerline
     quickrun
     recentf-ext
-    rhtml-mode
     rinari
     ruby-block
     ruby-compilation
