@@ -126,6 +126,7 @@
     shell-history
     slime
     undo-tree
+    web-mode
     yaml-mode)
   "Default packages")
 
