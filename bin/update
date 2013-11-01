@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ -d .git ] && git pull
-[ -d .hg  ] && hg pull -u
+[ -d .git ] && git fetch origin
+[ -d .hg  ] && hg pull
 [ -d .svn ] && svn update
 [ -d .bzr ] && bzr update
