@@ -2,7 +2,6 @@
 
 (when (autoload-if-found 'ruby-mode "ruby-mode" "Mode for editing ruby source file")
   (autoload-if-found 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
-  (autoload-if-found 'inf-ruby-setup-keybindings "inf-ruby" "" t)
 
   (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
   (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
@@ -48,7 +47,7 @@
         (when (> offset 0) (forward-char offset)))))
 
   (defun-add-hook 'ruby-mode-hook
-    (exec-if-bound (inf-ruby-setup-keybindings))
+    (exec-if-bound (inf-ruby-minor-mode t))
     (exec-if-bound (ruby-electric-mode t))
     (exec-if-bound (ruby-block-mode t))
     (setq ruby-deep-indent-paren-style nil)
