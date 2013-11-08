@@ -23,6 +23,8 @@ transplant =
 
 [diff]
 git = True
+showfunc = True
+unified = 5
 
 [email]
 method = smtp
