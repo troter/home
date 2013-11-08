@@ -11,6 +11,7 @@ color =
 convert =
 eol =
 extdiff =
+graphlog =
 histedit =
 mq =
 pager =
@@ -47,68 +48,103 @@ gshortlog.tags = green bold
 
 [pager]
 pager = LESS='MFRX' less
-attend = annotate, cat, diff, export, glog, log, qdiff, help, show, shortlog, gshortlog, less, grepfile, gf
+attend =
+  annotate, cat, export,
+  diff, qdiff, fdiff, qfdiff,
+  glog, log, help, shortlog, gshortlog,
+  show, less, lessincomming, wip,
+  grepfile, gf,
 
 [mq]
 secret = True
 
-[alias]
-_status = status
-st = ! $HG _status $($HG root) $HG_ARGS
-# misc
-cm = commit --message
-. = summary
-: = st
-h = help
+[revsetalias]
+wip = (ancestors(.) and (not public()))
 
-# branch
+[alias]
+# save original command.
+_status = status
+_push = push
+
+# just push the current changest ancestors.
+nudge = _push --rev .
+push = ! \
+  echo -e "\033[33mNOTICE: please use 'hg nudge' to push changesets.\033[m" && \
+  $HG _push --rev .
+
+# useful short cuts.
+. = st
 b = branch
+
+# branch.
 bs = branches -a
 
-# log
-l = log
-lb = log -b
-show = log --color=always -vpr
-less = log -vpr "reverse(not merge())"
-glog = log --graph
+# braphlog.
 gl = glog
 gll = glog --limit
 
-# shortlog
-shortlog  = log  --template "{label('changeset.{phase}', '{rev}:{node|short}')}{ifeq(p2node|short, '000000000000', '', '\033[1m\033[30m')} | {date|shortdate} | {author|emailuser}: {desc|strip|firstline}\033[0m\n"
-gshortlog = glog --template "{label('changeset.{phase}', '{rev}:{node|short}')}{ifeq(p2node|short, '000000000000', '', '\033[1m\033[30m')} | {date|shortdate} | {author|emailuser}: {desc|strip|firstline}\033[0m
-  {ifeq(branch, 'default', label('gshortlog.branch.default', 'default'), label('gshortlog.branch.other', '{branch}'))
-  }{if(bookmarks, '[')}{label('gshortlog.bookmarks', join(bookmarks, ','))}{if(bookmarks, ']')}{if(tags, '[')}{if(tags, label('gshortlog.tags', join(tags, ',')))}{if(tags, ']')}
-  "
+# relative path status.
+st = ! $HG _status $($HG root) $HG_ARGS
 
-# locate
+# diff.
+fdiff = diff -U 10000000000000
+qfdiff = qdiff -U 10000000000000
+
+# commit
+cm = commit --message
+cmm = ! $HG commit -m "merge with $(hg log -r 'p2()' --template '{branch}')"
+
+# browse changesets.
+show = log --color=always -vpr
+less = log -vpr "reverse(not merge())"
+lessincomming = log -vpr "tip:. and (not merge())"
+wip = log -vpr "wip"
+
+# grep files.
 #grepfile = ! $HG locate --print0 | xargs --null grep $@
 gf = grepfile
 
-# resolve
+# merge conflict resolve utilities.
 mark = resolve -m
 unmark = resolve -u
 conflicts = resolve -l
 uselocal = resolve --tool internal:local
 useother = resolve --tool internal:other
 
-# pull & push
-_push = push
-nudge = _push --rev .
-push = ! echo -e "\033[31m(use 'hg nudge' to push changesets)\033[m"
-
-# mq
+# mq.
 qi = qimport
 qr = qrefresh
 qf = qfinish
 qls = qseries --summary
-qst = status --change qtip
+qst = _status --change qtip
+
+# drag to qtip and apply.
 qdrag = qpush --move
+
+# empty the current mq patch.
+qempty = ! $HG qrefresh -X $($HG root)
+
+# import all wip changesets to mq patch
+qimportwip = qimport -r 'wip and (not mq())'
+qiwip = qimportwip
+
+# create partial commit/mq patch
+now = ! \
+  $HG commit -m "[from now] $(date +'%Y-%m-%d %H:%M:%S')" \
+  $@
+qnow = ! \
+  $HG qnew -m "[from qnow] $(date +'%Y-%m-%d %H:%M:%S')" \
+  $(date +'%Y-%m-%d_%H-%M-%S.diff') $@
 
 # power of commit
 poc = churn -t '{author|email}' -c
 
-qnow = ! $HG qnew $(date +'%Y-%m-%d_%H-%M-%S.diff') -m "[from now] $(date +'%Y-%m-%d %H:%M:%S')" $@
+# phortlog alias.
+shortlog  = log  --template "{label('changeset.{phase}', '{rev}:{node|short}')}{ifeq(p2node|short, '000000000000', '', '\033[1m\033[30m')} | {date|shortdate} | {author|emailuser}: {desc|strip|firstline}\033[0m\n"
+gshortlog = glog --template "{label('changeset.{phase}', '{rev}:{node|short}')}{ifeq(p2node|short, '000000000000', '', '\033[1m\033[30m')} | {date|shortdate} | {author|emailuser}: {desc|strip|firstline}\033[0m
+  {ifeq(branch, 'default', label('gshortlog.branch.default', 'default'), label('gshortlog.branch.other', '{branch}'))
+  }{if(bookmarks, '[')}{label('gshortlog.bookmarks', join(bookmarks, ','))}{if(bookmarks, ']')}{if(tags, '[')}{if(tags, label('gshortlog.tags', join(tags, ',')))}{if(tags, ']')}
+  "
 
 # include settings
 %include $HOME/.mercurial/typo.rc
