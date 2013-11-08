@@ -114,3 +114,4 @@ qnow = ! $HG qnew $(date +'%Y-%m-%d_%H-%M-%S.diff') -m "[from now] $(date +'%Y-%
 %include $HOME/.mercurial/hooks.rc
 %include $HOME/.mercurial/araxis.rc
 %include $HOME/.mercurial/local.rc
+%include $HOME/.hgrc_local
