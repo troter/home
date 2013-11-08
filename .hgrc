@@ -24,6 +24,16 @@ transplant =
 [diff]
 git = True
 
+[email]
+method = smtp
+from = Takumi IINO <trot.thunder@gmail.com>
+
+[smtp]
+host = smtp.gmail.com
+port = 587
+username = trot.thunder@gmail.com
+tls = True
+
 [color]
 changeset.secret = blue bold underline
 changeset.draft = green underline
