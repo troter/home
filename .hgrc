@@ -21,6 +21,25 @@ record =
 schemes =
 transplant =
 
+[diff]
+git = True
+
+[color]
+changeset.secret = blue bold underline
+changeset.draft = green underline
+changeset.public = yellow
+gshortlog.branch.default = white
+gshortlog.branch.other = cyan bold
+gshortlog.bookmarks = red bold
+gshortlog.tags = green bold
+
+[pager]
+pager = LESS='MFRX' less
+attend = annotate, cat, diff, export, glog, log, qdiff, help, show, shortlog, gshortlog, less, grepfile, gf
+
+[mq]
+secret = True
+
 [alias]
 _status = status
 st = ! $HG _status $($HG root) $HG_ARGS
@@ -78,26 +97,6 @@ qdrag = qpush --move
 poc = churn -t '{author|email}' -c
 
 qnow = ! $HG qnew $(date +'%Y-%m-%d_%H-%M-%S.diff') -m "[from now] $(date +'%Y-%m-%d %H:%M:%S')" $@
-
-[pager]
-pager = LESS='MFRX' less
-attend = annotate, cat, diff, export, glog, log, qdiff, help, show, shortlog, gshortlog, less, grepfile, gf
-
-[color]
-changeset.secret = blue bold underline
-changeset.draft = green underline
-changeset.public = yellow
-
-gshortlog.branch.default = white
-gshortlog.branch.other = cyan bold
-gshortlog.bookmarks = red bold
-gshortlog.tags = green bold
-
-[diff]
-git = True
-
-[mq]
-secret = True
 
 # include settings
 %include $HOME/.mercurial/typo.rc
