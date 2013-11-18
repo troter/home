@@ -95,10 +95,6 @@
     guide-key
     haskell-mode
     helm
-    helm-c-moccur
-    helm-c-yasnippet
-    helm-c-moccur
-    helm-c-yasnippet
     helm-descbinds
     highlight-indentation
     inf-ruby
