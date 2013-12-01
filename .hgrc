@@ -52,7 +52,7 @@ attend =
   annotate, cat, export,
   diff, qdiff, fdiff, qfdiff,
   glog, log, help, shortlog, gshortlog,
-  show, less, lessincomming, wip,
+  show, less, pulled, wip,
   grepfile, gf,
 
 [mq]
@@ -60,6 +60,7 @@ secret = True
 
 [revsetalias]
 wip = (ancestors(.) and (not public()))
+pulled = (tip:. - .)
 
 [alias]
 # save original command.
@@ -97,7 +98,7 @@ cmm = ! $HG commit -m "merge with $(hg log -r 'p2()' --template '{branch}')"
 # browse changesets.
 show = log --color=always -vpr
 less = log -vpr "reverse(not merge())"
-lessincomming = log -vpr "tip:. and (not merge())"
+pulled = log -vpr "pulled and (not merge())"
 wip = log -vpr "wip"
 
 # grep files.
