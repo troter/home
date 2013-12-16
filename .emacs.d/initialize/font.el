@@ -22,10 +22,13 @@
       (set-frame-font "fontset-default"))))
    (carbon-p)
    (ns-p
-    (condition-case nil
-        ;; https://launchpad.net/takao-fonts
-        (set-default-font "TakaoGothic 14")
-      (error nil)))
+    (set-face-attribute 'default nil :family "Menlo" :height 120)
+    (let ((jp-font-spec (font-spec :family "Hiragino Kaku Gothic ProN")))
+      (set-fontset-font nil 'japanese-jisx0208 jp-font-spec)
+      (set-fontset-font nil 'japanese-jisx0213-1 jp-font-spec)
+      (setq face-font-rescale-alist
+            '((".*Hiragino_Kaku_Gothic_ProN.*" . 1.2))))
+    )
    (t
     (dolist (weight '(((name . "medium") (suffix . "r"))
                       ((name . "bold") (suffix . "b"))))
