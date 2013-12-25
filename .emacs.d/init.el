@@ -115,7 +115,6 @@
     ruby-block
     ruby-compilation
     ruby-electric
-    ruby-mode
     rspec-mode
     sequential-command
     shell-command
