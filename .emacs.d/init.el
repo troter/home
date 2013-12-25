@@ -112,6 +112,7 @@
     quickrun
     recentf-ext
     rinari
+    ruby-additional
     ruby-block
     ruby-compilation
     ruby-electric
