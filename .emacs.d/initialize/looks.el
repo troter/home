@@ -50,7 +50,7 @@
 )
 
 
-(and ; mouse 
+(and ; mouse
  (when (and windows-p window-system)
    ;;ホイールマウス
    (mouse-wheel-mode t)

@@ -24,4 +24,3 @@
     (with-current-buffer buf
       (reopen-file)
       )))
-      

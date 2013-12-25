@@ -1,5 +1,5 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
-;; 
+;;
 (when (require 'auto-complete-config nil t)
   (add-to-list 'ac-dictionary-directories (expand-file-name "auto-complete/ac-dict" site-lisp-directory))
 

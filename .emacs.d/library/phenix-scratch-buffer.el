@@ -1,7 +1,7 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 ;; Phenix Scratch Buffer
 ;; refer: http://www.bookshelf.jp/soft/meadow_29.html#SEC381
-(defun my-make-scratch (&optional arg) 
+(defun my-make-scratch (&optional arg)
   (interactive)
   (progn
     ;; "*scratch*" を作成して buffer-list に放り込む
