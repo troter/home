@@ -22,3 +22,5 @@
 
 (when (require 'yaml-mode)
   (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode)))
+
+(add-to-list 'auto-mode-alist '("/\\.editorconfig$" . conf-unix-mode))
