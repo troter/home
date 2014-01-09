@@ -23,6 +23,7 @@ cask install 'cord'
 cask install 'cyberduck'
 cask install 'iterm2'
 cask install 'limechat'
+cask install 'keyremap4macbook'
 
 # editor
 install 'emacs'
