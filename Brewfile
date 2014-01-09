@@ -6,6 +6,8 @@
 
 tap 'homebrew/dupes'
 tap 'josegonzalez/homebrew-php'
+tap 'phinze/cask'
+brew 'brew-cask'
 
 # servers
 brew 'memcached'
@@ -40,3 +42,15 @@ brew 'watch'
 brew 'wget'
 brew 'parallel'
 brew 'editorconfig'
+
+# browser
+cask 'firefox'
+cask 'google-chrome'
+
+# gui tools
+cask 'emacs'
+cask 'alfred'
+cask 'cord'
+cask 'cyberduck'
+cask 'iterm2'
+cask 'limechat'
