@@ -89,24 +89,18 @@ namespace :brew do
         ([ -d $HOME/.rbenv ] || \
          git clone http://github.com/sstephenson/rbenv.git $HOME/.rbenv) && \
         mkdir -p $HOME/.rbenv/plugins && \
-        ([ -d $HOME/.rbenv/plugins/ruby-build ] || \
-         git clone https://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build) && \
-        ([ -d $HOME/.rbenv/plugins/rbenv-gem-rehash ] || \
-         git clone https://github.com/sstephenson/rbenv-gem-rehash.git $HOME/.rbenv/plugins/rbenv-gem-rehash) && \
-        ([ -d $HOME/.rbenv/plugins/rbenv-default-gems ] || \
-         git clone https://github.com/sstephenson/rbenv-default-gems.git $HOME/.rbenv/plugins/rbenv-default-gems) && \
+        ([ -d $HOME/.rbenv/plugins/rbenv-plug ] || \
+         git clone https://github.com/znz/rbenv-plug.git $HOME/.rbenv/plugins/rbenv-plug) && \
+        ($HOME/.rbenv/bin/rbenv plug rbenv-update || true) && \
+        ($HOME/.rbenv/bin/rbenv plug ruby-build || true) && \
+        ($HOME/.rbenv/bin/rbenv plug rbenv-gem-rehash || true) && \
+        ($HOME/.rbenv/bin/rbenv plug rbenv-default-gems || true) && \
         touch $HOME/.rbenv/default-gems && \
         (grep bundler $HOME/.rbenv/default-gems > /dev/null || echo bundler >> $HOME/.rbenv/default-gems) && \
         (grep pry $HOME/.rbenv/default-gems > /dev/null || echo pry >> $HOME/.rbenv/default-gems)
       INSTALL
       :update => <<-UPDATE,
-        ([ -d $HOME/.rbenv ] && cd $HOME/.rbenv && git pull) && \
-        ([ -d $HOME/.rbenv/plugins/ruby-build ] && cd $HOME/.rbenv/plugins/ruby-build && git pull) && \
-        ([ -d $HOME/.rbenv/plugins/rbenv-gem-rehash ] && cd $HOME/.rbenv/plugins/rbenv-gem-rehash && git pull) && \
-        ([ -d $HOME/.rbenv/plugins/rbenv-default-gems ] && cd $HOME/.rbenv/plugins/rbenv-default-gems && git pull) && \
-        touch $HOME/.rbenv/default-gems && \
-        (grep bundler $HOME/.rbenv/default-gems > /dev/null || echo bundler >> $HOME/.rbenv/default-gems) && \
-        (grep pry $HOME/.rbenv/default-gems > /dev/null || echo pry >> $HOME/.rbenv/default-gems)
+        [ -d $HOME/.rbenv ] && [ -d $HOME/.rbenv/plugins/rbenv-update ] && rbenv update
       UPDATE
     },
     :phpbrew => {
