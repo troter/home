@@ -2,55 +2,55 @@
 #
 # http://brew.sh/
 #
-# gem install brewdler
+# brew bundle
 
 tap 'homebrew/dupes'
 tap 'josegonzalez/homebrew-php'
 tap 'phinze/cask'
-brew 'brew-cask'
+install 'brew-cask'
 
 # servers
-brew 'memcached'
-brew 'mongodb'
-brew 'mysql'
-brew 'redis'
+instal 'memcached'
+instal 'mongodb'
+instal 'mysql'
+instal 'redis'
 
 # programming languages
-brew 'gauche'
-brew 'go'
-brew 'nodejs'
-brew 'phantomjs'
-brew 'php54'
-brew 'python'
-brew 'python3'
-brew 'sbcl'
+install 'gauche'
+install 'go'
+install 'nodejs'
+install 'phantomjs'
+install 'php54'
+install 'python'
+install 'python3'
+install 'sbcl'
 
 # vcs
-brew 'git'
-brew 'mercurial'
-brew 'subversion'
+install 'git'
+install 'mercurial'
+install 'subversion'
 
 # tools
-brew 'colordiff'
-brew 'emacs'
-brew 'gettext'
-brew 'imagemagick'
-brew 'jq'
-brew 'the_silver_searcher'
-brew 'tmux'
-brew 'watch'
-brew 'wget'
-brew 'parallel'
-brew 'editorconfig'
+install 'colordiff'
+install 'emacs'
+install 'gettext'
+install 'imagemagick'
+install 'jq'
+install 'the_silver_searcher'
+install 'tmux'
+install 'watch'
+install 'wget'
+install 'parallel'
+install 'editorconfig'
 
 # browser
-cask 'firefox'
-cask 'google-chrome'
+cask install 'firefox'
+cask install 'google-chrome'
 
 # gui tools
-cask 'emacs'
-cask 'alfred'
-cask 'cord'
-cask 'cyberduck'
-cask 'iterm2'
-cask 'limechat'
+cask install 'emacs'
+cask install 'alfred'
+cask install 'cord'
+cask install 'cyberduck'
+cask install 'iterm2'
+cask install 'limechat'
