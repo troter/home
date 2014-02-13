@@ -11,6 +11,9 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo 1
 # Enable locate service
 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 
+# Remove cache
+sudo kextcache -system-prelinked-kernel
+
 # Finder extra options.
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool TRUE
 defaults write com.apple.finder PathBarRootAtHome -bool TRUE
