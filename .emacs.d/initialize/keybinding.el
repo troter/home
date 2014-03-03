@@ -61,5 +61,15 @@
   (setq ns-alternate-modifier (quote super))
   (when window-system
     (define-key global-map [ns-drag-file] 'ns-find-file))
+  (global-set-key
+   [(control J)]
+   (lambda ()
+     (interactive)
+     (call-process "osascript" nil t nil "-e" "tell application \"System Events\" to key code 104")))
+  (global-set-key
+   [(control :)]
+   (lambda ()
+     (interactive)
+     (call-process "osascript" nil t nil "-e" "tell application \"System Events\" to key code 102")))
   )
 )
