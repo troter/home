@@ -10,6 +10,7 @@
   ;;(global-set-key [(control x) (b)] 'helm-buffers-list)    ; switch-to-buffer
   (global-set-key [(control x) (control f)] 'helm-find-files)    ; find-file
   (global-set-key [(control x) (b)] 'helm-for-files)    ; switch-to-buffer
+  (global-set-key [(meta x)] 'helm-M-x) ; execute-extended-command
   (global-set-key [(meta y)] 'helm-show-kill-ring)        ; yank-pop
   (global-set-key [(meta %)] 'helm-regexp)  ; query-replace-regexp
   ;; C-x a prefix
