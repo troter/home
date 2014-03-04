@@ -7,12 +7,12 @@
 
 ;; (@* "helm")
 (defun-eval-after-load 'helm
-  ;;(global-set-key [(control x) (b)] 'helm-buffers-list)    ; switch-to-buffer
-  (global-set-key [(control x) (control f)] 'helm-find-files)    ; find-file
-  (global-set-key [(control x) (b)] 'helm-for-files)    ; switch-to-buffer
+  ;;(global-set-key [(control x) (b)] 'helm-buffers-list) ; switch-to-buffer
+  (global-set-key [(control x) (control f)] 'helm-find-files) ; find-file
+  (global-set-key [(control x) (b)] 'helm-for-files) ; switch-to-buffer
   (global-set-key [(meta x)] 'helm-M-x) ; execute-extended-command
-  (global-set-key [(meta y)] 'helm-show-kill-ring)        ; yank-pop
-  (global-set-key [(meta %)] 'helm-regexp)  ; query-replace-regexp
+  (global-set-key [(meta y)] 'helm-show-kill-ring) ; yank-pop
+  (global-set-key [(meta %)] 'helm-regexp) ; query-replace-regexp
   ;; C-x a prefix
   (global-set-key [(control x) (a) (a)] 'helm-apropos)
   (global-set-key [(control x) (a) (r)] 'helm-regexp)
@@ -39,7 +39,7 @@
 (defun-eval-after-load 'popwin
   (global-set-key [(control x) (control p)] popwin:keymap))
 
-;(global-set-key "\C-z" 'undo)                       ;;UNDO
+;(global-set-key "\C-z" 'undo)
 (global-set-key [f1] 'one-key-menu-help)
 
 (defun-eval-after-load 'direx
