@@ -33,9 +33,6 @@
 )
 
 ;; (@* "others")
-(defun-eval-after-load 'flymake
-  (global-set-key [(control c) (d)] 'flymake-display-err-menu-for-current-line))
-
 (defun-eval-after-load 'popwin
   (global-set-key [(control x) (control p)] popwin:keymap))
 
