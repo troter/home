@@ -22,7 +22,6 @@
       custom-file            (expand-file-name "custom.el" base-directory)
       libraries-directory    (expand-file-name "library" base-directory)
       auto-install-directory (expand-file-name "auto-install" vendor-directory)
-      elpa-directory         (expand-file-name "elpa" vendor-directory)
       site-lisp-directory    (expand-file-name "site-lisp" base-directory)
       initialize-directory   (expand-file-name "initialize" base-directory)
       info-directory         (expand-file-name "info" base-directory)
@@ -58,85 +57,9 @@
        Info-default-directory-list
        tr:addition-info-directory))
 
-;; Setup package.el
-(require 'package)
-(when (< emacs-major-version 24)
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(setq package-user-dir elpa-directory)
-
-(package-initialize)
-
-(when (not (require 'melpa nil t))
-  (progn
-    (switch-to-buffer
-     (url-retrieve-synchronously
-        "https://raw.github.com/milkypostman/melpa/master/melpa.el"))
-    (package-install-from-buffer  (package-buffer-info) 'single))
-  (require 'melpa))
-
-(defvar troter/packages
-  '(ace-jump-mode
-    ac-helm
-    auto-complete
-    clojure-mode
-    color-moccur
-    direx
-    dsvn
-    edit-server
-    editorconfig
-    el-mock
-    elscreen
-    ert-expectations
-    findr
-    flymake-php
-    flymake-ruby
-    guide-key
-    haskell-mode
-    helm
-    helm-descbinds
-    highlight-indentation
-    inf-ruby
-    inflections
-    info+
-    jump
-    js2-mode
-    markdown-mode
-    melpa
-    open-junk-file
-    php-mode
-    popup
-    popwin
-    powerline
-    quickrun
-    recentf-ext
-    rinari
-    ruby-additional
-    ruby-block
-    ruby-compilation
-    ruby-electric
-    rspec-mode
-    sequential-command
-    shell-command
-    shell-history
-    slime
-    undo-tree
-    web-mode
-    yaml-mode)
-  "Default packages")
-
-(defun abedra/packages-installed-p ()
-  (loop for pkg in troter/packages
-        when (not (package-installed-p pkg)) do (return nil)
-        finally (return t)))
-
-(unless (abedra/packages-installed-p)
-  (message "%s" "Refreshing package database...")
-  (package-refresh-contents)
-  (dolist (pkg troter/packages)
-    (when (not (package-installed-p pkg))
-      (package-install pkg))))
+(if (require 'cask "~/.cask/cask.el" t)
+    (cask-initialize)
+  (warn "Cannot require `~/.cask/cask.el'. please install cask."))
 
 ;; load direcotry files.
 (load-directory-files libraries-directory "^.+el$")

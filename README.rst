@@ -33,6 +33,10 @@ Environment managers and latest version::
   $ pyenv install 2.7.4; pyenv rehash
   $ rbenv install 1.9.3; rbenv rehash
 
+Emacs dependencies manager::
+
+  $ curl -fsSkL https://raw.github.com/cask/cask/master/go | python
+
 Mercurial extensions::
 
   $ rake mercurial:extensions:install mercurial:extensions:update
