@@ -61,6 +61,8 @@
     (cask-initialize)
   (warn "Cannot require `~/.cask/cask.el'. please install cask."))
 
+(require 'pallet nil t)
+
 ;; load direcotry files.
 (load-directory-files libraries-directory "^.+el$")
 (load-directory-files initialize-directory "^.+el$")
