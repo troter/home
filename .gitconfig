@@ -24,6 +24,7 @@
 [core]
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = /Users/iino/.gitignore_global
+	pager = LESS='MFRX' less
 
 [alias]
 	br = branch
