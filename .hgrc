@@ -149,6 +149,7 @@ gshortlog = glog --template "{label('changeset.{phase}', '{rev}:{node|short}')}{
 
 [hostfingerprints]
 bitbucket.org = 67:b3:bf:9f:c5:38:0e:4c:dd:4e:8a:da:3d:11:1b:c2:a5:d1:6c:6b
+smtp.gmail.com = 10:75:e1:8c:df:93:15:3b:a1:8f:cd:fe:d3:11:79:d5:16:43:77:bc
 
 # include settings
 %include $HOME/.mercurial/typo.rc
