@@ -16,6 +16,7 @@ histedit =
 mq =
 pager =
 parentrevspec =
+patchbomb =
 progress =
 rebase =
 record =
