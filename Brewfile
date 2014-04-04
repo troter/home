@@ -40,6 +40,7 @@ install 'watch'
 install 'wget'
 install 'parallel'
 install 'editorconfig'
+install 'direnv'
 
 # servers
 instal 'memcached'
