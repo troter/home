@@ -9,8 +9,10 @@ ulimit -c 0
 # Load helper functions
 source ~/.zsh.d/helper.zsh
 
-load_directory_files "~/.zsh.d/init" "*.sh"
-load_directory_files "~/.zsh.d/function" "*.sh"
+#load_directory_files "~/.zsh.d/init" "*.sh"
+#load_directory_files "~/.zsh.d/function" "*.sh"
+eval "$(load_directory_files_function "~/.zsh.d/init" "\*.sh")"
+eval "$(load_directory_files_function "~/.zsh.d/function" "\*.sh")"
 
 # Load local configuration file.
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
