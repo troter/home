@@ -66,3 +66,6 @@
 (edit-server-start)
 
 (load "editorconfig")
+
+(require 'stripe-buffer)
+(add-hook 'dired-mode-hook 'stripe-listify-buffer)
