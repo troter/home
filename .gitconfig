@@ -24,9 +24,12 @@
 	pager = LESS='MFRX' less
 [alias]
 	br = branch
+	cb = ! git branch | grep '*' | awk '{print $2}' # current-branch
 	ci = commit
 	co = checkout
 	df = diff
+	fix = commit --amend
+	fixup = commit --amend -C HEAD
 	glog = log --pretty=format:\"%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative --graph --all
 	glogc = log --pretty=format:\"%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative --graph
 	lg = log -p
