@@ -27,10 +27,10 @@
 	ci = commit
 	co = checkout
 	df = diff
-	lg = log -p
-	st = status
 	glog = log --pretty=format:\"%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative --graph --all
 	glogc = log --pretty=format:\"%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative --graph
+	lg = log -p
+	st = status
 	pull = pull --ff-only
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
