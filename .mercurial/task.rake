@@ -6,6 +6,7 @@ namespace :mercurial do
     extensions_dir = "~/.mercurial/extensions".gsub(/~/, ENV['HOME'])
     extensions = [
       %w[https://bitbucket.org/troter/hg-grepfile hg-grepfile grepfile.py grepfile],
+      %w[https://bitbucket.org/troter/hg-now hg-now now.py now],
       %w[https://bitbucket.org/durin42/hg-git hg-git hggit hggit],
       %w[https://bitbucket.org/sjl/hg-review hg-review review review],
       %w[https://bitbucket.org/peerst/hgcollapse hgcollapse hgext/collapse.py collapse],

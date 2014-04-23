@@ -130,14 +130,6 @@ qempty = ! $HG qrefresh -X $($HG root)
 qimportwip = qimport -r 'wip and (not mq())'
 qiwip = qimportwip
 
-# create partial commit/mq patch
-now = ! \
-  $HG commit -m "[from now] $(date +'%Y-%m-%d %H:%M:%S')" \
-  $@
-qnow = ! \
-  $HG qnew -m "[from qnow] $(date +'%Y-%m-%d %H:%M:%S')" \
-  $(date +'%Y-%m-%d_%H-%M-%S.diff') $@
-
 # power of commit
 poc = churn -t '{author|email}' -c
 
