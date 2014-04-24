@@ -35,6 +35,11 @@
 	lg = log -p
 	st = status
 	pull = pull --ff-only
+[sendemail]
+	smtpencryption = tls
+	smtpserver = smtp.gmail.com
+	smtpuser = trot.thunder@gmail.com
+	smtpserverport = 587
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
