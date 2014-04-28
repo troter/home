@@ -23,9 +23,9 @@
 	excludesfile = /Users/iino/.gitignore_global
 	pager = LESS='MFRX' less
 [pager]
-  log = diff-highlight-safe | LESS='MFRX' less
-  show = diff-highlight-safe | LESS='MFRX' less
-  diff = diff-highlight-safe | LESS='MFRX' less
+	log = diff-highlight-safe | LESS='MFRX' less
+	show = diff-highlight-safe | LESS='MFRX' less
+	diff = diff-highlight-safe | LESS='MFRX' less
 [alias]
 	br = branch
 	cb = ! git branch | grep '*' | awk '{print $2}' # current-branch
