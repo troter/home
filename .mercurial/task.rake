@@ -11,15 +11,17 @@ namespace :mercurial do
       %w[https://bitbucket.org/sjl/hg-review hg-review review review],
       %w[https://bitbucket.org/peerst/hgcollapse hgcollapse hgext/collapse.py collapse],
       %w[https://bitbucket.org/durin42/hgsubversion/ hgsubversion hgsubversion hgsubversion],
+      ['', '', 'hg_diff_highlight.py', 'diff_highlight'],
     ]
     extension_dirs = extensions.map do |extension|
       _, name = extension
-      File.join(extensions_dir, name)
-    end
+      name.empty? ? nil : File.join(extensions_dir, name)
+    end.compact
 
     directory extensions_dir
     extensions.each do |extension|
       url, name = extension
+      next if url.empty?
       file File.join(extensions_dir, name) => extensions_dir do
         cd extensions_dir do
           sh "hg clone #{url} #{name}"
