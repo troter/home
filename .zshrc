@@ -75,7 +75,7 @@ plugins=(
   troter-key-binding
   troter-shellenv-el
   troter-http
-  troter-ps
+  troter-percol
 )
 
 
