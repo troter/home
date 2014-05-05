@@ -63,6 +63,7 @@ plugins=(
   troter-nodebrew
   troter-perlbrew
   troter-phpbrew
+  pyenv
   troter-pyenv
   troter-pythonbrew
   rbenv
