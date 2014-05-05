@@ -1,12 +1,5 @@
 # -*- coding: utf-8; mode: sh; -*-
 
-# pager
-if exists less; then PAGER=less; fi
-if exists lv;   then PAGER=lv;   fi
-export PAGER
-export LESS='-dMr'
-export LV='-c'
-
 # grep
 export GREP_OPTIONS='--color=auto --exclude=.svn --exclude="*~"'
 
