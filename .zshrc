@@ -69,7 +69,6 @@ plugins=(
   troter-rvm
   troter-virtualenvwrapper
   troter-direnv
-  troter-command-options
   troter-key-binding
   troter-shellenv-el
   troter-http
