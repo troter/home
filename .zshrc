@@ -65,6 +65,7 @@ plugins=(
   troter-phpbrew
   troter-pyenv
   troter-pythonbrew
+  rbenv
   troter-rbenv
   troter-rvm
   troter-virtualenvwrapper
