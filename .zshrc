@@ -49,12 +49,31 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
-  brew
+  bower
   brew-cask
+  brew
+  bundler
+  capistrano
+  coffee
+  composer
+  docker
+  extract
+  fabric
+  gem
   git
+  golang
+  gradle
+  jsontools
+  lein
   mercurial
+  mvn
+  pip
+  python
+  rails
+  rake
   screen
   tmux
+  vagrant
   z
   troter-functions
   troter-emacs-cask
