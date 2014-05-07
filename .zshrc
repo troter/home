@@ -75,7 +75,6 @@ plugins=(
   tmux
   vagrant
   z
-  troter-functions
   troter-emacs-cask
   troter-gvm
   troter-homebrew
