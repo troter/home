@@ -6,7 +6,7 @@ def transpose_chars(self):
     if caret > 0:
         if len(self.model.query) == caret:
             self.backward_char()
-            self.transpose_char()
+            self.transpose_chars()
         else:
             self.model.query = self.model.query[:caret - 1] + \
                                self.model.query[caret] + \
