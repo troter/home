@@ -28,7 +28,3 @@ function load_directory_files() {
   }
   debug "complete."
 }
-
-function exists() {
-  which $1 &> /dev/null
-}

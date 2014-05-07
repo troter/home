@@ -1,9 +1,9 @@
 # -*- coding: utf-8; mode: sh; -*-
 
-if exists percol; then
+if [[ $(whence percol) != "" ]]; then
   function percol_select_history() {
     local tac
-    exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+    [[ $(whence gtac) != "" ]] && tac="gtac" || { [[ $(whence tac) != "" ]] && tac="tac" || { tac="tail -r" } }
     BUFFER=$(''history -n 1 | eval $tac | percol --query "$LBUFFER")
     CURSOR=$#BUFFER         # move cursor
     zle -R -c               # refresh

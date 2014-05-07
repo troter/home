@@ -1,7 +1,7 @@
 # -*- coding: utf-8; mode: sh; -*-
 # Keybind configuration.
 # ----------------------
-if ! exists percol; then
+if [[ $(whence percol) = "" ]]; then
   function keybind_configuration() {
     bindkey -e
 

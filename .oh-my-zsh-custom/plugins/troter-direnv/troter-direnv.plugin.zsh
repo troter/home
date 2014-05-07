@@ -1,3 +1,3 @@
-if exists direnv; then
+if [[ $(whence direnv) != "" ]]; then
   eval "$(direnv hook zsh)"
 fi

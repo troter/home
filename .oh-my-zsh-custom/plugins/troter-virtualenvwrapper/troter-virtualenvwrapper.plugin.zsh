@@ -4,8 +4,8 @@ VIRTUALENVWRAPPER_SH=$VIRTUALENVWRAPPER_SH
 
 if [ -n "${VIRTUALENVWRAPPER_SH}" ] && [ -e ${VIRTUALENVWRAPPER_SH} ]; then
   # use ${VIRTUALENVWRAPPER_SH}
-elif exists virtualenvwrapper.sh; then
-  VIRTUALENVWRAPPER_SH=$(which virtualenvwrapper.sh)
+elif [[ $(whence virtualenvwrapper.sh) != "" ]]; then
+  VIRTUALENVWRAPPER_SH=$(whence virtualenvwrapper.sh)
 elif [ -x /usr/local/share/python/virtualenvwrapper.sh ]; then
   VIRTUALENVWRAPPER_SH=/usr/local/share/python/virtualenvwrapper.sh
 elif [ -x /usr/share/python/virtualenvwrapper.sh ]; then
