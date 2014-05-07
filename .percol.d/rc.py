@@ -1,6 +1,21 @@
 from percol.key import SPECIAL_KEYS
 from percol.finder import FinderMultiQueryRegex
 
+def transpose_char(self):
+    caret = self.model.caret
+    if caret > 0:
+        if len(self.model.query) == caret:
+            self.backward_char()
+            self.transpose_char()
+        else:
+            self.model.query = self.model.query[:caret - 1] + \
+                               self.model.query[caret] + \
+                               self.model.query[caret - 1] + \
+                               self.model.query[caret + 1:]
+            self.forward_char()
+
+percol.command.__class__.transpose_char = transpose_char
+
 # Prompt
 def dynamic_prompt():
     prompt = ur""
@@ -25,6 +40,7 @@ percol.import_keymap({
     "C-d" : lambda percol: percol.command.delete_forward_char(),
     "C-k" : lambda percol: percol.command.kill_end_of_line(),
     "C-y" : lambda percol: percol.command.yank(),
+    "C-t" : lambda percol: percol.command.transpose_char(),
     "C-a" : lambda percol: percol.command.beginning_of_line(),
     "C-e" : lambda percol: percol.command.end_of_line(),
     "C-b" : lambda percol: percol.command.backward_char(),
