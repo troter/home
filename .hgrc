@@ -97,10 +97,11 @@ cm = commit --message
 cmm = ! $HG commit -m "merge with $(hg log -r 'p2()' --template '{branch}')"
 
 # browse changesets.
-show = log --color=always -vpr
-less = log -vpr "reverse(not merge())"
-pulled = log -vpr "pulled and (not merge())"
-wip = log -vpr "wip"
+_show = show
+show = _show --color=always -v
+less = show "reverse(not merge())"
+pulled = show "pulled and (not merge())"
+wip = show "wip"
 
 # grep files.
 #grepfile = ! $HG locate --print0 | xargs --null grep $@
