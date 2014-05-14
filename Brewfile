@@ -9,6 +9,7 @@ update
 
 # repositories
 tap 'homebrew/dupes'
+tap 'homebrew/binary'
 tap 'josegonzalez/homebrew-php'
 tap 'phinze/cask'
 install 'brew-cask'
