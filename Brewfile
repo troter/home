@@ -11,7 +11,7 @@ update
 tap 'homebrew/dupes'
 tap 'homebrew/binary'
 tap 'josegonzalez/homebrew-php'
-tap 'phinze/cask'
+tap 'caskroom/cask'
 install 'brew-cask'
 
 # browsers
