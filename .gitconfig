@@ -44,6 +44,8 @@
 	smtpserver = smtp.gmail.com
 	smtpuser = trot.thunder@gmail.com
 	smtpserverport = 587
+[url "https://"]
+	insteadOf = git://
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
