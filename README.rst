@@ -39,7 +39,7 @@ Emacs dependencies manager::
 
 Mercurial extensions::
 
-  $ rake mercurial:extensions:install mercurial:extensions:update
+  $ rake mercurial:extensions
 
 Useful gems::
 

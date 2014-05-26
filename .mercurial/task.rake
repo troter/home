@@ -63,4 +63,8 @@ namespace :mercurial do
       end
     end
   end
+  task :extensions do
+    Rake::Task['mercurial:extensions:install'].invoke
+    Rake::Task['mercurial:extensions:update'].invoke
+  end
 end
