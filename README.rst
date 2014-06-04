@@ -15,7 +15,7 @@ Install Depends software
 
 My home directory depends on some software.
 
-- my favorite dvcs, mercural.
+- mercural, git.
 - compilers(gcc, g++) and development libraries.
 - some useful command line tools(zsh, screen, curl, etc..).
 
