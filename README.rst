@@ -30,8 +30,8 @@ Environment managers and latest version::
 
   $ rake brew:pyenv:install brew:rbenv:install
   $ source .zshrc
-  $ pyenv install 2.7.4; pyenv rehash
-  $ rbenv install 1.9.3; rbenv rehash
+  $ pyenv install 2.7.7; pyenv rehash
+  $ rbenv install 2.1.2; rbenv rehash
 
 Emacs dependencies manager::
 
