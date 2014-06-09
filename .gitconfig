@@ -2,6 +2,8 @@
 	user = troter
 	email = trot.thunder@gmail.com
 	name = Takumi IINO
+[push]
+	default = simple
 [color]
 	ui = auto
 [color "branch"]
