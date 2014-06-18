@@ -6,6 +6,9 @@ function history_configuration() {
   HISTSIZE=1000000
   SAVEHIST=1000000
   setopt hist_ignore_dups     # ignore duplication command history list
+  setopt hist_ignore_all_dups
+  setopt hist_reduce_blanks 
+  setopt hist_save_no_dups
   setopt share_history        # share command history data
 }
 history_configuration; unset -f history_configuration
