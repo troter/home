@@ -49,5 +49,6 @@
 (depends-on "slime")
 (depends-on "stripe-buffer")
 (depends-on "undo-tree")
+(depends-on "undohist")
 (depends-on "web-mode")
 (depends-on "yaml-mode")
