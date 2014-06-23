@@ -145,6 +145,11 @@ gshortlog = glog --template "{label('changeset.{phase}', '{rev}:{node|short}')}{
 bitbucket.org = 45:ad:ae:1a:cf:0e:73:47:06:07:e0:88:f5:cc:10:e5:fa:1c:f7:99
 smtp.gmail.com = 10:75:e1:8c:df:93:15:3b:a1:8f:cd:fe:d3:11:79:d5:16:43:77:bc
 
+[auth]
+github.schemes = http https
+github.prefix = github.com
+github.username = troter
+
 # include settings
 %include $HOME/.mercurial/typo.rc
 %include $HOME/.mercurial/extensions.rc
