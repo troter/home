@@ -8,8 +8,8 @@
   (dolist (mask '("\\.docx$" "\\.xlsx$" "\\.pptx$"))
     (add-to-list 'dmoccur-exclusion-mask mask))
   (setq moccur-split-word t))
-;; migemoがrequireできる環境ならmigemoを使う
-(when (require 'migemo nil t) ;第三引数がnon-nilだとloadできなかった場合にエラーではなくnilを返す
+
+(defun-eval-after-load 'migemo
   (setq moccur-use-migemo t))
 
 (defun-eval-after-load 'helm

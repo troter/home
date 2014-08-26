@@ -29,6 +29,7 @@
 (depends-on "jump")
 (depends-on "markdown-mode")
 (depends-on "melpa")
+(depends-on "migemo")
 (depends-on "open-junk-file")
 (depends-on "pallet")
 (depends-on "php-mode")
