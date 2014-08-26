@@ -39,6 +39,7 @@ brew install wget
 brew install parallel
 brew install editorconfig
 brew install direnv
+brew install cmigemo
 
 # servers
 brew instal memcached
