@@ -31,7 +31,7 @@
 (depends-on "markdown-mode")
 (depends-on "melpa")
 (depends-on "migemo")
-(depends-on "mozc" :svn "https://mozc.googlecode.com/svn/trunk/src/unix/emacs/" :files ("*.el"))
+(depends-on "mozc" :url "http://mozc.googlecode.com/svn/trunk/src/unix/emacs/mozc.el" :files ("*.el"))
 (depends-on "open-junk-file")
 (depends-on "pallet")
 (depends-on "php-mode")
