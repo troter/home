@@ -2,6 +2,7 @@
 (source melpa)
 
 (depends-on "ac-helm")
+(depends-on "ac-mozc" :git "https://github.com/igjit/ac-mozc.git")
 (depends-on "ace-jump-mode")
 (depends-on "auto-complete")
 (depends-on "cask")
@@ -30,6 +31,7 @@
 (depends-on "markdown-mode")
 (depends-on "melpa")
 (depends-on "migemo")
+(depends-on "mozc" :svn "https://mozc.googlecode.com/svn/trunk/src/unix/emacs/" :files ("*.el"))
 (depends-on "open-junk-file")
 (depends-on "pallet")
 (depends-on "php-mode")
