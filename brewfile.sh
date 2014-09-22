@@ -54,7 +54,7 @@ brew install gauche
 brew install go
 brew install nodejs
 brew install phantomjs
-brew install php54
+brew install php55
 brew install python
 brew install python3
 brew install sbcl
