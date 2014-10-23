@@ -8,5 +8,5 @@ theClass = bundle.classNamed('AppleKeychainExtra');
 keyChain = theClass.alloc().initWithBundle(nil);
 keyChain._lockScreenMenuHit(nil);
 "
-	return do shell script "/usr/bin/ruby -e " & quoted form of theRubyScript
+	return do shell script "/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby -e " & quoted form of theRubyScript
 end lockScreen
