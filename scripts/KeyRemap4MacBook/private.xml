@@ -1,13 +1,21 @@
 <?xml version="1.0"?>
 <root>
     <item>
-        <name>Command+Backqute to KANA/EISUU (toggle)</name>
-        <identifier>private.jis_commandBackquote2toggle_kana_eisuu_not_vm</identifier>
-        <not>VIRTUALMACHINE</not>
+        <name>Control+J to KANA</name>
+        <identifier>private.jis_control_shift_j_kana</identifier>
         <autogen>
           __KeyToKey__
-          KeyCode::BACKQUOTE, VK_COMMAND,
-          KeyCode::VK_JIS_TOGGLE_EISUU_KANA
+          KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, ModifierFlag::CONTROL_L,
+          KeyCode::JIS_KANA
+        </autogen>
+    </item>
+    <item>
+        <name>Control+: to EISUU</name>
+        <identifier>private.jis_contorl_shift_semicolon_eissu</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::SEMICOLON, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, ModifierFlag::CONTROL_L,
+          KeyCode::JIS_EISUU
         </autogen>
     </item>
     <item>
