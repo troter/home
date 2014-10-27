@@ -1,31 +1,31 @@
 <?xml version="1.0"?>
 <root>
-    <item>
-        <name>Control+J to KANA</name>
-        <identifier>private.jis_control_shift_j_kana</identifier>
-        <autogen>
-          __KeyToKey__
-          KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, ModifierFlag::CONTROL_L,
-          KeyCode::JIS_KANA
-        </autogen>
-    </item>
-    <item>
-        <name>Control+: to EISUU</name>
-        <identifier>private.jis_contorl_shift_semicolon_eissu</identifier>
-        <autogen>
-          __KeyToKey__
-          KeyCode::SEMICOLON, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, ModifierFlag::CONTROL_L,
-          KeyCode::JIS_EISUU
-        </autogen>
-    </item>
-    <item>
-        <name>Option+L to Sleep Displays</name>
-        <identifier>private.option_l_to_sleep_displays</identifier>
-        <not>VIRTUALMACHINE</not>
-        <autogen>
-          __KeyToKey__
-          KeyCode::L, VK_OPTION,
-          KeyCode::VK_CONSUMERKEY_EJECT, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L
-        </autogen>
-    </item>
+  <item>
+    <name>Control+J to KANA</name>
+    <identifier>private.jis_control_shift_j_kana</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, ModifierFlag::CONTROL_L,
+      KeyCode::JIS_KANA
+    </autogen>
+  </item>
+  <item>
+    <name>Control+: to EISUU</name>
+    <identifier>private.jis_contorl_shift_semicolon_eissu</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SEMICOLON, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, ModifierFlag::CONTROL_L,
+      KeyCode::JIS_EISUU
+    </autogen>
+  </item>
+  <item>
+    <name>Option+L to Sleep Displays</name>
+    <identifier>private.option_l_to_sleep_displays</identifier>
+    <not>VIRTUALMACHINE</not>
+    <autogen>
+      __KeyToKey__
+      KeyCode::L, VK_OPTION,
+      KeyCode::VK_CONSUMERKEY_EJECT, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L
+    </autogen>
+  </item>
 </root>
