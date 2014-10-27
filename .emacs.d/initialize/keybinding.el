@@ -59,6 +59,7 @@
   (setq ns-alternate-modifier (quote super))
   (when window-system
     (define-key global-map [ns-drag-file] 'ns-find-file))
+  (global-set-key [(control c) (m)] 'mark-sexp)
   (global-set-key
    [(control J)]
    (lambda ()

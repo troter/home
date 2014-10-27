@@ -142,6 +142,17 @@
           KeyCode::G, ModifierFlag::OPTION_L
         </autogen>
       </item>
+      <item>
+        <name>Remap Command_L+Control_L+Space to Control_L+C, m</name>
+        <identifier>remap.app_term_commandL_contorlL_space2controlL_c_m</identifier>
+        <only>TERMINAL</only>
+	<autogen>
+          __KeyToKey__
+          KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
+          KeyCode::C, ModifierFlag::CONTROL_L,
+	  KeyCode::M
+        </autogen>
+      </item>
     </item>
   </item>
 </root>
