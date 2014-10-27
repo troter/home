@@ -134,8 +134,18 @@
 
 ;; iswitch buffers
 ;; ---------------
-(iswitchb-mode 1)
-(add-hook 'iswitchb-define-mode-map-hook 'iswitchb-my-keys)
+(cond ((require 'ido nil t)
+       (ido-mode t)
+       (add-hook 'ido-setup-hook 'ido-my-keys))
+      ((require 'iswitchb nil t)
+       (iswitchb-mode 1)
+       (add-hook 'iswitchb-define-mode-map-hook 'iswitchb-my-keys)))
+
+(defun ido-my-keys ()
+  "Add my keybindings for ido."
+  (define-key ido-completion-map "\C-f" 'ido-next-match)
+  (define-key ido-completion-map " " 'ido-next-match)
+  (define-key ido-completion-map "\C-b" 'ido-prev-match))
 
 (defun iswitchb-my-keys ()
   "Add my keybindings for iswitchb."
