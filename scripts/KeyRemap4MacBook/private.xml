@@ -30,5 +30,118 @@
         KeyCode::VK_CONSUMERKEY_EJECT, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L
       </autogen>
     </item>
+    <item>
+      <name>Enable at only Terminal</name>
+      <item>
+        <name>Remap Command_L+[BFD] to Option_L+[BFD]</name>
+        <identifier>remap.app_term_commandL_BFD2optionL_BFD</identifier>
+        <only>TERMINAL</only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::B, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::B, ModifierFlag::OPTION_L
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::F, ModifierFlag::OPTION_L
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::D, ModifierFlag::OPTION_L
+        </autogen>
+      </item>
+      <item>
+        <name>Remap Command_L+[PN] to Option_L+[PN]</name>
+        <identifier>remap.app_term_commandL_PN2optionL_PN</identifier>
+        <only>TERMINAL</only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::P, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::P, ModifierFlag::OPTION_L
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::N, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::N, ModifierFlag::OPTION_L
+        </autogen>
+      </item>
+      <item>
+        <name>Remap Command_L+X to Option_L+X</name>
+        <identifier>remap.app_term_commandL_X2optionL_X</identifier>
+        <only>TERMINAL</only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::X, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::X, ModifierFlag::OPTION_L
+        </autogen>
+      </item>
+      <item>
+        <name>Remap Command_L+[LU] to Option_L+[LU]</name>
+        <identifier>remap.app_term_commandL_LU2optionL_LU</identifier>
+        <only>TERMINAL</only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::L, ModifierFlag::OPTION_L
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::U, ModifierFlag::OPTION_L
+        </autogen>
+      </item>
+      <item>
+        <name>Remap Command_L+W to Option_L+W</name>
+        <identifier>remap.app_term_commandL_W2optionL_W</identifier>
+        <only>TERMINAL</only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::W, ModifierFlag::OPTION_L
+        </autogen>
+      </item>
+      <item>
+        <name>Remap Command_L+C to Option_L+C</name>
+        <identifier>remap.app_term_commandL_C2optionL_C</identifier>
+        <only>TERMINAL</only>
+	<autogen>
+          __KeyToKey__
+          KeyCode::C, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::C, ModifierFlag::OPTION_L
+        </autogen>
+      </item>
+      <item>
+        <name>Remap Command_L+V to Option_L+V</name>
+        <identifier>remap.app_term_commandL_V2optionL_V</identifier>
+        <only>TERMINAL</only>
+	<autogen>
+          __KeyToKey__
+          KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::V, ModifierFlag::OPTION_L
+        </autogen>
+      </item>
+      <item>
+        <name>Remap Command_L+Q to Option_L+Q</name>
+        <identifier>remap.app_term_commandL_Q2optionL_Q</identifier>
+        <only>TERMINAL</only>
+	<autogen>
+          __KeyToKey__
+          KeyCode::Q, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::Q, ModifierFlag::OPTION_L
+        </autogen>
+      </item>
+      <item>
+        <name>Remap Command_L+G to Option_L+G</name>
+        <identifier>remap.app_term_commandL_G2optionL_G</identifier>
+        <only>TERMINAL</only>
+	<autogen>
+          __KeyToKey__
+          KeyCode::G, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+          KeyCode::G, ModifierFlag::OPTION_L
+        </autogen>
+      </item>
+    </item>
   </item>
 </root>
