@@ -16,7 +16,7 @@ clipboard = case
               exit 1
             end
 
-if STDIN.tty?
+if STDIN.tty? || ARGV[0] == '-p'
   system(clipboard[:paste])
 else
   IO.copy_stream(STDIN, IO.popen(clipboard[:copy], mode='w'))
