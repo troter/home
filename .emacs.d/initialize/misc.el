@@ -82,3 +82,17 @@
     (setq migemo-user-dictionary nil)
     (setq migemo-regex-dictionary nil)
     (setq migemo-coding-system 'utf-8-unix)))
+
+(cond
+ ((string-match "apple-darwin" system-configuration)
+  (defun copy-from-osx ()
+    (shell-command-to-string "cb -p"))
+
+  (defun paste-to-osx (text &optional push)
+    (let ((process-connection-type nil))
+      (let ((proc (start-process "cb" "*Messages*" "cb")))
+        (process-send-string proc text)
+        (process-send-eof proc))))
+
+  (setq interprogram-cut-function 'paste-to-osx)
+  (setq interprogram-paste-function 'copy-from-osx)))
