@@ -1,7 +1,7 @@
 ;;; -*- coding: utf-8; indent-tabs-mode: nil -*-
 
 ;; (auto-install-from-url "http://github.com/imakado/emacs-smartchr/raw/master/smartchr.el")
-(when (require 'smartchr)
+(when (and nil (require 'smartchr))
   ;; (global-set-key (kbd "=") (smartchr '("=" " = " " == " " === ")))
   ;; (global-set-key (kbd "{")
   ;;                 (smartchr '("{" "{ `!!' }" "{ \"`!!'\" }")))
