@@ -34,10 +34,13 @@ if [[ $(whence percol) != "" ]]; then
   }
 
   function junkfile() {
-    local selected_file=$(_percol_junkfile_source | percol --query "$LBUFFER")
-    echo $selected_file
+    local selected_file=$(_percol_junkfile_source | percol --query '$*')
     if [ -n "$selected_file" ]; then
-      print -z "less ${selected_file}"
+      if [ -t 1 ]; then
+        print -z "less ${selected_file}"
+      else
+        print $selected_file
+      fi
     fi
   }
   alias jf=junkfile
@@ -47,10 +50,13 @@ if [[ $(whence percol) != "" ]]; then
   }
 
   function scratch() {
-    emulate -L zsh
-    local selected_dir=$(_percol_scratch_source | percol --query "$LBUFFER")
+    local selected_dir=$(_percol_scratch_source | percol --query '$*')
     if [ -n "$selected_dir" ]; then
-      print -z "cd ${selected_dir}"
+      if [ -t 1 ]; then
+        print -z "cd ${selected_dir}"
+      else
+        print $selected_dir
+      fi
     fi
   }
   alias scr=scratch
