@@ -92,6 +92,7 @@ plugins=(
   troter-shellenv-el
   troter-http
   troter-percol
+  junk-and-scratch
 )
 
 
