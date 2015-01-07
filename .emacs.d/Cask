@@ -19,6 +19,7 @@
 (depends-on "findr")
 (depends-on "flycheck")
 (depends-on "guide-key")
+(depends-on "haml-mode")
 (depends-on "haskell-mode")
 (depends-on "helm")
 (depends-on "helm-descbinds")
