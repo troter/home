@@ -104,7 +104,7 @@ namespace :brew do
       :homepage => 'https://github.com/c9s/phpbrew/',
       :install => <<-INSTALL,
         ([ -f $HOME/bin/phpbrew ] ||
-         curl -O https://raw.github.com/c9s/phpbrew/master/phpbrew && chmod +x phpbrew && mv phpbrew $HOME/bin ) && \
+         curl -L -O https://github.com/phpbrew/phpbrew/raw/master/phpbrew && chmod +x phpbrew && mv phpbrew $HOME/bin ) && \
         $HOME/bin/phpbrew init
       INSTALL
       :update => "phpbrew self-update"
