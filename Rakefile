@@ -66,11 +66,6 @@ end
 
 namespace :brew do
   brews = {
-    :pythonbrew => {
-      :homepage => 'https://github.com/utahta/pythonbrew',
-      :install => "curl -kL http://xrl.us/pythonbrewinstall | bash",
-      :update => "pythonbrew update"
-    },
     :pyenv => {
       :homepage => 'https://github.com/yyuu/pyenv',
       :install => <<-INSTALL,
@@ -84,11 +79,6 @@ namespace :brew do
         ([ -d $HOME/.pyenv ] && cd $HOME/.pyenv && git pull) && \
         ([ -d $HOME/.pyenv/plugins/pyenv-virtualenv ] && cd $HOME/.pyenv/plugins/pyenv-virtualenv && git pull)
       UPDATE
-    },
-    :rvm => {
-      :homepage => 'https://github.com/wayneeseguin/rvm',
-      :install => "curl -L https://get.rvm.io | bash -s stable",
-      :update => "rvm get stable"
     },
     :rbenv => {
       :homepage => 'https://github.com/sstephenson/rbenv/',
