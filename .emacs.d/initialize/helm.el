@@ -3,6 +3,7 @@
 (when (require 'helm-config)
   (require 'helm-command)
   (require 'helm-descbinds)
+  (require 'helm-swoop)
 
   (setq helm-buffer-max-length 45
         helm-ff-auto-update-initial-value nil
@@ -17,6 +18,13 @@
           helm-source-locate))
   (when nt-p
     (setq helm-c-locate-command "lfes -i -r %s"))
+
+  (setq helm-multi-swoop-edit-save t)
+  (setq helm-swoop-split-with-multiple-windows nil)
+  (setq helm-swoop-split-direction 'split-window-vertically)
+  (setq helm-swoop-speed-or-color nil)
+  (setq helm-swoop-move-to-line-cycle t)
+  (setq helm-swoop-use-line-number-face t)
 
   (define-key helm-map [(control i)] 'helm-execute-persistent-action) ;; helm-select-action
   (define-key helm-map [(control e)] 'move-end-of-line) ;; helm-select-2nd-action-or-end-of-line

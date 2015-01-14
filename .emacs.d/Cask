@@ -23,6 +23,7 @@
 (depends-on "haskell-mode")
 (depends-on "helm")
 (depends-on "helm-descbinds")
+(depends-on "helm-swoop")
 (depends-on "highlight-indentation")
 (depends-on "inf-ruby")
 (depends-on "inflections")

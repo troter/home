@@ -28,6 +28,15 @@
   (global-set-key [(control meta o)] 'helm-c-moccur-dmoccur) ; directory
 )
 
+(defun-eval-after-load 'helm-swoop
+  (define-key isearch-mode-map [(meta i)] 'helm-swoop-from-isearch)
+  (define-key helm-swoop-map [(meta i)] 'helm-multi-swoop-all-from-helm-swoop)
+  (global-set-key [(meta i)] 'helm-swoop)
+  (global-set-key [(meta I)] 'helm-swoop-back-to-last-point)
+  (global-set-key [(control c) (meta i)] 'helm-multi-swoop)
+  (global-set-key [(control x) (meta i)] 'helm-multi-swoop-all)
+)
+
 (defun-eval-after-load 'key-chord
   ;; keybind
 )
