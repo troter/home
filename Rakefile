@@ -57,6 +57,13 @@ task :prepare => [
   'prepare:macosx',
 ]
 
+namespace :pipsi do
+  desc 'install pipsi'
+  task :install do
+    sh 'curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python'
+  end
+end
+
 namespace :brew do
   brews = {
     :pythonbrew => {

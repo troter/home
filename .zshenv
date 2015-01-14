@@ -33,6 +33,9 @@ fi
 [ -d "/opt/local/share/info" ] && INFOPATH="/opt/local/share/info:$INFOPATH"
 [ -d "/opt/local/lib"        ] && LD_LIBRARY_PATH="/opt/local/lib:$LD_LIBRARY_PATH"
 
+# for pipsi
+[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
+
 # for my own tools
 [ -d "$HOME/bin"       ] && PATH="$HOME/bin:$PATH"
 [ -d "$HOME/man"       ] && MANPATH="$HOME/man:$MANPATH"
