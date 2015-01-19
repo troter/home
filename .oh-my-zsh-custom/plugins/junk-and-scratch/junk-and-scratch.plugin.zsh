@@ -34,7 +34,7 @@ if [[ $(whence percol) != "" ]]; then
   }
 
   function junkfile() {
-    local selected_file=$(_percol_junkfile_source | percol --query '$*')
+    local selected_file=$(_percol_junkfile_source | percol --query "$*")
     if [ -n "$selected_file" ]; then
       if [ -t 1 ]; then
         print -z "less ${selected_file}"
@@ -50,7 +50,7 @@ if [[ $(whence percol) != "" ]]; then
   }
 
   function scratch() {
-    local selected_dir=$(_percol_scratch_source | percol --query '$*')
+    local selected_dir=$(_percol_scratch_source | percol --query "$*")
     if [ -n "$selected_dir" ]; then
       if [ -t 1 ]; then
         print -z "cd ${selected_dir}"
