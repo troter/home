@@ -36,6 +36,7 @@ brew install imagemagick
 brew install jq
 brew install the_silver_searcher
 brew install tmux
+brew install reattach-to-user-namespace
 brew install watch
 brew install wget
 brew install parallel
