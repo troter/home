@@ -92,6 +92,7 @@ namespace :brew do
         ($HOME/.rbenv/bin/rbenv plug ruby-build || true) && \
         ($HOME/.rbenv/bin/rbenv plug rbenv-gem-rehash || true) && \
         ($HOME/.rbenv/bin/rbenv plug rbenv-default-gems || true) && \
+        ($HOME/.rbenv/bin/rbenv plug gem-src || true) && \
         touch $HOME/.rbenv/default-gems && \
         (grep bundler $HOME/.rbenv/default-gems > /dev/null || echo bundler >> $HOME/.rbenv/default-gems) && \
         (grep pry $HOME/.rbenv/default-gems > /dev/null || echo pry >> $HOME/.rbenv/default-gems)

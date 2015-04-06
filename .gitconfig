@@ -48,6 +48,8 @@
 	smtpserverport = 587
 [url "https://"]
 	insteadOf = git://
+[ghq]
+	root = ~/src
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =

@@ -10,6 +10,7 @@ brew tap homebrew/binary
 brew tap josegonzalez/homebrew-php
 brew tap caskroom/cask
 brew tap hirocaster/homebrew-mozc-emacs-helper
+brew tap motemen/ghq
 brew install brew-cask
 
 # browsers
@@ -43,6 +44,7 @@ brew install parallel
 brew install editorconfig
 brew install direnv
 brew install cmigemo
+brew install ghq
 
 # servers
 brew instal memcached
