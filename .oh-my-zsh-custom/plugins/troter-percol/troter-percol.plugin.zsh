@@ -14,13 +14,14 @@ if [[ $(whence percol) != "" ]]; then
 
   function _percol_select_repository_source() {
     local -a target_dirs
-    target_dirs=(sandbox src work)
+    target_dirs=(sandbox work)
     for dir in $target_dirs; do
       ls -d $HOME/$dir/*/
       [ -d $HOME/$dir/github.com ] && ls -d $HOME/$dir/github.com/*/*/
       [ -d $HOME/$dir/bitbucket.org ] && ls -d $HOME/$dir/bitbucket.org/*/*/
       [ -d $HOME/$dir/code.google.com ] && ls -d $HOME/$dir/code.google.com/*/*/
     done
+    [[ $(whence ghq) != "" ]] && ghq list --full-path
   }
 
   function percol_select_repository() {
