@@ -2,19 +2,23 @@
 
 (setq user-full-name "Takumi IINO"
       user-mail-address "trot.thunder@gmail.com")
-(setq default-directory "~/")
 
 ;; Basic configuration.
 (load "~/.emacs.d/basic.el")
-
-;; Load environment value if exists
-(load "~/.emacs.d/shellenv.el" t nil t)
 
 ;; Common Lisp extensions for Emacs.
 (require 'cl)
 
 ;; Startup Helper Functions.
 (require 'startup-helper "~/.emacs.d/startup-helper.el")
+
+;; Default-directory
+(when (and ns-p (equal (getenv "PATH") "/usr/bin:/bin:/usr/sbin:/sbin")) ; launch from os x dock
+  (setq default-directory "~/")
+  (setq command-line-default-directory "~/"))
+
+;; Load environment value if exists
+(load "~/.emacs.d/shellenv.el" t nil t)
 
 ;; Setup directory variables.
 (setq base-directory         "~/.emacs.d"
