@@ -24,6 +24,16 @@
 (setq dired-listing-switches "-alh")
 
 (require 'direx)
+(require 'direx-project)
 (defun-eval-after-load 'popwin
   (push '(direx:direx-mode :position left :width 40 :dedicated t)
         popwin:special-display-config))
+
+(defun tr:direx-project:jump-to-project-root-noselect:around (f)
+  (interactive)
+  (condition-case nil
+    (apply f nil)
+    (error
+      (direx:jump-to-directory-noselect))))
+(advice-add 'direx-project:jump-to-project-root-noselect
+  :around #'tr:direx-project:jump-to-project-root-noselect:around)
