@@ -9,7 +9,6 @@ brew tap homebrew/dupes
 brew tap homebrew/binary
 brew tap josegonzalez/homebrew-php
 brew tap caskroom/cask
-brew tap hirocaster/homebrew-mozc-emacs-helper
 brew tap motemen/ghq
 brew install brew-cask
 
@@ -28,7 +27,6 @@ brew cask install keyremap4macbook
 # editor
 brew install emacs
 brew cask install emacs
-brew install mozc-emacs-helper
 
 # tools
 brew install colordiff

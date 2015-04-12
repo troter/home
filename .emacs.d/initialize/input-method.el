@@ -31,24 +31,3 @@
   (when (locate-library "anthy")
     (load-library "anthy")
     (setq default-input-method "japanese-anthy")))
-
-(when darwin-p
-  (when (and (locate-library "mozc") (executable-find "mozc_emacs_helper"))
-    (load-library "mozc")
-    (setq default-input-method "japanese-mozc")
-    (setq mozc-helper-program-name "mozc_emacs_helper")
-    (defun-eval-after-load 'auto-complete-config
-      (require 'ac-mozc)
-      (define-key ac-mode-map (kbd "C-c C-SPC") 'ac-complete-mozc)
-      (defun tr-ac-mozc-setup ()
-        (setq ac-sources
-              '(ac-source-mozc ac-source-ascii-words-in-same-mode-buffers))
-        (set (make-local-variable 'ac-auto-show-menu) 0.2))
-      (dolist (mode (list 'rst-mode
-                          'markdown-mode
-                          'org-mode
-                          'text-mode))
-        (defun-eval-after-load mode
-          (add-to-list 'ac-modes mode)
-          (defun-add-hook (intern (format "%s-%s" mode "hook")) (tr-ac-mozc-setup))))
-      )))
