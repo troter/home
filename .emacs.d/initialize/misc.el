@@ -66,6 +66,7 @@
 
 (require 'edit-server)
 (setq edit-server-new-frame nil)
+(setq edit-server-port 19292)
 (edit-server-start)
 
 (load "editorconfig")
