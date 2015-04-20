@@ -149,6 +149,9 @@ smtp.gmail.com = 10:75:e1:8c:df:93:15:3b:a1:8f:cd:fe:d3:11:79:d5:16:43:77:bc
 github.schemes = http https
 github.prefix = github.com
 github.username = troter
+github.schemes = http https
+bitbucket.prefix = bitbucket.org
+bitbucket.username = troter
 
 # include settings
 %include $HOME/.mercurial/typo.rc
