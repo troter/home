@@ -6,8 +6,9 @@ brew update
 
 # repositories
 brew tap homebrew/dupes
+brew tap homebrew/versions
 brew tap homebrew/binary
-brew tap josegonzalez/homebrew-php
+brew tap homebrew/homebrew-php
 brew tap caskroom/cask
 brew tap motemen/ghq
 brew install brew-cask
