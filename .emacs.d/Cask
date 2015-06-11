@@ -50,6 +50,7 @@
 (depends-on "shell-command")
 (depends-on "shell-history")
 (depends-on "slime")
+(depends-on "smart-cursor-color")
 (depends-on "stripe-buffer")
 (depends-on "undo-tree")
 (depends-on "undohist")

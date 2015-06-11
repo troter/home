@@ -71,5 +71,6 @@
 (load-directory-files libraries-directory "^.+el$")
 (load-directory-files initialize-directory "^.+el$")
 (load custom-file t)
+(smart-cursor-color-mode 1)
 
 ;;; End of .emacs.el
