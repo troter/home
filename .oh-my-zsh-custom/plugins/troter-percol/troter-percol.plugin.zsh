@@ -54,4 +54,8 @@ if [[ $(whence percol) != "" ]]; then
     fi
     ppgrep $QUERY | xargs kill $*
   }
+
+  alias -g GB='$(git branch | percol | sed -e "s/^\*[ ]*//g")'
+  alias -g GGL='$(git log --graph --oneline --decorate | percol | sed "s/^\([|/\ *]* \)//g")'
+  alias -g MQ='$(hg qseries --summary | percol | sed -e "s/: .*$//g")'
 fi
