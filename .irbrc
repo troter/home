@@ -3,27 +3,12 @@
 require 'logger'
 require 'irb/completion'
 require 'pp'
+require 'rubygems'
 
 log = Logger.new(STDOUT)
 log.level = Logger::DEBUG
 
 IRB.conf[:SAVE_HISTORY] = 100000
-
-['rubygems', 'win32console', 'utility_belt'].each do |feature|
-  begin
-    require feature
-  rescue LoadError
-    log.warn("please install '#{feature}'.")
-  end
-end
-
-# http://eigenclass.org/hiki.rb?irb+ri+completion
-module Kernel
-  def r(arg)
-    puts `fri "#{arg}"`
-  end
-  private :r
-end
 
 class Object
   def puts_ri_documentation_for(obj, meth)
