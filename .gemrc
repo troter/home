@@ -1,1 +1,3 @@
 gemsrc_use_ghq: true
+gem: --no-document
+:backtrace: true
