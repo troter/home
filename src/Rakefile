@@ -8,18 +8,17 @@ REPOSITORIES = [
   %w[hg http://selenic.com/repo/hg hg],
   %w[hg http://selenic.com/repo/hg-stable hg-stable],
   %w[hg https://bitbucket.org/danielmartins/freehg freehg],
-  %w[hg https://bitbucket.org/zzzeek/sqlalchemy sqlalchemy],
+  %w[hg https://bitbucket.org/conservancy/kallithea kallithea],
+  %w[git https://bitbucket.org/zzzeek/sqlalchemy sqlalchemy],
   %w[hg https://bitbucket.org/mchaput/whoosh whoosh],
-  %w[hg https://bitbucket.org/marcinkuzminski/rhodecode rhodecode],
   %w[hg https://bitbucket.org/denis/gevent gevent],
   %w[hg https://bitbucket.org/cherrypy/cherrypy cherrypy],
   %w[hg https://bitbucket.org/simplecodes/wtforms wtforms],
   %w[hg https://bitbucket.org/thomaswaldmann/moin-2.0 moin-2.0],
-  %w[hg https://bitbucket.org/tarek/distribute distribute],
   %w[hg https://bitbucket.org/scons/scons scons],
   %w[hg https://bitbucket.org/danjac/newsmeme newsmeme],
   %w[hg https://bitbucket.org/tk0miya/blockdiag blockdiag],
-  %w[hg https://bitbucket.org/hpk42/pytest pytest],
+  %w[git https://github.com/pytest-dev/pytest pytest],
   %w[hg https://bitbucket.org/ianb/paste paste],
   %w[hg https://bitbucket.org/ianb/pastedeploy pastedeploy],
   %w[hg https://bitbucket.org/ianb/pastescript pastescript],
@@ -37,7 +36,7 @@ REPOSITORIES = [
   %w[git git://github.com/basho/riak-python-client.git riak-python-client],
   %w[git git://github.com/Linux2Go/riakalchemy.git riakalchemy],
   # python-packaging
-  %w[hg https://bitbucket.org/tarek/distribute distribute],
+  %w[hg https://bitbucket.org/pypa/setuptools setuptools],
   %w[hg https://bitbucket.org/python_mirrors/distutils2 distutils2],
   %w[git git://github.com/pypa/pip.git pip],
   %w[git git://github.com/pypa/virtualenv.git virtualenv],
@@ -45,10 +44,11 @@ REPOSITORIES = [
   # flask
   %w[git git://github.com/mitsuhiko/flask.git flask],
   %w[git git://github.com/mitsuhiko/flask-oauth.git flask-oauth],
-  %w[git git://github.com/adamrt/flask-evolution.git flask-evolution],
+  %w[git https://github.com/smurfix/flask-script flask-script],
+  %w[git https://github.com/miguelgrinberg/Flask-Migrate Flask-Migrate],
   %w[git git://github.com/mitsuhiko/flask-sqlalchemy.git flask-sqlalchemy],
-  %w[hg https://bitbucket.org/leafstorm/flask-login flask-login],
-  %w[hg https://bitbucket.org/danjac/flask-wtf flask-wtf],
+  %w[git https://github.com/maxcountryman/flask-login flask-login],
+  %w[git https://github.com/lepture/flask-wtf flask-wtf],
   # django
   %w[git git://github.com/django/django django],
   %w[hg https://bitbucket.org/jespern/django-piston django-piston],
@@ -152,24 +152,23 @@ REPOSITORIES = [
   %w[git git://github.com/ryanb/nested_form.git nested_form],
   %w[git git://github.com/plataformatec/simple_form.git simple_form],
   %w[git git://github.com/teambox/teambox.git teambox],
+  %w[git https://github.com/carrierwaveuploader/carrierwave carrierwave],
   # java
-  %w[svn https://www.seasar.org/svn/s2container/trunk/seasar2/ seasar2],
-  %w[svn https://www.seasar.org/svn/s2container/trunk/s2-tiger/ s2-tiger],
-  %w[svn https://www.seasar.org/svn/cubby/trunk/cubby-project/ cubby-project],
-  %w[svn https://www.seasar.org/svn/doma/trunk/doma/ doma],
-  %w[svn http://slim3.googlecode.com/svn/trunk/ slim3-read-only],
-  %w[svn http://google-guice.googlecode.com/svn/trunk/ google-guice-read-only],
-  %w[svn http://primefaces.googlecode.com/svn/primefaces/trunk/ primefaces-read-only],
-  %w[svn http://h2database.googlecode.com/svn/trunk/ h2database-read-only],
-  %w[svn https://svn.java.net/svn/jersey~svn/tags/jersey-1.9.1 jersey-1.9.1],
-  %w[svn https://svn.java.net/svn/jersey~svn/trunk/jersey jersey-trunk],
-  %w[svn https://resteasy.svn.sourceforge.net/svnroot/resteasy/trunk resteasy-trunk],
-  %w[svn https://resteasy.svn.sourceforge.net/svnroot/resteasy/tags/RESTEASY_JAXRS_2_1_0_GA/ resteasy-jaxrs-2.1.0-ga],
-  %w[svn http://svn.apache.org/repos/asf/geronimo/specs/trunk/ geronimo-specs-trunk],
-  %w[svn http://svn.apache.org/repos/asf/tomcat/trunk/ tomcat-trunk],
-  %w[svn http://svn.apache.org/repos/asf/wicket/trunk/ wicket-trunk],
-  %w[svn http://svn.apache.org/repos/asf/maven/maven-3/trunk maven-3],
-  %w[git http://git.eclipse.org/c/jetty/org.eclipse.jetty.project.git org.eclipse.jetty.project],
+  %w[git https://github.com/seasarorg/seasar2 seasar2],
+  %w[git https://github.com/seasarorg/cubby cubby],
+  %w[git https://github.com/seasarorg/doma doma],
+  %w[git https://github.com/Slim3/slim3 slim3],
+  %w[git https://github.com/google/guice guice],
+  %w[git https://github.com/h2database/h2database h2database],
+  %w[git https://github.com/jersey/jersey jersey],
+  %w[git https://github.com/jersey/jersey-1.x jersey-1.x],
+  %w[git https://github.com/resteasy/Resteasy Resteasy],
+  %w[git https://github.com/apache/geronimo geronimo],
+  %w[git https://github.com/apache/geronimo-txmanager geronimo-txmanager],
+  %w[git https://github.com/apache/tomcat tomcat],
+  %w[git https://github.com/apache/wicket wicket],
+  %w[git https://github.com/apache/maven maven],
+  %w[git https://github.com/eclipse/jetty.project jetty.project],
   %w[git git://github.com/KentBeck/junit junit],
   %w[git git://github.com/jenkinsci/jenkins.git jenkins],
   %w[git git://github.com/yusuke/twitter4j.git twitter4j],
@@ -194,36 +193,28 @@ REPOSITORIES = [
   %w[git git://github.com/basho/riak_core.git riak_core],
   %w[git git://github.com/basho/riak_kv.git riak_kv],
   # scheme
-  %w[git git://gauche.git.sourceforge.net/gitroot/gauche/Gauche Gauche],
+  %w[git https://github.com/shirok/Gauche Gauche],
   %w[git git://github.com/kiyoka/nendo.git nendo],
   %w[hg http://www.stklos.net/hg/hgweb.cgi stklos],
+  %w[hg https://bitbucket.org/ktakashi/sagittarius-scheme sagittarius-scheme],
   %w[git git://code.call-cc.org/chicken-core chicken-core],
 ]
-
-VCS_COMMAND = {
-  :hg => 'clone',
-  :git => 'clone',
-  :svn => 'checkout',
-}
 
 desc "Display repositories"
 task :list do
   REPOSITORIES.each do |repository|
     vcs, url, name = *repository
-    puts "#{name} [#{vcs}] #{url}"
+    next if vcs == 'svn'
+    puts "#{url} # #{name}"
   end
 end
 
 REPOSITORIES.each do |repository|
   vcs, url, name = *repository
-
-  desc "Clone #{name}"
-  task "clone-#{name}" do
-    if File.directory?(name)
-      STDERR.puts "WARNING: already exists #{name} directory."
-    else
-      sh "#{vcs} #{VCS_COMMAND[vcs.to_sym]} #{url} #{name}"
-    end
+  next if vcs == 'svn'
+  desc "ghq get #{url} # #{name}"
+  task "ghq-#{name}" do
+    sh "ghq get #{url}"
   end
 end
 
