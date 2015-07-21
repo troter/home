@@ -94,6 +94,7 @@ plugins=(
   troter-http
   troter-percol
   troter-travis
+  troter-golang
   junk-and-scratch
 )
 
