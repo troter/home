@@ -6,7 +6,9 @@
 
 (when (autoload-if-found 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
   (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
-  (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode)))
+  (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
+  (defun-add-hook 'markdown-mode-hook
+    (electric-indent-local-mode -1)))
 
 (when (autoload-if-found 'nxml-mode "nxml-mode.el" "a new XML mode" t)
   (add-to-list 'auto-mode-alist '("\\.xml$" . nxml-mode))
