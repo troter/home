@@ -96,6 +96,7 @@ plugins=(
   troter-travis
   troter-golang
   junk-and-scratch
+  troter-google-cloud-sdk
 )
 
 
