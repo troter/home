@@ -5,6 +5,9 @@ if [ $(uname) != 'Darwin' ]; then
   exit 1
 fi
 
+# path_helper run only once
+sudo mv /etc/zprofile /etc/zshenv
+
 # Show admin host info
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo 1
 
