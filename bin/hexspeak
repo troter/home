@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# -*- coding: utf-8; mode: ruby -*-
 #
 # usage:
 # hg log --template "{node} {author} {desc|firstline}\n" | hexspeak
