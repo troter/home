@@ -24,6 +24,8 @@
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = ~/.gitignore_global
 	pager = LESS='MFRX' less
+[rebase]
+	autostash = true
 [pager]
 	log = diff-highlight-safe | LESS='MFRX' less
 	show = diff-highlight-safe | LESS='MFRX' less
