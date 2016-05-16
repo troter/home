@@ -17,9 +17,7 @@ mq =
 pager =
 parentrevspec =
 patchbomb =
-progress =
 rebase =
-record =
 schemes =
 transplant =
 
