@@ -43,6 +43,7 @@
 	lg = log -p
 	st = status
 	pull = pull --ff-only
+	up = ! git fetch && git rebase --autostash FETCH_HEAD
 [sendemail]
 	smtpencryption = tls
 	smtpserver = smtp.gmail.com
