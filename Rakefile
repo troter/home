@@ -19,26 +19,6 @@ namespace :prepare do
     DOC
   end
 
-  desc "Prepare for centos 6.x"
-  task :centos do
-    puts <<-DOC.split(/\n/).map(&:lstrip)
-      ## centos 6.x
-      # add repoforge.
-      # ref: http://wiki.centos.org/AdditionalResources/Repositories/RPMForge
-      wget http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
-      sudo rpm --import http://apt.sw.be/RPM-GPG-KEY.dag.txt
-      sudo rpm -K rpmforge-release-0.5.2-2.el6.rf.*.rpm
-      sudo rpm -i rpmforge-release-0.5.2-2.el6.rf.*.rpm
-
-      # upgrade system and install development tools:
-      sudo yum upgrade
-      sudo yum groupinstall 'Development tools' 'Additional Development'
-
-      # install useful tools:
-      sudo yum install screen zsh mercurial
-    DOC
-  end
-
   desc "Prepare for macosx"
   task :macosx do
     puts <<-DOC.split(/\n/).map(&:lstrip)
@@ -53,7 +33,6 @@ end
 desc "prepare"
 task :prepare => [
   'prepare:cygwin',
-  'prepare:centos',
   'prepare:macosx',
 ]
 
