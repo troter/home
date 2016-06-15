@@ -90,7 +90,6 @@ namespace :brew do
          git clone https://github.com/znz/rbenv-plug.git $HOME/.rbenv/plugins/rbenv-plug) && \
         ($HOME/.rbenv/bin/rbenv plug rbenv-update || true) && \
         ($HOME/.rbenv/bin/rbenv plug ruby-build || true) && \
-        ($HOME/.rbenv/bin/rbenv plug rbenv-gem-rehash || true) && \
         ($HOME/.rbenv/bin/rbenv plug rbenv-default-gems || true) && \
         ($HOME/.rbenv/bin/rbenv plug gem-src || true) && \
         touch $HOME/.rbenv/default-gems && \
