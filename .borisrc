@@ -1,4 +1,0 @@
-<?php
-// -*- coding: utf-8 -*-
-
-$boris->setPrompt(PHP_VERSION . '> ');
