@@ -23,3 +23,6 @@ alias c "cheat" # gem install cheat
 alias p "eval \$PECO"
 
 alias ec "emacsclient"
+
+alias be "bundle exec"
+alias bi "bundle install"
