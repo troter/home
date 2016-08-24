@@ -1,3 +1,3 @@
 function fish_user_key_bindings
-  bind \cr 'peco_select_history'
+  bind \cr 'builtin history --merge; peco_select_history'
 end
