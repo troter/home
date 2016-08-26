@@ -11,7 +11,7 @@ alias df "df -h"
 
 alias su "su -l"
 
-alias cp "nocorrect cp -i"
+alias cp "cp -i"
 alias rm "rm -i"
 alias m "make"
 
