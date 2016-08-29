@@ -28,7 +28,7 @@
 (defun-eval-after-load 'ruby-mode
   (require 'ruby-additional nil t)
   (require 'ruby-electric nil t)
-  (require 'ruby-block nil t)
+  (require 'ruby-compilation nil t)
   (require 'rspec-mode nil t)
 
   ;; https://gist.github.com/dgutov/1274520
