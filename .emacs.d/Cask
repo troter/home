@@ -45,6 +45,7 @@
 (depends-on "ruby-additional")
 (depends-on "ruby-compilation")
 (depends-on "ruby-electric")
+(depends-on "rust-mode")
 (depends-on "sequential-command")
 (depends-on "shell-command")
 (depends-on "shell-history")
