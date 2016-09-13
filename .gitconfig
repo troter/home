@@ -24,6 +24,7 @@
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = ~/.gitignore_global
 	pager = LESS='MFRX' less
+	autocrlf = false
 [diff]
 	compactionHeuristic = true
 [rebase]
