@@ -149,7 +149,7 @@ github.prefix = github.com
 github.username = troter
 bitbucket.schemes = http https
 bitbucket.prefix = bitbucket.org
-bitbucket.username = troter
+bitbucket.username = trot.thunder@gmail.com
 
 # include settings
 %include $HOME/.mercurial/typo.rc
