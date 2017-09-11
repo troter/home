@@ -1,5 +1,5 @@
 function fish_title
-  if tmux info > /dev/null ^ /dev/null
+  if tmux info > /dev/null ^&1
     if [ "fish" != $_ ]
       tmux rename-window (string sub -s 1 -l 20 "$argv")
     else
