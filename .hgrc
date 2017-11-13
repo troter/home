@@ -139,9 +139,9 @@ gshortlog = glog --template "{label('changeset.{phase}', '{rev}:{node|short}')}{
   }{if(bookmarks, '[')}{label('gshortlog.bookmarks', join(bookmarks, ','))}{if(bookmarks, ']')}{if(tags, '[')}{if(tags, label('gshortlog.tags', join(tags, ',')))}{if(tags, ']')}
   "
 
-[hostfingerprints]
-bitbucket.org = 3f:d3:c5:17:23:3c:cd:f5:2d:17:76:06:93:7e:ee:97:42:21:14:aa
-smtp.gmail.com = 10:75:e1:8c:df:93:15:3b:a1:8f:cd:fe:d3:11:79:d5:16:43:77:bc
+[hostsecurity]
+bitbucket.org:fingerprints = sha256:4e:65:3e:76:0f:81:59:85:5b:50:06:0c:c2:4d:3c:56:53:8b:83:3e:9b:fa:55:26:98:9a:ca:e2:25:03:92:47
+smtp.gmail.com:fingerprints = sha1:E5:3E:03:D3:3F:C9:BA:86:E9:CC:20:B2:59:45:20:5E:98:F4:A4:DE
 
 [auth]
 github.schemes = http https
@@ -149,7 +149,7 @@ github.prefix = github.com
 github.username = troter
 bitbucket.schemes = http https
 bitbucket.prefix = bitbucket.org
-bitbucket.username = trot.thunder@gmail.com
+bitbucket.username = troter
 
 # include settings
 %include $HOME/.mercurial/typo.rc
