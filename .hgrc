@@ -151,6 +151,9 @@ bitbucket.schemes = http https
 bitbucket.prefix = bitbucket.org
 bitbucket.username = troter
 
+[subrepos]
+git:allowed = True
+
 # include settings
 %include $HOME/.mercurial/typo.rc
 %include $HOME/.mercurial/extensions.rc
