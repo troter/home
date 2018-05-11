@@ -1,7 +1,6 @@
 [user]
 	user = troter
-	email = trot.thunder@gmail.com
-	name = Takumi IINO
+	useConfigOnly = true
 [push]
 	default = simple
 [color]
