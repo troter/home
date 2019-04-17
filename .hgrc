@@ -140,7 +140,7 @@ gshortlog = glog --template "{label('changeset.{phase}', '{rev}:{node|short}')}{
   "
 
 [hostsecurity]
-bitbucket.org:fingerprints = sha256:4e:65:3e:76:0f:81:59:85:5b:50:06:0c:c2:4d:3c:56:53:8b:83:3e:9b:fa:55:26:98:9a:ca:e2:25:03:92:47
+bitbucket.org:fingerprints = sha256:32:12:90:9A:70:64:82:1C:5B:52:CC:C3:0A:D0:79:DB:E1:A8:62:1B:9A:9A:4C:F4:72:40:1C:A7:3A:D3:0A:8C
 smtp.gmail.com:fingerprints = sha1:E5:3E:03:D3:3F:C9:BA:86:E9:CC:20:B2:59:45:20:5E:98:F4:A4:DE
 
 [auth]
