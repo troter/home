@@ -1,7 +1,7 @@
 #!/bin/sh
 
 exists() {
-  if command -v $1 &>/dev/null; then
+  if command -v $1 2>&1 > /dev/null; then
     return 0
   else
     return 1
@@ -10,6 +10,15 @@ exists() {
 
 if exists diff-highlight; then
   diff-highlight
-else
-  cat
+  exit
 fi
+if exists batcat; then
+  batcat
+  exit
+fi
+if exists bat; then
+  bat
+  exit
+fi
+
+cat
