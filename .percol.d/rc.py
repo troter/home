@@ -23,7 +23,7 @@ percol.command.__class__.transpose_chars = transpose_chars
 
 # Prompt
 def dynamic_prompt():
-    prompt = ur""
+    prompt = u""
     if percol.model.finder.case_insensitive:
         prompt += "<bold><cyan>Q</cyan></bold> [a]"
     else:
@@ -33,7 +33,7 @@ def dynamic_prompt():
 
 percol.view.__class__.PROMPT = property(lambda self: dynamic_prompt())
 percol.view.prompt_replacees["F"] = lambda self, **args: self.model.finder.get_name()
-percol.view.RPROMPT = ur"(%F) [%i/%I]"
+percol.view.RPROMPT = u"(%F) [%i/%I]"
 
 # Mac で delete (backspace) が効くようにする
 SPECIAL_KEYS.update({
