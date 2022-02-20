@@ -1,7 +1,7 @@
 alias where "command -v"
 alias j="jobs -l"
 
-if test -n $WSL_DISTRO_NAME
+if test -n "$WSL_DISTRO_NAME"
   alias ls='ls --color=tty 2>/dev/null'
 end
 

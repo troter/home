@@ -1,4 +1,4 @@
-if test -n $WSL_DISTRO_NAME
+if test -n "$WSL_DISTRO_NAME"
   function open
     set -l path $argv[1]
     if test -e $path
