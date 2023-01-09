@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+
+  gem 'tty-command'
+end
+
+require 'securerandom'
+require 'tty-command'
+
+
+def generate_temporary_branch_name(prefix:)
+  [prefix, SecureRandom.uuid].join("/")
+end
+
+prefix = %x{git config --default 'tmp-merge' --get tmp-merge.prefix}.strip
+merge_branch = generate_temporary_branch_name(prefix: prefix)
+
+if ARGV.length != 1
+  $stderr.puts "usage: git tmp-merge <commit>"
+  exit 1
+end
+
+commit = ARGV[0]
+
+cmd = TTY::Command.new
+cmd.run("git", "checkout", "-b", merge_branch)
+cmd.run("git", "merge", commit)
