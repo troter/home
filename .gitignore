@@ -1,1 +1,11 @@
 *
+!.asdfrc
+!.config/fish/completions
+!.config/fish/conf.d
+!.config/fish/config.fish
+!.config/fish/functions
+!.default-gems
+!.editorconfig
+!.emacs.d
+!.mercurial
+!.percol.d
