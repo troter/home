@@ -44,6 +44,7 @@
 	glogc = log --pretty=format:\"%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative --date-order --graph
 	lg = log -p
 	st = status
+	sw = switch
 	pull = pull --ff-only
 	up = ! git fetch && git rebase --autostash FETCH_HEAD
 [sendemail]
