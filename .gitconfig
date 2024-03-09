@@ -34,7 +34,8 @@
 	diff = diff-highlight-safe | LESS='MFRX' less
 [alias]
 	br = branch
-	cb = ! git branch | grep '*' | awk '{print $2}' # current-branch
+	current = ! git branch --contains | awk '{print $2}' # current-branch
+	cur = current
 	ci = commit
 	co = checkout
 	df = diff
