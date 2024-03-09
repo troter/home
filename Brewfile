@@ -1,6 +1,3 @@
-# tap
-tap "motemen/ghq"
-
 # browsers
 cask "firefox"
 cask "google-chrome"
@@ -28,6 +25,8 @@ brew "parallel"
 brew "editorconfig"
 brew "direnv"
 brew "cmigemo"
+
+# ghq
 brew "ghq"
 
 # vcs
