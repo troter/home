@@ -57,6 +57,10 @@
 	insteadOf = git://
 [ghq]
 	root = ~/src
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft \"$LOCAL\" \"$REMOTE\"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
