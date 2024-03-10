@@ -5,9 +5,12 @@ function peco_select_history
     set peco_flags --query "$argv"
   end
 
-  history|eval $PECO $peco_flags|read foo
+  history --null \
+    | ruby -rjson -e 'puts ARGF.read.split(/\x00/).map{|c| JSON.dump(c.split("\n"))}' \
+    | eval $PECO $peco_flags \
+    | read foo
   if [ $foo ]
-    commandline $foo
+    commandline (echo $foo | ruby -rjson -e "puts JSON.parse(ARGF.read)" )
   else
     commandline ''
   end
