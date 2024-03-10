@@ -3,7 +3,7 @@
 
 [ui]
 username = Takumi IINO <trot.thunder@gmail.com>
-ignore = $HOME/.hgignore_global
+ignore = $HOME/.config/hg/ignore
 
 [extensions]
 churn =
@@ -157,4 +157,3 @@ bitbucket.username = troter
 %include $HOME/.mercurial/hooks.rc
 %include $HOME/.mercurial/araxis.rc
 %include $HOME/.mercurial/local.rc
-%include $HOME/.hgrc_local
