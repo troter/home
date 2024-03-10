@@ -59,8 +59,4 @@ if [ -z "$JAVA_HOME" ]; then
   export JAVA_HOME
 fi
 
-# PYTHONSTARTUP
-# =============
-export PYTHONSTARTUP=$HOME/.pythonstartup.py
-
 # __END__
