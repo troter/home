@@ -22,13 +22,6 @@ if [ -f "/opt/homebrew/bin/brew" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# for MacPorts
-[ -d "/opt/local/bin"        ] && PATH="/opt/local/bin:$PATH"
-[ -d "/opt/local/sbin"       ] && PATH="/opt/local/sbin:$PATH"
-[ -d "/opt/local/share/man"  ] && MANPATH="/opt/local/share/man:$MANPATH"
-[ -d "/opt/local/share/info" ] && INFOPATH="/opt/local/share/info:$INFOPATH"
-[ -d "/opt/local/lib"        ] && LD_LIBRARY_PATH="/opt/local/lib:$LD_LIBRARY_PATH"
-
 # for specific tools
 [ -d "$HOME/.local/bin"       ] && PATH="$HOME/.local/bin:$PATH"
 [ -d "$HOME/.local/man"       ] && MANPATH="$HOME/.local/man:$MANPATH"
