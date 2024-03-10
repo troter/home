@@ -27,5 +27,5 @@ end
 commit = ARGV[0]
 
 cmd = TTY::Command.new
-cmd.run("git", "checkout", "-b", merge_branch)
+cmd.run("git", "switch", "-c", merge_branch)
 cmd.run("git", "merge", commit)
