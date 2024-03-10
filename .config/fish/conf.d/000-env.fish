@@ -9,11 +9,9 @@ switch "$TERM"
   case 'screen*'; set -x TERM screen-256color;
 end
 
-if [ -f /usr/local/bin/brew ]
-  set -x PATH /usr/local/bin /usr/local/sbin $PATH
-  set -x MANPATH /usr/local/share/man $MANPATH
-  set -x INFOPATH /usr/local/share/info $INFOPATH
-  set -x LD_LIBRARY_PATH /usr/local/lib $LD_LIBRARY_PATH
+# homebrew
+if command -v /opt/homebrew/bin/brew &> /dev/null
+  /opt/homebrew/bin/brew shellenv fish | source
 end
 
 # for my own tools
