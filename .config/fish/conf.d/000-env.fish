@@ -17,8 +17,8 @@ if [ -f /usr/local/bin/brew ]
 end
 
 # for my own tools
-set -x PATH $HOME/bin $HOME/local/bin $PATH
-set -x MANPATH $HOME/man $HOME/share/man $HOME/local/man $HOME/local/share/man $MANPATH
-set -x INFOPATH $HOME/info $HOME/local/info $INFOPATH
+set -x PATH $HOME/.local/bin $PATH
+set -x MANPATH $HOME/.local/man $HOME/.local/share/man $MANPATH
+set -x INFOPATH $HOME/.local/info $INFOPATH
 
 set -x EDITOR vi
