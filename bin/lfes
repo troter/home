@@ -1,7 +1,0 @@
-#!/bin/sh
-if ! which es &> /dev/null; then
-  echo "Not Install 'Everything'"
-  echo "Download from http://www.voidtools.com/download.php"
-  exit 1
-fi
-es $@ | awk '{print $0}'
