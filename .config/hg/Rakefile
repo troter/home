@@ -2,17 +2,11 @@
 
 namespace :mercurial do
   namespace :extensions do
-    extensions_rc = "~/.mercurial/extensions.rc".gsub(/~/, ENV['HOME'])
-    extensions_dir = "~/.mercurial/extensions".gsub(/~/, ENV['HOME'])
+    extensions_rc = "#{__dir__}/extensions.rc"
+    extensions_dir = "#{__dir__}/extensions"
     extensions = [
-      %w[https://bitbucket.org/troter/hg-grepfile hg-grepfile grepfile.py grepfile],
-      %w[https://bitbucket.org/troter/hg-now hg-now now.py now],
-      %w[https://bitbucket.org/troter/hg-show hg-show show.py show],
-      %w[https://bitbucket.org/durin42/hg-git hg-git hggit hggit],
-      %w[https://bitbucket.org/sjl/hg-review hg-review review review],
-      %w[https://bitbucket.org/peerst/hgcollapse hgcollapse hgext/collapse.py collapse],
-      %w[https://bitbucket.org/durin42/hgsubversion/ hgsubversion hgsubversion hgsubversion],
-      %w[https://bitbucket.org/mg/terse-status/ terse-status terse-status.py terse-status],
+      %w[https://foss.heptapod.net/mercurial/hg-git hg-git hggit hggit],
+      %w[https://hg.durin42.com/hgsubversion/ hgsubversion hgsubversion hgsubversion],
       ['', '', 'hg_diff_highlight.py', 'diff_highlight'],
     ]
     extension_dirs = extensions.map do |extension|
@@ -55,7 +49,7 @@ namespace :mercurial do
     desc "mercurial extensions update"
     task :update do
       extension_dirs.each do |extension_dir|
-        if File.exists? extension_dir
+        if File.exist? extension_dir
           cd extension_dir do
             sh "hg pull"
             sh "hg update"

@@ -152,8 +152,8 @@ bitbucket.prefix = bitbucket.org
 bitbucket.username = troter
 
 # include settings
-%include $HOME/.mercurial/typo.rc
-%include $HOME/.mercurial/extensions.rc
-%include $HOME/.mercurial/hooks.rc
-%include $HOME/.mercurial/araxis.rc
-%include $HOME/.mercurial/local.rc
+%include $HOME/.config/hg/typo.rc
+%include $HOME/.config/hg/extensions.rc
+%include $HOME/.config/hg/hooks.rc
+%include $HOME/.config/hg/araxis.rc
+%include $HOME/.config/hg/local.rc
