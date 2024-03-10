@@ -11,16 +11,15 @@ end
 require 'securerandom'
 require 'tty-command'
 
-
 def generate_temporary_branch_name(prefix:)
   [prefix, SecureRandom.uuid].join("/")
 end
 
-prefix = %x{git config --default 'tmp-merge' --get tmp-merge.prefix}.strip
+prefix = %x(git config --default 'tmp-merge' --get tmp-merge.prefix).strip
 merge_branch = generate_temporary_branch_name(prefix: prefix)
 
 if ARGV.length != 1
-  $stderr.puts "usage: git tmp-merge <commit>"
+  warn "usage: git tmp-merge <commit>"
   exit 1
 end
 

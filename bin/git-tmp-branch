@@ -11,12 +11,11 @@ end
 require 'securerandom'
 require 'tty-command'
 
-
 def generate_temporary_branch_name(prefix:)
   [prefix, SecureRandom.uuid].join("/")
 end
 
-prefix = %x{git config --default 'tmp' --get tmp-branch.prefix}.strip
+prefix = %x(git config --default 'tmp' --get tmp-branch.prefix).strip
 tmp_branch = generate_temporary_branch_name(prefix: prefix)
 
 cmd = TTY::Command.new
