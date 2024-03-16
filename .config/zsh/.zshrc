@@ -73,7 +73,7 @@ ZSH_CUSTOM=$HOME/.config/zsh/custom
 plugins=(
 #  bower
 #  brew-cask
-#  brew
+  brew
 #  bundler
 #  capistrano
 #  coffee
