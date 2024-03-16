@@ -17,7 +17,7 @@ if [[ $(whence percol) = "" ]]; then
       bindkey "^P" history-beginning-search-backward-end
       bindkey "^N" history-beginning-search-forward-end
     fi
-    [[ $EMACS = t ]] && unsetopt zle
+    [[ -n "$INSIDE_EMACS" ]] && unsetopt zle
   }
   keybind_configuration; unset -f keybind_configuration
 fi
