@@ -151,4 +151,4 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Load local configuration file.
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+[[ -f ~/.zshrc ]] && source ~/.zshrc

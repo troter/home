@@ -2,6 +2,10 @@
 # user generic .zshenv file for zsh(1).
 # =====================================
 
+# ZDOTDIR.
+# =====
+export ZDOTDIR="${ZDOTDIR:-"$HOME/.config/zsh"}"
+
 # LANG.
 # =====
 export LANG=ja_JP.UTF-8
