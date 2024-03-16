@@ -13,10 +13,9 @@ export LANG=ja_JP.UTF-8
 # PATH, MANPATH, INFOPATH, LD_LIBRARY_PATH.
 # =========================================
 # for specific tools
-[ -d "$HOME/.local/bin"       ] && PATH="$HOME/.local/bin:$PATH"
-[ -d "$HOME/.local/man"       ] && MANPATH="$HOME/.local/man:$MANPATH"
-[ -d "$HOME/.local/share/man" ] && MANPATH="$HOME/.local/share/man:$MANPATH"
-[ -d "$HOME/.local/info"      ] && INFOPATH="$HOME/.local/info:$INFOPATH"
+path+=($HOME/.local/bin(N-/))
+manpath+=($HOME/.local/man(N-/) $HOME/.local/share/man(N-/))
+infopath+=($HOME/.local/info(N-/))
 
 export PATH MANPATH INFOPATH LD_LIBRARY_PATH
 
