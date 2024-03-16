@@ -2,13 +2,6 @@
 
 set -x LANG ja_JP.UTF-8
 
-switch "$TERM"
-  case 'xterm*';  set -x TERM xterm-256color;
-  case 'kterm*';  set -x TERM kterm-256color;
-  case 'rxvt*';   set -x TERM rxvt-256color;
-  case 'screen*'; set -x TERM screen-256color;
-end
-
 # homebrew
 if command -v /opt/homebrew/bin/brew &> /dev/null
   /opt/homebrew/bin/brew shellenv fish | source

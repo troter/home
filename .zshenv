@@ -10,15 +10,6 @@ export ZDOTDIR="${ZDOTDIR:-"$HOME/.config/zsh"}"
 # =====
 export LANG=ja_JP.UTF-8
 
-# TERM.
-# =====
-[[ "$TERM" == (xterm*)   ]] && TERM=xterm-256color
-[[ "$TERM" == (kterm*)   ]] && TERM=kterm-256color
-[[ "$TERM" == (rxvt*)    ]] && TERM=rxvt-256color
-[[ "$TERM" == (screen*)  ]] && TERM=screen-256color
-#if [[ "${OSTYPE}" == (cygwin*) ]] { TERM=cygwin;  }
-export TERM
-
 # PATH, MANPATH, INFOPATH, LD_LIBRARY_PATH.
 # =========================================
 # for Homebrew
