@@ -1,4 +1,20 @@
 {
+  "Keymap": {
+    "C-h": "peco.DeleteBackwardChar",
+    "C-d": "peco.DeleteForwardChar",
+    "C-k": "peco.KillEndOfLine",
+    "C-a": "peco.BeginningOfLine",
+    "C-e": "peco.EndOfLine",
+    "C-b": "peco.BackwardChar",
+    "C-f": "peco.ForwardChar",
+    "C-n": "peco.SelectDown",
+    "C-p": "peco.SelectUp",
+    "C-v": "peco.ScrollPageDown",
+    "M-v": "peco.ScrollPageUp",
+    "C-m": "peco.Finish",
+    "C-j": "peco.Finish",
+    "C-g": "peco.Cancel"
+  },
   "Prompt": "Q>",
   "Use256Color": true
 }
