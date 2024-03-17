@@ -74,5 +74,3 @@ if (( ${+functions[marks]} )); then
   bindkey -M viins '^B' peco_select_marks
   bindkey -M vicmd '^B' peco_select_marks
 fi
-
-export PECO_USE_TMUX=1
