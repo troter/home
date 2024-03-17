@@ -104,7 +104,7 @@ plugins=(
 #  troter-direnv
 #  troter-shellenv-el
 #  troter-http
-#  troter-percol
+  troter-peco
 #  troter-travis
 #  troter-golang
 #  junk-and-scratch
