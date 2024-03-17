@@ -5,6 +5,7 @@
     "C-k": "peco.KillEndOfLine",
     "C-y": "-",
     "C-t": "-",
+    "C-l": "peco.RefreshScreen",
     "C-a": "peco.BeginningOfLine",
     "C-e": "peco.EndOfLine",
     "C-b": "peco.BackwardChar",
