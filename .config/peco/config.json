@@ -3,6 +3,8 @@
     "C-h": "peco.DeleteBackwardChar",
     "C-d": "peco.DeleteForwardChar",
     "C-k": "peco.KillEndOfLine",
+    "C-y": "-",
+    "C-t": "-",
     "C-a": "peco.BeginningOfLine",
     "C-e": "peco.EndOfLine",
     "C-b": "peco.BackwardChar",
