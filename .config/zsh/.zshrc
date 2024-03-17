@@ -105,7 +105,6 @@ plugins=(
 #  troter-shellenv-el
 #  troter-http
   troter-peco
-#  troter-travis
 #  troter-golang
 #  junk-and-scratch
 )
