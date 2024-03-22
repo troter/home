@@ -1,0 +1,64 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+require 'open3'
+require 'pathname'
+require 'shellwords'
+require 'tmpdir'
+
+# port of https://github.com/mooz/percol/blob/v0.2.1/tools/zsh/percol.zsh
+class PecoPopup
+  class << self
+    def peco_path
+      ENV["PECO_BIN"] || "peco"
+    end
+
+    def tmux_path
+      ENV["TMUX_BIN"] || "tmux"
+    end
+  end
+
+  def run(argv, stdin, use_tmux=false)
+    if use_tmux
+      peco_tmux(argv, stdin)
+    else
+      peco_normal(argv, stdin)
+    end
+  end
+
+  def peco_tmux(argv, stdin)
+    create_fifo
+    system([self.class.tmux_path, "split-window",  "#{self.class.peco_path} #{argv.map(&:shellescape).join(" ")} < #{fifo_in_path} > #{fifo_out_path}"].shelljoin)
+    t = Thread.new do
+      fifo_in_path.open("w") do |fifo_in|
+        IO.copy_stream(stdin, fifo_in)
+      end
+    end
+    system("cat #{fifo_out_path}")
+  end
+
+  def peco_normal(argv, stdin)
+    peco_in, = *Open3.popen2([self.class.peco_path, *argv].shelljoin)
+    IO.copy_stream(stdin, peco_in)
+  end
+
+  def tmpdir
+    @tmpdir ||= Dir.mktmpdir.tap do
+      at_exit { FileUtils.remove_entry_secure(tmpdir) }
+    end
+  end
+
+  def fifo_in_path
+    Pathname("#{tmpdir}/peco-channel-in")
+  end
+
+  def fifo_out_path
+    Pathname("#{tmpdir}/peco-channel-out")
+  end
+
+  def create_fifo
+    [File.mkfifo(fifo_in_path, 0600), File.mkfifo(fifo_out_path, 0600)]
+  end
+end
+
+PecoPopup.new.run(ARGV, $stdin, ENV["TMUX"] && ENV["PECO_USE_TMUX"])
