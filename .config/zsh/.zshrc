@@ -104,7 +104,7 @@ plugins=(
   direnv
 #  troter-shellenv-el
 #  troter-http
-#  troter-peco
+#  peco
 #  troter-golang
 #  junk-and-scratch
   fzf
