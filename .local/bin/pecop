@@ -16,17 +16,30 @@ class PecoPopup
     def tmux_path
       ENV["TMUX_BIN"] || "tmux"
     end
-  end
 
-  def run(argv, stdin, stdout, use_tmux=false)
-    if use_tmux
-      peco_tmux(argv, stdin, stdout)
-    else
-      peco_normal(argv, stdin, stdout)
+    def run(argv, stdin, stdout, use_tmux=false)
+      self.new(argv, stdin, stdout, use_tmux).run
     end
   end
 
-  def peco_tmux(argv, stdin, stdout)
+  private attr_reader :argv, :stdin, :stdout, :use_tmux
+
+  def initialize(argv, stdin, stdout, use_tmux)
+    @argv = argv
+    @stdin = stdin
+    @stdout = stdout
+    @use_tmux = use_tmux
+  end
+
+  def run
+    if use_tmux
+      peco_tmux
+    else
+      peco_normal
+    end
+  end
+
+  def peco_tmux
     create_fifo
     system([self.class.tmux_path, "split-window",  "#{self.class.peco_path} #{argv.map(&:shellescape).join(" ")} < #{fifo_in_path} > #{fifo_out_path}"].shelljoin)
     t = Thread.new do
@@ -39,7 +52,7 @@ class PecoPopup
     stdout.write(fifo_out_path.read)
   end
 
-  def peco_normal(argv, stdin, stdout)
+  def peco_normal
     IO.popen([self.class.peco_path, *argv].shelljoin, "r+") do |io|
       IO.copy_stream(stdin, io)
       io.close_write
@@ -67,5 +80,5 @@ class PecoPopup
 end
 
 if __FILE__ == $0
-  PecoPopup.new.run(ARGV, $stdin, $stdout, ENV["TMUX"] && ENV["PECO_USE_TMUX"])
+  PecoPopup.run(ARGV, $stdin, $stdout, ENV["TMUX"] && ENV["PECO_USE_TMUX"])
 end
