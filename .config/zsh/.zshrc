@@ -101,7 +101,7 @@ plugins=(
 #  troter-homebrew
 #  pyenv
 #  rbenv
-#  troter-direnv
+  direnv
 #  troter-shellenv-el
 #  troter-http
 #  troter-peco
