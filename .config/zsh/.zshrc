@@ -104,9 +104,10 @@ plugins=(
 #  troter-direnv
 #  troter-shellenv-el
 #  troter-http
-  troter-peco
+#  troter-peco
 #  troter-golang
 #  junk-and-scratch
+  troter-fzf
 )
 
 if [[ -f $ZSH/oh-my-zsh.sh ]]; then

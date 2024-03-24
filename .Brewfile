@@ -25,6 +25,7 @@ brew "parallel"
 brew "editorconfig"
 brew "direnv"
 brew "cmigemo"
+brew "fzf"
 
 # ghq
 brew "ghq"
