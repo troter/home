@@ -108,6 +108,7 @@ plugins=(
 #  troter-golang
 #  junk-and-scratch
   fzf
+  zoxide
 )
 
 if [[ -f $ZSH/oh-my-zsh.sh ]]; then
