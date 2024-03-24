@@ -107,7 +107,7 @@ plugins=(
 #  troter-peco
 #  troter-golang
 #  junk-and-scratch
-  troter-fzf
+  fzf
 )
 
 if [[ -f $ZSH/oh-my-zsh.sh ]]; then
