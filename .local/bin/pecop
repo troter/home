@@ -18,15 +18,15 @@ class PecoPopup
     end
   end
 
-  def run(argv, stdin, use_tmux=false)
+  def run(argv, stdin, stdout, use_tmux=false)
     if use_tmux
-      peco_tmux(argv, stdin)
+      peco_tmux(argv, stdin, stdout)
     else
-      peco_normal(argv, stdin)
+      peco_normal(argv, stdin, stdout)
     end
   end
 
-  def peco_tmux(argv, stdin)
+  def peco_tmux(argv, stdin, stdout)
     create_fifo
     system([self.class.tmux_path, "split-window",  "#{self.class.peco_path} #{argv.map(&:shellescape).join(" ")} < #{fifo_in_path} > #{fifo_out_path}"].shelljoin)
     t = Thread.new do
@@ -36,12 +36,15 @@ class PecoPopup
         # ignore broken pipe
       end
     end
-    system("cat #{fifo_out_path}")
+    stdout.write(fifo_out_path.read)
   end
 
-  def peco_normal(argv, stdin)
-    peco_in, = *Open3.popen2([self.class.peco_path, *argv].shelljoin)
-    IO.copy_stream(stdin, peco_in)
+  def peco_normal(argv, stdin, stdout)
+    IO.popen([self.class.peco_path, *argv].shelljoin, "r+") do |io|
+      IO.copy_stream(stdin, io)
+      io.close_write
+      stdout.write(io.read)
+    end
   end
 
   def tmpdir
@@ -63,4 +66,6 @@ class PecoPopup
   end
 end
 
-PecoPopup.new.run(ARGV, $stdin, ENV["TMUX"] && ENV["PECO_USE_TMUX"])
+if __FILE__ == $0
+  PecoPopup.new.run(ARGV, $stdin, $stdout, ENV["TMUX"] && ENV["PECO_USE_TMUX"])
+end
