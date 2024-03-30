@@ -1,6 +1,8 @@
 [user]
 	user = troter
 	useConfigOnly = true
+[init]
+	defaultBranch = main
 [push]
 	default = simple
 [branch]
