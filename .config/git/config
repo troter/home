@@ -27,6 +27,9 @@
 	compactionHeuristic = true
 [rebase]
 	autostash = true
+[rerere]
+	enabled = true
+	autoUpdate = true
 [pager]
 	log = diff-highlight-safe | LESS='MFRX' less
 	show = diff-highlight-safe | LESS='MFRX' less
