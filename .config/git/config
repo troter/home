@@ -42,6 +42,7 @@
 	ci = commit
 	co = checkout
 	df = diff
+	di = diff
 	fixup = commit --amend -C HEAD
 	glog = log --pretty=format:\"%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative --date-order --graph --all
 	glogc = log --pretty=format:\"%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative --date-order --graph
@@ -50,6 +51,7 @@
 	sw = switch
 	sync = pull --rebase --autostash
 	pull = pull --ff-only
+	wt = worktree
 [sendemail]
 	smtpencryption = tls
 	smtpserver = smtp.gmail.com
