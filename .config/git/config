@@ -52,11 +52,6 @@
 	up = pull --rebase --autostash
 	pull = pull --ff-only
 	wt = worktree
-[sendemail]
-	smtpencryption = tls
-	smtpserver = smtp.gmail.com
-	smtpuser = trot.thunder@gmail.com
-	smtpserverport = 587
 [url "https://"]
 	insteadOf = git://
 [ghq]
