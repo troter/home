@@ -50,7 +50,6 @@
 	st = status
 	sw = switch
 	up = pull --rebase --autostash
-	pull = pull --ff-only
 	wt = worktree
 [url "https://"]
 	insteadOf = git://
