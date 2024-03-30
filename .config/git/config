@@ -3,6 +3,8 @@
 	useConfigOnly = true
 [push]
 	default = simple
+[branch]
+	sort = -committerdate
 [color]
 	ui = auto
 [color "branch"]
