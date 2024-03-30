@@ -39,13 +39,13 @@
 	show = diff-highlight-safe | LESS='MFRX' less
 	diff = diff-highlight-safe | LESS='MFRX' less
 [alias]
+	amend = commit --amend
 	br = branch
 	current = branch --show-current
 	cur = current
 	ci = commit
 	co = checkout
 	df = diff
-	fix = commit --amend
 	fixup = commit --amend -C HEAD
 	glog = log --pretty=format:\"%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative --date-order --graph --all
 	glogc = log --pretty=format:\"%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative --date-order --graph
