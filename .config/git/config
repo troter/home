@@ -65,11 +65,5 @@
 	prompt = false
 [difftool "difftastic"]
 	cmd = difft \"$LOCAL\" \"$REMOTE\"
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [includeIf "gitdir:~/.git"]
 	path = ~/.config/git/config.home
