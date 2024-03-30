@@ -49,7 +49,7 @@
 	lg = log -p
 	st = status
 	sw = switch
-	sync = pull --rebase --autostash
+	up = pull --rebase --autostash
 	pull = pull --ff-only
 	wt = worktree
 [sendemail]
