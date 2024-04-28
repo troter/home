@@ -1,23 +1,17 @@
 #!/usr/bin/env ruby
+# based on https://gist.github.com/janlelis/781835
 
-def command?(command)
-  system("which #{command} > /dev/null 2>&1")
+require 'bundler/inline'
+
+gemfile do
+  source 'https://rubygems.org'
+  gem 'clipboard'
 end
 
-clipboard = case
-            when command?('pbcopy') && command?('pbpaste') # mac
-              {:copy => 'pbcopy', :paste => 'pbpaste'}
-            when File.exists?('/dev/clipboard')
-              {:copy => 'cat > /dev/clipboard', :paste => 'cat /dev/clipboard'} # cygwin
-            when command?('xclip')
-              {:copy => 'xclip', :paste => 'xclip -o'}
-            else
-              STDERR.puts "#{$0}: not supported platform or command not found"
-              exit 1
-            end
+require 'clipboard'
 
-if STDIN.tty? || ARGV[0] == '-p'
-  system(clipboard[:paste])
+if $stdin.tty? && $*.empty?
+  puts Clipboard.paste # the trailing new-line is intended ;)
 else
-  IO.copy_stream(STDIN, IO.popen(clipboard[:copy], mode='w'))
+  Clipboard.copy ARGF.read
 end
