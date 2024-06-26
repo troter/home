@@ -35,47 +35,81 @@ class PecoPopup
     if use_tmux
       peco_tmux
     else
-      peco_normal
+      peco_simple
     end
   end
 
   def peco_tmux
-    create_fifo
-    system([self.class.tmux_path, "split-window",  "#{self.class.peco_path} #{argv.map(&:shellescape).join(" ")} < #{fifo_in_path} > #{fifo_out_path}"].shelljoin)
-    t = Thread.new do
-      fifo_in_path.open("w") do |fifo_in|
-        IO.copy_stream(stdin, fifo_in)
-      rescue
-        # ignore broken pipe
+    WithTmux.new(argv, stdin, stdout).run
+  end
+
+  def peco_simple
+    Simple.new(argv, stdin, stdout).run
+  end
+
+  class WithTmux
+    private attr_reader :argv, :stdin, :stdout
+
+    def initialize(argv, stdin, stdout)
+      @argv = argv
+      @stdin = stdin
+      @stdout = stdout
+    end
+
+    def run
+      create_fifo
+      t = Thread.new do
+        system([
+          PecoPopup.tmux_path,
+          'split-window',
+          "#{PecoPopup.peco_path} #{argv.map(&:shellescape).join(' ')} < #{fifo_in_path} > #{fifo_out_path}"
+        ].shelljoin)
+      end
+      Thread.new do
+        fifo_in_path.open('w') do |fifo_in|
+          IO.copy_stream(stdin, fifo_in)
+          # ignore broken pipe
+        end
+      end
+      t.join
+      stdout.write(fifo_out_path.read)
+    end
+
+    def tmpdir
+      @tmpdir ||= Dir.mktmpdir.tap do
+        at_exit { FileUtils.remove_entry_secure(tmpdir) }
       end
     end
-    stdout.write(fifo_out_path.read)
-  end
 
-  def peco_normal
-    IO.popen([self.class.peco_path, *argv].shelljoin, "r+") do |io|
-      IO.copy_stream(stdin, io)
-      io.close_write
-      stdout.write(io.read)
+    def fifo_in_path
+      Pathname("#{tmpdir}/peco-channel-in")
+    end
+
+    def fifo_out_path
+      Pathname("#{tmpdir}/peco-channel-out")
+    end
+
+    def create_fifo
+      [File.mkfifo(fifo_in_path, 0o600), File.mkfifo(fifo_out_path, 0o600)]
     end
   end
 
-  def tmpdir
-    @tmpdir ||= Dir.mktmpdir.tap do
-      at_exit { FileUtils.remove_entry_secure(tmpdir) }
+  class Simple
+    private attr_reader :argv, :stdin, :stdout
+
+    def initialize(argv, stdin, stdout)
+      @argv = argv
+      @stdin = stdin
+      @stdout = stdout
     end
-  end
 
-  def fifo_in_path
-    Pathname("#{tmpdir}/peco-channel-in")
-  end
-
-  def fifo_out_path
-    Pathname("#{tmpdir}/peco-channel-out")
-  end
-
-  def create_fifo
-    [File.mkfifo(fifo_in_path, 0600), File.mkfifo(fifo_out_path, 0600)]
+    def run
+      IO.popen([PecoPopup.peco_path, *argv].shelljoin, 'r+') do |io|
+        IO.copy_stream(stdin, io)
+        io.close_write
+        stdout.write(io.read)
+      end
+    end
   end
 end
 
