@@ -1,5 +1,11 @@
 (( ${+commands[peco]} )) || return
 
+if [[ "$TERM_PROGRAM" == "tmux" ]]; then
+  export PECO_USE_TMUX=1
+else
+  export PECO_USE_TMUX=0
+fi
+
 # TODO: I'm not sure whether this process is proper or not
 function _peco_clean_prompt() {
   if [[ -n $TMUX ]]; then
