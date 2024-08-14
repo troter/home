@@ -111,6 +111,11 @@ plugins=(
   zoxide
 )
 
+# Skip all plugin aliases
+zstyle ':omz:plugins:*' aliases no
+# Except for the specific plugin
+# zstyle ':omz:plugins:git' aliases yes
+
 if [[ -f $ZSH/oh-my-zsh.sh ]]; then
   source $ZSH/oh-my-zsh.sh
 fi
