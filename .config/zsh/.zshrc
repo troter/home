@@ -82,7 +82,7 @@ plugins=(
 #  extract
 #  fabric
 #  gem
-  git
+#  git
 #  golang
 #  gradle
 #  jsontools
