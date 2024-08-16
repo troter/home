@@ -2,4 +2,4 @@
 
 require_relative '../libexec/git-tmp'
 
-GitTmp.start(['branch'] + ARGV)
+GitTmp::CLI.start(['branch'] + ARGV)
