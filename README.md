@@ -5,7 +5,7 @@ My home directory.
 ## Setup
 
 ```
-git clone https://github.com/trote/home .home
+git clone https://github.com/troter/home .home
 cp -R .home/.git $HOME/.git
 git restore .
 ```
