@@ -25,7 +25,7 @@
 	untracked = cyan
 [core]
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol # https://git-scm.com/docs/git-config#Documentation/git-config.txt-corewhitespace
-	pager = LESS='MFRX' less # https://git-scm.com/docs/git-config#Documentation/git-config.txt-corepager
+	pager = less -MFRX # https://git-scm.com/docs/git-config#Documentation/git-config.txt-corepager
 	autocrlf = false # to disable end-of-line convertion https://git-scm.com/docs/git-config#Documentation/git-config.txt-coreautocrlf dislabe
 	commentString = "##" # to avoid conflicts comment char and reference prefix (ex: #123). https://git-scm.com/docs/git-config#Documentation/git-config.txt-corecommentString
 [diff]
