@@ -1,12 +1,12 @@
 [user]
 	user = troter
-	useConfigOnly = true
+	useConfigOnly = true # to force user configuration for each repository to avoid commits under the wrong account. https://git-scm.com/docs/git-config#Documentation/git-config.txt-useruseConfigOnly
 [init]
-	defaultBranch = main
+	defaultBranch = main # https://git-scm.com/docs/git-config#Documentation/git-config.txt-codeinitdefaultBranchcode
 [push]
-	default = simple
+	default = simple # https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushdefault
 [branch]
-	sort = -committerdate
+	sort = -committerdate # to sort newest branches first. https://git-scm.com/docs/git-config#Documentation/git-config.txt-branchsort
 [color]
 	ui = auto
 [color "branch"]
@@ -24,17 +24,17 @@
 	changed = green
 	untracked = cyan
 [core]
-	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	pager = LESS='MFRX' less
-	autocrlf = false
-	commentString = "##"
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol # https://git-scm.com/docs/git-config#Documentation/git-config.txt-corewhitespace
+	pager = LESS='MFRX' less # https://git-scm.com/docs/git-config#Documentation/git-config.txt-corepager
+	autocrlf = false # to disable end-of-line convertion https://git-scm.com/docs/git-config#Documentation/git-config.txt-coreautocrlf dislabe
+	commentString = "##" # to avoid conflicts comment char and reference prefix (ex: #123). https://git-scm.com/docs/git-config#Documentation/git-config.txt-corecommentString
 [diff]
-	algorithm = histogram
+	algorithm = histogram # to output more readable diff. https://git-scm.com/docs/git-config#Documentation/git-config.txt-diffalgorithm
 [rebase]
-	autostash = true
+	autostash = true # to allow rebase on dirty worktree. https://git-scm.com/docs/git-config#Documentation/git-config.txt-rebaseautoStash
 [rerere]
-	enabled = true
-	autoUpdate = true
+	enabled = true # https://git-scm.com/docs/git-config#Documentation/git-config.txt-rerereenabled
+	autoUpdate = true # https://git-scm.com/docs/git-config#Documentation/git-config.txt-rerereautoUpdate
 [alias]
 	amend = commit --amend
 	br = branch
@@ -55,7 +55,7 @@
 [url "https://"]
 	insteadOf = git://
 [ghq]
-	root = ~/src
+	root = ~/src # https://github.com/x-motemen/ghq?tab=readme-ov-file#configuration
 [difftool]
 	prompt = false
 [difftool "difftastic"]
