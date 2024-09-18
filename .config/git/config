@@ -29,7 +29,6 @@
 	autocrlf = false
 	commentString = "##"
 [diff]
-	compactionHeuristic = true
 [rebase]
 	autostash = true
 [rerere]
