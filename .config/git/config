@@ -29,6 +29,7 @@
 	autocrlf = false
 	commentString = "##"
 [diff]
+	algorithm = histogram
 [rebase]
 	autostash = true
 [rerere]
