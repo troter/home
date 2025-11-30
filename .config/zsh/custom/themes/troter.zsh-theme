@@ -2,7 +2,7 @@
 # Prompt configuration.
 # ---------------------
 # |[user@host:pwd(shlvl)]                      |
-# |%                                   [number]|
+# |%                                 [datetime]|
 # |command is correct? [n,y,a,e]:              |
 setopt prompt_subst
 function prompt_setup() {
@@ -24,8 +24,17 @@ function prompt_setup() {
   local shlevel="(\${SHLVL})"
   if [[ ${SHLVL} < 2 ]] { shlevel='' }
 
-  PROMPT="[${c_user}%n${c_reset}@${c_green}%m${c_reset}:${c_cyan}%~${c_reset}${shlevel}]
-${c_prompt}%#${c_reset} "
+  local p_user="${c_user}%n${c_reset}"
+  local p_host="${c_green}%m${c_reset}"
+  local p_pwd="${c_cyan}%~${c_reset}"
+  local p_prompt="${c_prompt}%#${c_reset}"
+  local p_nl="$'\n'"
+
+  if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+    PROMPT="[${p_pwd}${shlevel}]${p_prompt} "
+  else
+    PROMPT="[${p_user}@${p_host}:${p_pwd}${shlevel}]${p_nl}${p_prompt} "
+  fi
   PROMPT2="${c_prompt}%_>${c_reset} "
   RPROMPT="[${c_green}%D{%Y/%m/%d %H:%M:%S}${c_reset}]"
   SPROMPT="${c_magenta}%r is correct? [n,y,a,e]:${c_reset} "
