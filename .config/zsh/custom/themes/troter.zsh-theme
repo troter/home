@@ -28,7 +28,7 @@ function prompt_setup() {
   local p_host="${c_green}%m${c_reset}"
   local p_pwd="${c_cyan}%~${c_reset}"
   local p_prompt="${c_prompt}%#${c_reset}"
-  local p_nl="$'\n'"
+  local p_nl=$'\n'
 
   if [[ "$TERM_PROGRAM" == "vscode" ]]; then
     PROMPT="[${p_pwd}${shlevel}]${p_prompt} "
