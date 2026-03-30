@@ -27,6 +27,45 @@ class GitCommand
   end
 end
 
+class ClaudeStatus
+  def self.org_name
+    AuthCache.data&.dig("orgName")
+  end
+
+  class AuthCache
+    CACHE_PATH = File.join(ENV["HOME"], ".claude", "scripts", ".auth_cache.json")
+    TTL = 3600 # 1 hour
+
+    def self.data
+      read_cache || fetch_and_cache
+    end
+
+    class << self
+      private
+
+      def read_cache
+        return nil unless File.exist?(CACHE_PATH)
+        return nil if Time.now - File.mtime(CACHE_PATH) > TTL
+
+        JSON.parse(File.read(CACHE_PATH))
+      rescue JSON::ParserError
+        nil
+      end
+
+      def fetch_and_cache
+        out, status = Open3.capture2("claude", "auth", "status", err: File::NULL)
+        return nil unless status.success?
+
+        data = JSON.parse(out)
+        File.write(CACHE_PATH, out)
+        data
+      rescue JSON::ParserError, Errno::ENOENT
+        nil
+      end
+    end
+  end
+end
+
 class StatusLine
   def initialize(input)
     @cwd_full   = input.dig("workspace", "current_dir") || input["cwd"] || ""
@@ -37,12 +76,13 @@ class StatusLine
     @cost_raw   = input.dig("cost", "total_cost_usd")
     @five_hour  = input.dig("rate_limits", "five_hour")
     @seven_day  = input.dig("rate_limits", "seven_day")
+    @org_name   = ClaudeStatus.org_name
   end
 
   def to_s
     lines = [
       [location],
-      [@model, context, rate_limits, cost, "v#{@version}"],
+      [@model, context, rate_limits, cost, "v#{@version}", @org_name],
     ]
 
     lines.map { |line| line.compact.join(" | ") }.join("\n")
