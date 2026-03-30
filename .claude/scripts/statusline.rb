@@ -28,38 +28,45 @@ class GitCommand
 end
 
 class ClaudeStatus
+  CACHE_DIR = File.join(ENV["HOME"], ".claude", "scripts", "cache")
+
   def self.org_name
-    AuthCache.data&.dig("orgName")
+    FileCache.fetch(File.join(CACHE_DIR, "auth.json")) {
+      out, status = Open3.capture2("claude", "auth", "status", err: File::NULL)
+      status.success? ? out : nil
+    }&.dig("orgName")
   end
 
-  class AuthCache
-    CACHE_PATH = File.join(ENV["HOME"], ".claude", "scripts", ".auth_cache.json")
+  class FileCache
     TTL = 3600 # 1 hour
 
-    def self.data
-      read_cache || fetch_and_cache
+    def self.fetch(path, ttl: TTL)
+      data = read(path, ttl: ttl)
+      return data if data
+
+      raw = yield
+      return nil if raw.nil?
+
+      write(path, raw)
     end
 
     class << self
       private
 
-      def read_cache
-        return nil unless File.exist?(CACHE_PATH)
-        return nil if Time.now - File.mtime(CACHE_PATH) > TTL
+      def read(path, ttl:)
+        return nil unless File.exist?(path)
+        return nil if Time.now - File.mtime(path) > ttl
 
-        JSON.parse(File.read(CACHE_PATH))
+        JSON.parse(File.read(path))
       rescue JSON::ParserError
         nil
       end
 
-      def fetch_and_cache
-        out, status = Open3.capture2("claude", "auth", "status", err: File::NULL)
-        return nil unless status.success?
-
-        data = JSON.parse(out)
-        File.write(CACHE_PATH, out)
-        data
-      rescue JSON::ParserError, Errno::ENOENT
+      def write(path, raw)
+        Dir.mkdir(File.dirname(path)) unless Dir.exist?(File.dirname(path))
+        File.write(path, raw)
+        JSON.parse(raw)
+      rescue JSON::ParserError
         nil
       end
     end
