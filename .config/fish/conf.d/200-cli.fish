@@ -4,4 +4,3 @@ if command -s peco > /dev/null
 end
 set -x PAGER less
 set -x LESS '-dMr'
-set -x LV '-c'
