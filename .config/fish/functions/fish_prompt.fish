@@ -1,4 +1,6 @@
 function fish_prompt --description 'Write out the prompt'
+  set -l last_status $status
+
   echo -n [
 
   # User
@@ -27,8 +29,6 @@ function fish_prompt --description 'Write out the prompt'
   echo -n ]
 
   echo
-
-  set -l last_status $status
 
   if not test $last_status -eq 0
     set_color $fish_color_error
