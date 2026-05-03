@@ -2,7 +2,7 @@
 
 ## ディレクトリ
 
-- 一時作業ディレクトリ: `~/.cache/claude-scratch/`（SessionEnd時に7日以上経過したファイルを自動削除）
+- 一時作業ディレクトリ: `~/.cache/claude-scratch/`
 
 ## スタイル
 
