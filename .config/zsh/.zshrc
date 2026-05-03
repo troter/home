@@ -88,6 +88,7 @@ plugins=(
 #  jsontools
 #  lein
 #  mercurial
+  mise
 #  mvn
 #  pip
 #  python
