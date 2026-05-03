@@ -1,4 +1,3 @@
-alias gh "hg"
 alias hgst "hg st"
 alias hgshow "hg show"
 alias hgdiff "hg diff"
