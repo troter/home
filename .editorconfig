@@ -16,5 +16,5 @@ indent_size = 4
 [*.go]
 indent_style = tab
 
-[{.gitconfig,.conig/git/config}*]
+[{.gitconfig,.config/git/config}*]
 indent_style = tab
