@@ -54,7 +54,7 @@ module GitTmp
     def merge(commit)
       prefix = cmd.git_config.fetch('tmp-merge.prefix', 'tmp-merge')
       cmd.git("switch", "-c", generate_temporary_branch_name(prefix: prefix))
-      cmd.git("git", "merge", commit)
+      cmd.git("merge", commit)
     end
 
     no_commands do
