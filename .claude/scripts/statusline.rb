@@ -74,22 +74,34 @@ class ClaudeStatus
 end
 
 class StatusLine
+  # モデル別のデフォルト effort level
+  # 出典: https://code.claude.com/docs/en/model-config#adjust-effort-level
+  # ドキュメントが更新されたらこの表も更新する
+  MODEL_DEFAULT_EFFORT = {
+    "claude-opus-4-7"   => "xhigh",
+    "claude-opus-4-6"   => "high",
+    "claude-sonnet-4-6" => "high",
+  }.freeze
+
   def initialize(input)
-    @cwd_full   = input.dig("workspace", "current_dir") || input["cwd"] || ""
-    @cwd        = @cwd_full.sub(%r{\A#{Regexp.escape(ENV["HOME"])}}, "~")
-    @model      = input.dig("model", "display_name") || ""
-    @version    = input["version"] || ""
-    @used       = input.dig("context_window", "used_percentage")
-    @cost_raw   = input.dig("cost", "total_cost_usd")
-    @five_hour  = input.dig("rate_limits", "five_hour")
-    @seven_day  = input.dig("rate_limits", "seven_day")
-    @org_name   = ClaudeStatus.org_name
+    @cwd_full     = input.dig("workspace", "current_dir") || input["cwd"] || ""
+    @cwd          = @cwd_full.sub(%r{\A#{Regexp.escape(ENV["HOME"])}}, "~")
+    @model        = input.dig("model", "display_name") || ""
+    @model_id     = input.dig("model", "id") || ""
+    @version      = input["version"] || ""
+    @used         = input.dig("context_window", "used_percentage")
+    @cost_raw     = input.dig("cost", "total_cost_usd")
+    @five_hour    = input.dig("rate_limits", "five_hour")
+    @seven_day    = input.dig("rate_limits", "seven_day")
+    @effort       = input.dig("effort", "level")
+    @output_style = input.dig("output_style", "name")
+    @org_name     = ClaudeStatus.org_name
   end
 
   def to_s
     lines = [
-      [location],
-      [@model, context, rate_limits, cost, "v#{@version}", @org_name],
+      [output_style, location],
+      [model_label, context, rate_limits, cost, "v#{@version}", @org_name],
     ]
 
     lines.map { |line| line.compact.join(" | ") }.join("\n")
@@ -107,6 +119,31 @@ class StatusLine
 
   def context
     @used ? "ctx:#{colorize_pct(@used.to_i)}" : "ctx:--%"
+  end
+
+  def model_label
+    parts = [@model]
+    parts << @effort if show_effort?
+    parts.join(" ")
+  end
+
+  def show_effort?
+    !@effort.nil? && @effort != default_effort
+  end
+
+  def default_effort
+    base_id = @model_id.sub(/\[\d+[a-z]\]\z/, "")
+    MODEL_DEFAULT_EFFORT[base_id]
+  end
+
+  def output_style
+    return nil unless show_style?
+
+    "#{COLOR_MAGENTA}*#{@output_style}*#{COLOR_RESET}"
+  end
+
+  def show_style?
+    !@output_style.nil? && !@output_style.casecmp?("default")
   end
 
   def rate_limits
@@ -152,10 +189,11 @@ class StatusLine
     "#{WEEKDAYS[t.wday]}%02d:%02d" % [t.hour, t.min]
   end
 
-  COLOR_GREEN  = "\033[32m"
-  COLOR_YELLOW = "\033[33m"
-  COLOR_RED    = "\033[31m"
-  COLOR_RESET  = "\033[0m"
+  COLOR_GREEN   = "\033[32m"
+  COLOR_YELLOW  = "\033[33m"
+  COLOR_RED     = "\033[31m"
+  COLOR_MAGENTA = "\033[35m"
+  COLOR_RESET   = "\033[0m"
 
   def color_for_pct(pct_i)
     case pct_i
