@@ -40,7 +40,6 @@ alias srevertall="svn revert --depth infinity"
 alias g="git"
 alias gs="git svn"
 alias h="hg"
-alias c="cheat" # gem install cheat
 alias p="percol"
 
 # update commands
