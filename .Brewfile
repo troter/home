@@ -10,7 +10,6 @@ cask "iterm2"
 
 # editor
 brew "emacs"
-cask "emacs"
 
 # tools
 brew "colordiff"
