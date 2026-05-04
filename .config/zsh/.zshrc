@@ -126,7 +126,7 @@ export PATH="$HOME/.local/bin:$PATH"
 [[ -d $HOME/go/bin ]] && export PATH="$HOME/go/bin:$PATH"
 
 typeset -U MANPATH manpath
-export MANPATH="$HOME/.local/man:$HOME/.local/share/man:$MANPATH"
+export MANPATH="$HOME/.local/share/man:$MANPATH"
 
 
 # Load local configuration file.
