@@ -86,6 +86,15 @@
       use-package-always-defer t)
 #+end_src
 
+* シェル環境変数の取り込み
+GUI Emacs（=Emacs.app= 等）を Dock や Spotlight から起動した場合、シェルの =PATH= 等が引き継がれない。=exec-path-from-shell= で起動時にログインシェルから取り込み、ターミナル起動時と動作を揃える。
+#+begin_src emacs-lisp
+(use-package exec-path-from-shell
+  :if (memq window-system '(mac ns x))
+  :demand t
+  :config (exec-path-from-shell-initialize))
+#+end_src
+
 * テーマ
 #+begin_src emacs-lisp
 (use-package modus-themes
