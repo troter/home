@@ -1,1 +1,1 @@
-set -x TMUX_TMPDIR /tmp;
+set -x TMUX_TMPDIR /tmp
