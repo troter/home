@@ -90,7 +90,7 @@
 #+begin_src emacs-lisp
 (use-package modus-themes
   :demand t
-  :config (load-theme 'modus-operandi t))
+  :config (load-theme 'modus-vivendi t))
 #+end_src
 
 * 補完 UI（vertico + orderless + marginalia + consult + embark）
