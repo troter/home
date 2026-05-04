@@ -72,7 +72,6 @@ ZSH_CUSTOM=$HOME/.config/zsh/custom
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 #  bower
-#  brew-cask
   brew
 #  bundler
 #  capistrano
@@ -98,15 +97,12 @@ plugins=(
 #  tmux
 #  vagrant
 #  z
-#  troter-emacs-cask
 #  troter-homebrew
 #  pyenv
 #  rbenv
   direnv
-#  troter-shellenv-el
 #  troter-http
 #  peco
-#  troter-golang
 #  junk-and-scratch
   fzf
   zoxide
