@@ -1,9 +1,9 @@
 function peco_pgrep
   if test (count $argv) = 0
-    set peco_flag
+    set peco_flags
   else
-    set peco_flag --query "$argv"
+    set peco_flags --query "$argv"
   end
 
-  ps aux|eval $PECO $percol_flags| awk '{ print $2 }'
+  ps aux | eval $PECO $peco_flags | awk '{ print $2 }'
 end
