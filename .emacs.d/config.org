@@ -102,6 +102,14 @@ GUI Emacs（=Emacs.app= 等）を Dock や Spotlight から起動した場合、
   :config (load-theme 'modus-vivendi t))
 #+end_src
 
+* 補完の大文字小文字を無視する
+ファイル名・バッファ名・一般補完すべてで case を区別しない。orderless / vertico もこの設定を尊重する。
+#+begin_src emacs-lisp
+(setq read-file-name-completion-ignore-case t
+      read-buffer-completion-ignore-case t
+      completion-ignore-case t)
+#+end_src
+
 * 補完 UI（vertico + orderless + marginalia + consult + embark）
 #+begin_src emacs-lisp
 (use-package vertico
