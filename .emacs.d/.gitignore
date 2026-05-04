@@ -1,0 +1,15 @@
+# Tangled outputs of *.org via org-babel-load-file
+/early-config.el
+/config.el
+
+# Emacs runtime files
+/auto-save/
+/backup/
+/eln-cache/
+/elpa/
+/transient/
+/var/
+/recentf
+/savehist
+/places
+/custom.el

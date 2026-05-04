@@ -1,0 +1,172 @@
+#+TITLE: Emacs config
+#+STARTUP: indent
+#+PROPERTY: header-args:emacs-lisp :results none
+
+* GC threshold を起動後に戻す
+=early-config.org= で持ち上げた閾値を、常用値に戻す。
+#+begin_src emacs-lisp
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (setq gc-cons-threshold (* 64 1024 1024)
+                  gc-cons-percentage 0.1)))
+#+end_src
+
+* エンコーディング
+#+begin_src emacs-lisp
+(set-language-environment "Japanese")
+(prefer-coding-system 'utf-8)
+#+end_src
+
+* デフォルト値
+#+begin_src emacs-lisp
+(setq-default
+ indent-tabs-mode nil
+ tab-width 2
+ fill-column 100)
+
+(setq inhibit-startup-screen t
+      initial-scratch-message nil
+      ring-bell-function 'ignore
+      use-short-answers t
+      create-lockfiles nil
+      backup-by-copying t
+      backup-directory-alist
+        `(("." . ,(expand-file-name "backup" user-emacs-directory)))
+      auto-save-file-name-transforms
+        `((".*" ,(expand-file-name "auto-save" user-emacs-directory) t))
+      custom-file (expand-file-name "custom.el" user-emacs-directory))
+
+(when (file-exists-p custom-file)
+  (load custom-file 'noerror))
+#+end_src
+
+* Built-in モード
+#+begin_src emacs-lisp
+(global-display-line-numbers-mode 1)
+(column-number-mode 1)
+(show-paren-mode 1)
+(electric-pair-mode 1)
+(savehist-mode 1)
+(save-place-mode 1)
+(recentf-mode 1)
+(winner-mode 1)
+(global-auto-revert-mode 1)
+#+end_src
+
+* パッケージ
+#+begin_src emacs-lisp
+(require 'package)
+(setq package-archives
+      '(("gnu"    . "https://elpa.gnu.org/packages/")
+        ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+        ("melpa"  . "https://melpa.org/packages/")))
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(eval-when-compile (require 'use-package))
+(setq use-package-always-ensure t
+      use-package-always-defer t)
+#+end_src
+
+* テーマ
+#+begin_src emacs-lisp
+(use-package modus-themes
+  :demand t
+  :config (load-theme 'modus-operandi t))
+#+end_src
+
+* 補完 UI（vertico + orderless + marginalia + consult + embark）
+#+begin_src emacs-lisp
+(use-package vertico
+  :demand t
+  :config (vertico-mode 1))
+
+(use-package orderless
+  :demand t
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides
+   '((file (styles basic partial-completion)))))
+
+(use-package marginalia
+  :demand t
+  :config (marginalia-mode 1))
+
+(use-package consult
+  :bind (("C-s"   . consult-line)
+         ("C-x b" . consult-buffer)
+         ("M-y"   . consult-yank-pop)
+         ("M-g g" . consult-goto-line)
+         ("M-g i" . consult-imenu)
+         ("M-s r" . consult-ripgrep)))
+
+(use-package embark
+  :bind (("C-." . embark-act)
+         ("M-." . embark-dwim)))
+
+(use-package embark-consult
+  :after (embark consult)
+  :hook (embark-collect-mode . consult-preview-at-point-mode))
+#+end_src
+
+* バッファ内補完（corfu + cape）
+#+begin_src emacs-lisp
+(use-package corfu
+  :demand t
+  :custom
+  (corfu-cycle t)
+  (corfu-auto t)
+  :config (global-corfu-mode 1))
+
+(use-package cape
+  :init
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-file))
+#+end_src
+
+* キーヒント
+#+begin_src emacs-lisp
+(use-package which-key
+  :demand t
+  :config (which-key-mode 1))
+#+end_src
+
+* Git
+#+begin_src emacs-lisp
+(use-package magit
+  :bind ("C-x g" . magit-status))
+#+end_src
+
+* LSP（=M-x eglot= で起動）
+#+begin_src emacs-lisp
+(use-package eglot
+  :ensure nil
+  :defer t)
+#+end_src
+
+* Tree-sitter（Emacs 29+）
+#+begin_src emacs-lisp
+(use-package treesit-auto
+  :demand t
+  :custom (treesit-auto-install 'prompt)
+  :config (global-treesit-auto-mode 1))
+#+end_src
+
+* Markup
+#+begin_src emacs-lisp
+(use-package markdown-mode
+  :mode (("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode)))
+
+(use-package yaml-mode
+  :mode "\\.ya?ml\\'")
+#+end_src
+
+* 編集補助
+#+begin_src emacs-lisp
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+#+end_src

@@ -1,0 +1,31 @@
+#+TITLE: Early init
+#+STARTUP: indent
+#+PROPERTY: header-args:emacs-lisp :results none
+
+* GC tuning during startup
+起動中は GC 圧を下げ、=config.org= 側で常用値に戻す。
+#+begin_src emacs-lisp
+(setq gc-cons-threshold most-positive-fixnum
+      gc-cons-percentage 0.6)
+#+end_src
+
+* Defer package activation
+=config.org= 側で =package.el= を初期化するため、デフォルトの自動アクティベーションは抑止する。
+#+begin_src emacs-lisp
+(setq package-enable-at-startup nil)
+#+end_src
+
+* UI chrome
+メニュー・ツール・スクロールバーをフレーム生成前に外し、再描画コストを削る。
+#+begin_src emacs-lisp
+(push '(menu-bar-lines . 0) default-frame-alist)
+(push '(tool-bar-lines . 0) default-frame-alist)
+(push '(vertical-scroll-bars) default-frame-alist)
+(setq frame-inhibit-implied-resize t)
+#+end_src
+
+* Native compilation
+ネイティブコンパイル時の警告は popup させずバッファに記録する。
+#+begin_src emacs-lisp
+(setq native-comp-async-report-warnings-errors 'silent)
+#+end_src
