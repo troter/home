@@ -19,7 +19,6 @@ alias cp "cp -i"
 alias rm "rm -i"
 alias m "make"
 
-alias ag "ag --pager=\$PAGER"
 alias g "git"
 alias p "eval \$PECO"
 
