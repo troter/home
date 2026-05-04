@@ -127,6 +127,7 @@ export LANG=ja_JP.UTF-8
 # setup path
 typeset -U PATH path
 export PATH="$HOME/.local/bin:$PATH"
+[[ -d $HOME/go/bin ]] && export PATH="$HOME/go/bin:$PATH"
 
 typeset -U MANPATH manpath
 export MANPATH="$HOME/.local/man:$HOME/.local/share/man:$MANPATH"
