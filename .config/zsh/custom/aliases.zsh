@@ -34,21 +34,8 @@ alias rm="rm -i"
 alias m="make"
 
 alias ag="ag --pager=\$PAGER"
-alias s="svn"
-alias srevertall="svn revert --depth infinity"
 alias g="git"
-alias gs="git svn"
-alias h="hg"
 alias p="percol"
-
-# update commands
-case "${OSTYPE}" in
-  darwin*)
-    alias updateports="sudo port selfupdate; sudo port outdated"
-    alias portupgrade="sudo port upgrade installed"
-    alias portsearch="sudo port search"
-    ;;
-esac
 
 # editor
 alias ec="emacsclient"

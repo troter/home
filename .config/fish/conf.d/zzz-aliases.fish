@@ -20,9 +20,7 @@ alias rm "rm -i"
 alias m "make"
 
 alias ag "ag --pager=\$PAGER"
-alias s "svn"
 alias g "git"
-alias h "hg"
 alias p "eval \$PECO"
 
 alias ec "emacsclient"
