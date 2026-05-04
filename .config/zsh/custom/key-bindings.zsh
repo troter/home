@@ -1,23 +1,25 @@
 # -*- coding: utf-8; mode: sh; -*-
 # Keybind configuration.
 # ----------------------
-if [[ $(whence percol) = "" ]]; then
-  function keybind_configuration() {
-    bindkey -e
+function keybind_configuration() {
+  # Apply baseline emacs-mode bindings only if no plugin has already bound ^R.
+  if [[ "$(bindkey -M emacs '^R')" != '"^R" history-incremental-search-backward' ]]; then
+    return
+  fi
 
-    # historical backward/forward search with linehead string binded to ^P/^N
-    if zle -la | grep -q '^history-incremental-pattern-search'; then
-      # zsh 4.3.10 以降でのみ有効
-      bindkey '^R' history-incremental-pattern-search-backward
-      bindkey '^S' history-incremental-pattern-search-forward
-    else
-      autoload history-search-end
-      zle -N history-beginning-search-backward-end history-search-end
-      zle -N history-beginning-search-forward-end history-search-end
-      bindkey "^P" history-beginning-search-backward-end
-      bindkey "^N" history-beginning-search-forward-end
-    fi
-    [[ -n "$INSIDE_EMACS" ]] && unsetopt zle
-  }
-  keybind_configuration; unset -f keybind_configuration
-fi
+  bindkey -e
+
+  # Pattern-based incremental history search.
+  bindkey -M emacs '^R' history-incremental-pattern-search-backward
+  bindkey -M emacs '^S' history-incremental-pattern-search-forward
+
+  # Line-beginning incremental history search.
+  autoload -U history-search-end
+  zle -N history-beginning-search-backward-end history-search-end
+  zle -N history-beginning-search-forward-end history-search-end
+  bindkey -M emacs '^P' history-beginning-search-backward-end
+  bindkey -M emacs '^N' history-beginning-search-forward-end
+
+  [[ -n "$INSIDE_EMACS" ]] && unsetopt zle
+}
+keybind_configuration; unset -f keybind_configuration
