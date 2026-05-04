@@ -12,4 +12,4 @@ zle -N fzf-file-widget
 bindkey -M emacs '^xf' fzf-file-widget
 
 zle -N fzf-cd-widget
-bindkey -M emacs '^xb' fzf-cd-widget
+bindkey -M emacs '^x^o' fzf-cd-widget
