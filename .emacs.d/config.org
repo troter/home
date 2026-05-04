@@ -198,6 +198,15 @@ GUI Emacs（=Emacs.app= 等）を Dock や Spotlight から起動した場合、
   :mode "\\.ya?ml\\'")
 #+end_src
 
+* EditorConfig 連携
+プロジェクトの =.editorconfig= に従ってインデント・改行コード等を自動適用する。Emacs 30 から built-in なので =:straight nil= で組込み版を使う。
+#+begin_src emacs-lisp
+(use-package editorconfig
+  :straight nil
+  :demand t
+  :config (editorconfig-mode 1))
+#+end_src
+
 * 編集補助
 #+begin_src emacs-lisp
 (use-package rainbow-delimiters
