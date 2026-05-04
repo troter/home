@@ -97,13 +97,12 @@ plugins=(
 #  tmux
 #  vagrant
 #  z
-#  troter-homebrew
+  troter-homebrew
 #  pyenv
 #  rbenv
   direnv
-#  troter-http
 #  peco
-#  junk-and-scratch
+#  troter-percol
   fzf
   zoxide
 )
