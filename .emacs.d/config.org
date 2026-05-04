@@ -55,6 +55,14 @@
 
 * パッケージ管理（straight.el）
 =straight.el= で git ベースのパッケージ管理を行う。=use-package= は straight 経由で取り込み、=straight-use-package-by-default= で全 =use-package= 宣言にデフォルト適用する。
+
+** よく使うコマンド
+| コマンド                   | 用途                                                 |
+|----------------------------+------------------------------------------------------|
+| =straight-pull-all=        | 全パッケージを最新化する                              |
+| =straight-rebuild-all=     | Emacs アップグレード後などに全パッケージを再ビルドする |
+| =straight-freeze-versions= | lockfile (=straight/versions/default.el=) を書き出す  |
+| =straight-thaw-versions=   | lockfile に従ってバージョンを巻き戻す                 |
 #+begin_src emacs-lisp
 (defvar bootstrap-version)
 (let ((bootstrap-file
