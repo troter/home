@@ -118,6 +118,7 @@ fi
 
 # User configuration
 export LANG=ja_JP.UTF-8
+export EDITOR=vi
 
 # setup path
 typeset -U PATH path
