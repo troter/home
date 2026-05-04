@@ -53,21 +53,28 @@
 (global-auto-revert-mode 1)
 #+end_src
 
-* パッケージ
+* パッケージ管理（straight.el）
+=straight.el= で git ベースのパッケージ管理を行う。=use-package= は straight 経由で取り込み、=straight-use-package-by-default= で全 =use-package= 宣言にデフォルト適用する。
 #+begin_src emacs-lisp
-(require 'package)
-(setq package-archives
-      '(("gnu"    . "https://elpa.gnu.org/packages/")
-        ("nongnu" . "https://elpa.nongnu.org/nongnu/")
-        ("melpa"  . "https://melpa.org/packages/")))
-(package-initialize)
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name
+        "straight/repos/straight.el/bootstrap.el"
+        (or (bound-and-true-p straight-base-dir)
+            user-emacs-directory)))
+      (bootstrap-version 7))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
+(straight-use-package 'use-package)
 (eval-when-compile (require 'use-package))
-(setq use-package-always-ensure t
+(setq straight-use-package-by-default t
       use-package-always-defer t)
 #+end_src
 
@@ -141,9 +148,10 @@
 #+end_src
 
 * LSP（=M-x eglot= で起動）
+=eglot= は Emacs 29 以降に同梱されているため =:straight nil= で built-in 版を使う。
 #+begin_src emacs-lisp
 (use-package eglot
-  :ensure nil
+  :straight nil
   :defer t)
 #+end_src
 
