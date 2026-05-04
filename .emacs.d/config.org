@@ -203,3 +203,21 @@ GUI Emacs（=Emacs.app= 等）を Dock や Spotlight から起動した場合、
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 #+end_src
+
+* 日本語 isearch（migemo）
+ローマ字入力で日本語を incremental search する。=cmigemo= を Homebrew で導入している前提。
+#+begin_src emacs-lisp
+(use-package migemo
+  :demand t
+  :if (executable-find "cmigemo")
+  :custom
+  (migemo-command "cmigemo")
+  (migemo-options '("-q" "--emacs"))
+  (migemo-dictionary
+   (expand-file-name "share/migemo/utf-8/migemo-dict"
+                     (or (getenv "HOMEBREW_PREFIX") "/opt/homebrew")))
+  (migemo-coding-system 'utf-8-unix)
+  (migemo-user-dictionary nil)
+  (migemo-regex-dictionary nil)
+  :config (migemo-init))
+#+end_src
