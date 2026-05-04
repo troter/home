@@ -15,6 +15,14 @@ git restore .
 git worktree add ~/.home develop
 ```
 
+### LaunchAgents
+
+Symlink and load the tracked `*.plist` files into `~/Library/LaunchAgents/`:
+
+```
+cd ~/.local/Library/LaunchAgents && rake install
+```
+
 ## Note
 
 ### Launch zsh from bash
