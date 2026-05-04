@@ -3,9 +3,6 @@ cask "firefox"
 cask "google-chrome"
 
 # gui tools
-cask "alfred"
-cask "cord"
-cask "cyberduck"
 cask "iterm2"
 
 # editor
