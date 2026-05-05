@@ -20,7 +20,6 @@ alias rm "rm -i"
 alias m "make"
 
 alias g "git"
-alias p "eval \$PECO"
 
 alias ec "emacsclient"
 

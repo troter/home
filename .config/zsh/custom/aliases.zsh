@@ -34,7 +34,6 @@ alias rm="rm -i"
 alias m="make"
 
 alias g="git"
-alias p="percol"
 
 # editor
 alias ec="emacsclient"
