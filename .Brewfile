@@ -27,6 +27,11 @@ brew "zoxide"
 brew "peco"
 brew "percol"
 
+# shells & runtimes
+brew "fish"
+brew "mise"
+brew "pipx"
+
 # ghq
 brew "ghq"
 
