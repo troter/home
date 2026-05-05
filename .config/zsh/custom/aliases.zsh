@@ -35,5 +35,8 @@ alias m="make"
 
 alias g="git"
 
+alias be="bundle exec"
+alias bi="bundle install"
+
 # editor
 alias ec="emacsclient"
