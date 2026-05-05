@@ -3,18 +3,19 @@
 require 'fileutils'
 
 DST_DIR = File.expand_path('~/Library/LaunchAgents')
+DOMAIN  = "gui/#{Process.uid}"
 
 task default: :install
 
-desc 'Symlink *.plist into ~/Library/LaunchAgents/ and (re)load via launchctl'
+desc 'Symlink *.plist into ~/Library/LaunchAgents/ and (re)load via launchctl bootstrap'
 task :install do
   FileUtils.mkdir_p(DST_DIR)
   Dir.glob(File.join(__dir__, '*.plist')).each do |src|
     name = File.basename(src)
     link = File.join(DST_DIR, name)
     FileUtils.ln_sf(src, link)
-    sh('launchctl', 'unload', link) { } # ignore failure on first install
-    sh 'launchctl', 'load', '-w', link
+    sh('launchctl', 'bootout', DOMAIN, link) { } # ignore failure on first install
+    sh 'launchctl', 'bootstrap', DOMAIN, link
     puts "loaded: #{name}"
   end
 end
@@ -25,7 +26,7 @@ task :uninstall do
     link = File.join(DST_DIR, File.basename(src))
     next unless File.symlink?(link)
 
-    sh('launchctl', 'unload', link) { }
+    sh('launchctl', 'bootout', DOMAIN, link) { }
     File.unlink(link)
     puts "removed: #{File.basename(src)}"
   end
