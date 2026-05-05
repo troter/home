@@ -1,6 +1,9 @@
 # homebrew
-if command -v /opt/homebrew/bin/brew &> /dev/null
-  /opt/homebrew/bin/brew shellenv fish | source
+for prefix in /opt/homebrew /usr/local
+  if test -x "$prefix/bin/brew"
+    "$prefix/bin/brew" shellenv fish | source
+    break
+  end
 end
 
 set -x HOMEBREW_NO_EMOJI 1
