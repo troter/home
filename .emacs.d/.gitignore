@@ -6,7 +6,6 @@
 /auto-save/
 /backup/
 /eln-cache/
-/elpa/
 /straight/*
 !/straight/versions/
 /transient/
